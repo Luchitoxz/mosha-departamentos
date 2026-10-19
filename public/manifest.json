@@ -1,0 +1,18 @@
+{
+  "short_name": "Mosha Deptos",
+  "name": "Mosha Departamentos - Guía del Huésped",
+  "description": "Guía interactiva para huéspedes en Trevelin, Chubut. Wi-Fi, paseos, restaurantes y servicios esenciales.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0b192c",
+  "theme_color": "#0b192c",
+  "display": "standalone",
+  "orientation": "portrait"
+}
