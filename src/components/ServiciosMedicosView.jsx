@@ -25,7 +25,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Centro de salud público con atención general, guardia y servicios básicos.'
         : 'Public healthcare center with general outpatient services, active 24/7 emergency room and basic care.',
-      image: './stitch/medicos-1-hospital.jpg',
+      image: './banco-chubut.jpg',
       mapsUrl: 'https://maps.app.goo.gl/hospitaltrevelin',
     },
     {
@@ -37,7 +37,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Atención médica ambulatoria en distintas especialidades para toda la familia.'
         : 'Outpatient medical care across multiple specialties for adults and children.',
-      image: './stitch/medicos-2-clinicas.jpg',
+      image: './la-anonima.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
@@ -49,7 +49,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Farmacias con atención permanente y variedad de productos de salud y cuidado personal.'
         : 'Local pharmacies with rotating night shifts and a wide range of medications and care essentials.',
-      image: './stitch/medicos-3-farmacias.jpg',
+      image: './virginia-y-mabel.jpg',
       mapsUrl: 'https://maps.app.goo.gl/farmaciastrevelin',
     },
     {
@@ -61,7 +61,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Atención médica de urgencias y emergencias las 24 horas.'
         : '24-hour urgent medical care, accident response and ambulance dispatch.',
-      image: './stitch/medicos-4-urgencias.jpg',
+      image: './banco-chubut.jpg',
       mapsUrl: 'tel:107',
     },
     {
@@ -73,7 +73,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Consultas y atención médica para niñas y niños.'
         : 'Medical consultations and care specifically for infants, children and adolescents.',
-      image: './stitch/medicos-5-pediatria.jpg',
+      image: './la-anonima.jpg',
       mapsUrl: 'https://maps.app.goo.gl/hospitaltrevelin',
     },
     {
@@ -85,7 +85,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Consultorios odontológicos con atención general y tratamientos básicos.'
         : 'Dental offices providing general dentistry, urgent pain relief and basic treatments.',
-      image: './stitch/medicos-6-odontologia.jpg',
+      image: './banco-chubut.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
@@ -97,7 +97,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Estudios clínicos y análisis con indicación médica.'
         : 'Clinical diagnostics, laboratory testing and biochemical blood work with physician orders.',
-      image: './stitch/medicos-7-laboratorios.jpg',
+      image: './ypf-trevelin.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
@@ -109,7 +109,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Atención veterinaria para tus mascotas durante la estadía.'
         : 'Veterinary care and emergency services for family pets during your stay.',
-      image: './stitch/medicos-8-veterinarias.jpg',
+      image: './mirador-cerro-la-cruz.jpg',
       mapsUrl: 'https://maps.app.goo.gl/veterinariastrevelin',
     },
   ];
@@ -122,7 +122,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         <img
           alt="Servicios médicos en Trevelin"
           className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
-          src="./stitch/medicos-hero.jpg"
+          src="./banco-chubut.jpg"
         />
         <div className="absolute inset-0 hero-gradient z-10 pointer-events-none" />
 
@@ -338,7 +338,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         buttonText={currentT.banner.btnVolver || 'Volver al inicio'}
         onButtonClick={onBack}
         isSubpage={true}
-        image="./stitch/medicos-banner.jpg"
+        image="./stitch/banner-panoramico.png"
       />
       {/* END: PanoramicBanner */}
 

@@ -17,7 +17,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Un entorno natural increíble con cascadas, bosques nativos y senderos para recorrer.'
         : 'A breathtaking natural environment with cascading waterfalls, native forests and walking trails.',
-      image: './stitch/lugares-1-nantyfall.jpg',
+      image: './cascadas-nant-y-fall.png',
       mapsUrl: 'https://maps.app.goo.gl/9Zc1j3d3BsmhVnN26',
     },
     {
@@ -28,7 +28,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Un paisaje único en primavera con millones de tulipanes florecidos con el fondo de la cordillera nevada.'
         : 'A unique spring wonderland featuring millions of vibrant blooming tulips framed by snow-capped Andean peaks.',
-      image: './stitch/lugares-2-tulipanes.jpg',
+      image: './tulipanes.jpg',
       mapsUrl: 'https://maps.app.goo.gl/5p7kL7LhY3GZkmZ78',
     },
     {
@@ -39,7 +39,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Lagos glaciares de aguas turquesas, bosques milenarios de alerce y vistas impresionantes declaradas Patrimonio Mundial.'
         : 'Turquoise glacial lakes, ancient millennial alerce forests and UNESCO World Heritage mountain landscapes.',
-      image: './stitch/lugares-3-alerces.jpg',
+      image: './los-alerces.jpg',
       mapsUrl: 'https://maps.app.goo.gl/P85cQ3PzXhU1p8M57',
     },
     {
@@ -50,7 +50,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Museo histórico del primer molino harinero de la zona impulsado por rueda hidráulica y rodeado de naturaleza.'
         : 'Historic watermill museum recreating the pioneering Welsh agricultural era in an idyllic setting.',
-      image: './stitch/lugares-4-molino.jpg',
+      image: './molino-nant-fach.jpg',
       mapsUrl: 'https://maps.app.goo.gl/uK5UfM8k6dGkZkM47',
     },
     {
@@ -61,7 +61,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Aguas cristalinas y paisajes increíbles, ideal para relajarse y disfrutar la naturaleza en estado puro.'
         : 'Crystal-clear waters and mountain beaches, ideal for relaxation, boat excursions and serene nature contemplation.',
-      image: './stitch/lugares-3-alerces.jpg',
+      image: './los-alerces.jpg',
       mapsUrl: 'https://maps.app.goo.gl/kG1v9U7hE9GZ1',
     },
     {
@@ -72,7 +72,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Una vista panorámica increíble del valle y la cordillera a pocos minutos del centro.'
         : 'A breathtaking 360° panoramic view of the agricultural valley and mountain ranges just minutes from downtown.',
-      image: './stitch/lugares-6-mirador.jpg',
+      image: './mirador-cerro-la-cruz.jpg',
       mapsUrl: 'https://maps.app.goo.gl/4r3d8sK9nL2m1pQ49',
     },
     {
@@ -83,7 +83,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Distintos senderos para disfrutar del bosque, la flora local y la tranquilidad cordillerana.'
         : 'Diverse trails through native Andean woods, local flora and mountain tranquility.',
-      image: './stitch/lugares-7-senderos.jpg',
+      image: './vinas-nant-fall.jpg',
       mapsUrl: 'https://maps.app.goo.gl/vinasnantfall',
     },
     {
@@ -94,7 +94,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Rutas escénicas y paisajes únicos en todas las estaciones del año en el corazón de la Patagonia.'
         : 'Scenic driving routes towards the border pass, meltwater rivers and awe-inspiring alpine scenery in every season.',
-      image: './stitch/home-banner.jpg',
+      image: './stitch/banner-panoramico.png',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
   ];
@@ -107,7 +107,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         <img
           alt="Cascadas turquesas en Trevelin"
           className="absolute inset-0 w-full h-full object-cover object-center z-0 transform scale-105"
-          src="./stitch/lugares-hero.jpg"
+          src="./cascadas-nant-y-fall.png"
         />
         <div className="absolute inset-0 hero-gradient z-[1]" />
 
@@ -286,7 +286,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         buttonText={currentT.banner.btnVolver || 'Volver al inicio'}
         onButtonClick={onBack}
         isSubpage={true}
-        image="./stitch/home-banner.jpg"
+        image="./stitch/banner-panoramico.png"
       />
       {/* END: ClosingPanoramicBanner */}
 

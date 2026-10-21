@@ -17,7 +17,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Emblemática capilla de la colonia galesa construida en piedra y madera.'
         : 'Iconic Welsh colony chapel built in stone and native wood in 1897.',
-      image: './stitch/historicos-1-bethel.jpg',
+      image: './molino-nant-fach.jpg',
       mapsUrl: 'https://maps.app.goo.gl/capillabethel',
     },
     {
@@ -28,7 +28,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Recorre la historia local, la cultura galesa y el desarrollo de la región.'
         : 'Explore local frontier history, Welsh culture and regional valley development.',
-      image: './stitch/historicos-2-museo.jpg',
+      image: './molino-nant-fach.jpg',
       mapsUrl: 'https://maps.app.goo.gl/museoregional',
     },
     {
@@ -39,7 +39,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'El histórico tren patagónico que conecta paisajes, historia y tradición.'
         : 'The historic narrow-gauge steam train connecting breathtaking landscapes, history and lore.',
-      image: './stitch/historicos-3-trochita.jpg',
+      image: './la-trochita.jpg',
       mapsUrl: 'https://maps.app.goo.gl/latrochita',
     },
     {
@@ -50,7 +50,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Primer molino harinero de la zona, testimonio del legado galés en la región.'
         : 'First flour mill in the area, a testament to Welsh agricultural pioneering.',
-      image: './stitch/historicos-4-molino.jpg',
+      image: './molino-nant-fach.jpg',
       mapsUrl: 'https://maps.app.goo.gl/uK5UfM8k6dGkZkM47',
     },
     {
@@ -61,7 +61,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Restos del antiguo edificio escolar, parte de la historia educativa de la colonia.'
         : 'Ruins of the historic school building and site of the 1902 Argentine plebiscite.',
-      image: './stitch/historicos-5-escuela1.jpg',
+      image: './cascadas-nant-y-fall.png',
       mapsUrl: 'https://maps.app.goo.gl/escuelariocorintos',
     },
     {
@@ -72,7 +72,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Un lugar cargado de historia que refleja las raíces y tradiciones de la comunidad.'
         : 'A place rich in memory reflecting the pioneer roots and heritage of the community.',
-      image: './stitch/historicos-6-cementerio.jpg',
+      image: './molino-nant-fach.jpg',
       mapsUrl: 'https://maps.app.goo.gl/cementeriogales',
     },
     {
@@ -83,7 +83,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Espacio histórico y cultural vinculado al desarrollo de la región.'
         : 'Historic and cultural grounds celebrating regional rural traditions.',
-      image: './stitch/historicos-7-campo.jpg',
+      image: './mirador-cerro-la-cruz.jpg',
       mapsUrl: 'https://maps.app.goo.gl/campotradicion',
     },
     {
@@ -94,7 +94,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Antiguo puente de madera, parte del trazado histórico de la zona.'
         : 'Historic wooden bridge and pioneer crossing over the mountain river.',
-      image: './stitch/historicos-8-puenteviejo.jpg',
+      image: './cascadas-nant-y-fall.png',
       mapsUrl: 'https://maps.app.goo.gl/puenteviejo',
     },
   ];
@@ -108,7 +108,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
           <img
             alt="Capilla histórica de Trevelin con fondo de montañas andinas nevadas"
             className="h-full w-full object-cover object-top filter brightness-[0.92]"
-            src="./stitch/historicos-hero.jpg"
+            src="./la-trochita.jpg"
           />
           <div className="hero-gradient absolute inset-0" />
         </div>
@@ -294,7 +294,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
         buttonText={currentT.banner.btnVolver || 'Volver al inicio'}
         onButtonClick={onBack}
         isSubpage={true}
-        image="./stitch/historicos-banner.jpg"
+        image="./stitch/banner-panoramico.png"
       />
       {/* END: BottomPanoramicBanner */}
 

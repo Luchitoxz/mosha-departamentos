@@ -10,10 +10,7 @@ export default function HeroBanner({ tHero }) {
       <img
         alt="Complejo moderno Mosha Departamentos bajo cielo azul"
         className="absolute inset-0 w-full h-full object-cover object-center transform scale-105 transition-transform duration-700"
-        src="./stitch/home-hero.jpg"
-        onError={(e) => {
-          e.currentTarget.src = "./hero-mosha.jpg";
-        }}
+        src="./hero-mosha.jpg"
       />
 
       {/* Dramatic Atmospheric Overlays */}

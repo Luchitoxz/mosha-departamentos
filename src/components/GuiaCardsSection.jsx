@@ -13,8 +13,8 @@ export default function GuiaCardsSection({
       title: tGuia.card1Title || 'Lugares para visitar',
       titleSplit: ['Lugares', 'para visitar'],
       desc: tGuia.card1Desc || 'Naturaleza, paisajes y experiencias únicas.',
-      image: './stitch/home-card-lugares.jpg',
-      fallbackImage: './cascadas-nant-y-fall.png',
+      image: './cascadas-nant-y-fall.png',
+      fallbackImage: './tulipanes.jpg',
       onClick: onOpenLugares,
       icon: (
         <svg className="w-6 h-6 text-white shrink-0 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -27,7 +27,7 @@ export default function GuiaCardsSection({
       title: tGuia.card2Title || 'Dónde comer',
       titleSplit: ['Dónde', 'comer'],
       desc: tGuia.card2Desc || 'Restaurantes, cafeterías y sabores locales.',
-      image: './stitch/home-card-comer.jpg',
+      image: './los-troncos.jpg',
       fallbackImage: './nain-maggie.jpg',
       onClick: onOpenGastronomia,
       icon: (
@@ -41,7 +41,7 @@ export default function GuiaCardsSection({
       title: tGuia.card3Title || 'Puntos históricos',
       titleSplit: ['Puntos', 'históricos'],
       desc: tGuia.card3Desc || 'Historia, cultura y el legado galés.',
-      image: './stitch/home-card-historicos.jpg',
+      image: './la-trochita.jpg',
       fallbackImage: './molino-nant-fach.jpg',
       onClick: onOpenHistoricos,
       icon: (
@@ -56,8 +56,8 @@ export default function GuiaCardsSection({
       title: tGuia.card4Title || 'Servicios médicos',
       titleSplit: ['Servicios', 'médicos'],
       desc: tGuia.card4Desc || 'Hospitales, clínicas, farmacias y urgencias.',
-      image: './stitch/home-card-medicos.jpg',
-      fallbackImage: './stitch/medicos-1-hospital.jpg',
+      image: './banco-chubut.jpg',
+      fallbackImage: './la-anonima.jpg',
       onClick: onOpenMedicos,
       icon: (
         <svg className="w-6 h-6 text-white shrink-0 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

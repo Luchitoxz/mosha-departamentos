@@ -17,7 +17,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Platos regionales con ingredientes locales, sabores auténticos y un ambiente cálido.'
         : 'Regional delicacies prepared with fresh local ingredients, authentic Andean flavors and cozy mountain ambiance.',
-      image: './stitch/comer-1-patagonica.jpg',
+      image: './nain-maggie.jpg',
       mapsUrl: 'https://maps.app.goo.gl/3w8S5zX9yL1k4vP27',
     },
     {
@@ -28,7 +28,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Opciones ideales para disfrutar de un buen café, pastelería casera y vistas increíbles.'
         : 'Perfect retreats to savor specialty pour-over coffee, traditional homemade pastries and scenic views.',
-      image: './stitch/comer-2-cafes.jpg',
+      image: './la-mutisia.jpg',
       mapsUrl: 'https://maps.app.goo.gl/8v3kP2d1zL4w7yS99',
     },
     {
@@ -39,7 +39,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Variedad de pizzas artesanales en un ambiente familiar y relajado.'
         : 'Artisanal stone-baked pizzas crafted in a welcoming and family-friendly environment.',
-      image: './stitch/comer-3-pizzas.jpg',
+      image: './sangre-tinta.jpg',
       mapsUrl: 'https://maps.app.goo.gl/7y2kL1z4w8v3P9S44',
     },
     {
@@ -50,7 +50,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Opciones modernas y sabrosas para una comida rápida y de calidad.'
         : 'Contemporary artisanal burgers, gourmet bites and quick high-quality mountain dining.',
-      image: './stitch/comer-4-gourmet.jpg',
+      image: './nikanor.jpg',
       mapsUrl: 'https://maps.app.goo.gl/9z1kL4w7y2v8P3S22',
     },
     {
@@ -61,7 +61,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Cortes de carne y sabores tradicionales de la Patagonia en un entorno único.'
         : 'Prime Argentinian beef cuts, slow-roasted Patagonian lamb and time-honored gaucho barbecue traditions.',
-      image: './stitch/comer-5-parrillas.jpg',
+      image: './los-troncos.jpg',
       mapsUrl: 'https://maps.app.goo.gl/5x9kL2z1w4v8P7S11',
     },
     {
@@ -72,7 +72,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Productos artesanales, facturas, empanadas y opciones dulces y saladas.'
         : 'Fresh daily baked sourdough bread, Argentine medialunas, homemade empanadas and regional sweets.',
-      image: './stitch/comer-6-panaderias.jpg',
+      image: './virginia-y-mabel.jpg',
       mapsUrl: 'https://maps.app.goo.gl/2w4kL7z1y8v3P9S55',
     },
     {
@@ -83,7 +83,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Cerveza artesanal y propuestas gastronómicas para disfrutar con amigos.'
         : 'Locally crafted mountain tap beer, regional tapas and welcoming sunset gathering spots.',
-      image: './stitch/comer-7-cervecerias.jpg',
+      image: './sangre-tinta.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
@@ -94,7 +94,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Opciones variadas con sabores del mundo, en un ambiente acogedor.'
         : 'Eclectic menu choices blending international flavors with Patagonian produce in an intimate venue.',
-      image: './stitch/comer-8-internacional.jpg',
+      image: './vinas-nant-fall.jpg',
       mapsUrl: 'https://maps.app.goo.gl/vinasnantfall',
     },
   ];
@@ -107,7 +107,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         <img
           alt="Gastronomía en Trevelin"
           className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
-          src="./stitch/comer-hero.jpg"
+          src="./sangre-tinta.jpg"
         />
         {/* Hero Dark Overlay Gradients */}
         <div className="absolute inset-0 hero-gradient z-10 pointer-events-none" />
@@ -290,7 +290,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         buttonText={currentT.banner.btnVolver || 'Volver al inicio'}
         onButtonClick={onBack}
         isSubpage={true}
-        image="./stitch/comer-banner.jpg"
+        image="./stitch/banner-panoramico.png"
       />
       {/* END: PanoramicBanner */}
 
