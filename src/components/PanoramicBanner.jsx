@@ -22,7 +22,7 @@ export default function PanoramicBanner({
       <div className="absolute inset-0 banner-gradient" />
 
       {/* Banner Content */}
-      <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-14 lg:py-24 w-full">
+      <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-14 lg:py-24">
         <div className="max-w-2xl text-left">
           <span className="text-xs font-bold tracking-[0.25em] text-white/90 uppercase block mb-3">
             {eyebrow}

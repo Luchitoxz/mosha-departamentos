@@ -127,7 +127,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         <div className="absolute inset-0 hero-gradient z-10 pointer-events-none" />
 
         {/* Top Navigation Bar */}
-        <nav aria-label="Navegación principal" className="relative z-20 max-w-[1600px] w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-5 flex items-center justify-between">
+        <nav aria-label="Navegación principal" className="relative z-20 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-4 sm:py-5 flex items-center justify-between">
           {/* Brand Logo */}
           <button
             onClick={onBack}
@@ -170,7 +170,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         </nav>
 
         {/* Hero Content */}
-        <div className="relative z-20 max-w-[1600px] w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-6 pb-10 sm:pb-16 flex flex-col justify-end">
+        <div className="relative z-20 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-6 pb-10 sm:pb-16 flex flex-col justify-end">
           <span className="text-[11px] font-bold tracking-[0.25em] text-cyan-200 uppercase mb-2">
             {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
           </span>
@@ -186,7 +186,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
 
       {/* BEGIN: SubBar */}
       <section className="bg-white border-b border-slate-200/80 py-3.5 shadow-sm" data-purpose="secondary-toolbar">
-        <div className="max-w-[1600px] w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex items-center justify-between gap-4">
+        <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 flex items-center justify-between gap-4">
           {/* Back Link Button */}
           <button
             onClick={onBack}
@@ -218,7 +218,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
 
       {/* BEGIN: Quick Emergency Bar */}
       <section className="bg-red-50/70 border-b border-red-100 py-3.5 sm:py-4 px-4 sm:px-6">
-        <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 px-0 sm:px-2 md:px-4 lg:px-8 xl:px-10">
+        <div className="w-full max-w-[1800px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 px-0 sm:px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           <div className="flex items-center gap-2 text-red-900">
             <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 shrink-0" />
             <span className="text-xs sm:text-sm font-bold uppercase tracking-wider">
@@ -243,7 +243,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       {/* END: Quick Emergency Bar */}
 
       {/* BEGIN: MainContent */}
-      <main className="max-w-[1600px] w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16" data-purpose="medical-directory">
+      <main className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-8 sm:py-12 md:py-16" data-purpose="medical-directory">
         {/* Header Titles */}
         <div className="mb-8 sm:mb-10 max-w-4xl">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-2 sm:mb-3">

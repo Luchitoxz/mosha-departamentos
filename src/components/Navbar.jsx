@@ -47,7 +47,7 @@ export default function Navbar({ lang, setLang, tNav, onSelectSection }) {
           : 'bg-gradient-to-b from-[#0c1a2d]/90 to-transparent py-5'
       }`}
     >
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 flex items-center justify-between">
         {/* Brand Logo - Google Stitch Alpine Design */}
         <a
           aria-label="Mosha Departamentos"

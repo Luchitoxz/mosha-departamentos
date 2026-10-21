@@ -18,7 +18,7 @@ export default function HeroBanner({ tHero }) {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a2d] via-transparent to-black/30" />
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-24 sm:pt-32 lg:pt-40 pb-14 sm:pb-20 lg:pb-28 w-full">
+      <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-24 sm:pt-32 lg:pt-40 pb-14 sm:pb-20 lg:pb-28">
         <div className="max-w-3xl text-left">
           {/* Eyebrow Subtitle */}
           <div className="inline-block mb-3 sm:mb-4">

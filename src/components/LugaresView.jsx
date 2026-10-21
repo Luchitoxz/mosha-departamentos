@@ -120,7 +120,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         <div className="absolute inset-0 hero-gradient z-[1]" />
 
         {/* Top Navigation Bar */}
-        <nav aria-label="Navegación principal" className="relative z-10 max-w-[1600px] mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-6 flex items-center justify-between">
+        <nav aria-label="Navegación principal" className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-4 sm:py-6 flex items-center justify-between">
           {/* Mosha Brand Logo */}
           <button
             onClick={onBack}
@@ -164,7 +164,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         </nav>
 
         {/* Hero Titles and Subtitle */}
-        <div className="relative z-10 max-w-[1600px] mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-10 sm:pb-16 pt-4 sm:pt-6">
+        <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-10 sm:pb-16 pt-4 sm:pt-6">
           <p className="text-[11px] md:text-xs font-semibold tracking-[0.28em] uppercase text-slate-200 mb-2">
             {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
           </p>
@@ -180,7 +180,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
 
       {/* BEGIN: SubHeaderBar */}
       <section className="w-full bg-[#f1f5f9]/80 border-b border-slate-200/80 py-3 sm:py-4 px-4 sm:px-6 select-none" data-purpose="sub-header-navigation">
-        <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4 px-0 sm:px-2 md:px-4 lg:px-8 xl:px-10">
+        <div className="w-full max-w-[1800px] mx-auto flex items-center justify-between gap-4 px-0 sm:px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           {/* Back to Guide Button */}
           <button
             onClick={onBack}
@@ -212,7 +212,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       {/* END: SubHeaderBar */}
 
       {/* BEGIN: MainContentSection */}
-      <main className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 grow">
+      <main className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-8 sm:py-12 md:py-16 grow">
         {/* Title & Description Intro */}
         <div className="mb-8 sm:mb-10 max-w-4xl">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#091524] tracking-tight mb-2 sm:mb-3">

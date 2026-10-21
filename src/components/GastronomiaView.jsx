@@ -116,7 +116,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
 
         {/* Navigation Bar */}
         <div className="relative z-20 w-full border-b border-white/10">
-          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-5 flex items-center justify-between">
+          <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-4 sm:py-5 flex items-center justify-between">
             {/* Logo Mosha */}
             <button
               onClick={onBack}
@@ -160,7 +160,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-20 max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-8 sm:pt-12 pb-12 sm:pb-20 w-full">
+        <div className="relative z-20 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-8 sm:pt-12 pb-12 sm:pb-20">
           <div className="max-w-3xl text-white">
             <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-white/85 mb-2 sm:mb-3">
               {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
@@ -178,7 +178,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
 
       {/* BEGIN: SubNavigationBanner */}
       <section className="w-full bg-white border-b border-slate-200/80 relative z-30" data-purpose="breadcrumb-and-location-bar">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-3.5 sm:py-4 flex items-center justify-between gap-4">
+        <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-3.5 sm:py-4 flex items-center justify-between gap-4">
           {/* Back button pill */}
           <button
             onClick={onBack}
@@ -210,7 +210,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       {/* END: SubNavigationBanner */}
 
       {/* BEGIN: MainContent */}
-      <main className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16" data-purpose="gastronomy-catalog">
+      <main className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-8 sm:py-12 md:py-16" data-purpose="gastronomy-catalog">
         {/* Intro text */}
         <div className="max-w-4xl mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0b192c] tracking-tight mb-2 sm:mb-3">

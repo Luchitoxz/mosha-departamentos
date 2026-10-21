@@ -122,7 +122,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
         </div>
 
         {/* Navigation Top Bar */}
-        <div className="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 w-full border-b border-white/15">
+        <div className="relative z-10 mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 border-b border-white/15">
           <nav aria-label="Navegación principal" className="flex h-16 sm:h-20 items-center justify-between">
             {/* Logo Mosha Departamentos */}
             <button
@@ -167,7 +167,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
         </div>
 
         {/* Hero Typography Section */}
-        <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-10 sm:py-16 md:py-20 w-full">
+        <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-10 sm:py-16 md:py-20">
           <div className="max-w-3xl text-left">
             <span className="text-xs font-bold tracking-[0.28em] text-cyan-200 uppercase block mb-2 sm:mb-3">
               {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
@@ -185,7 +185,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
 
       {/* BEGIN: SecondarySubNav */}
       <section className="border-b border-slate-200/80 bg-white shadow-xs" data-purpose="breadcrumb-location-bar">
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-4 py-3.5 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="mx-auto flex w-full max-w-[1800px] items-center justify-between gap-4 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-3.5">
           {/* Back to Guide Button */}
           <button
             onClick={onBack}
@@ -216,7 +216,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
 
       {/* BEGIN: MainContentSection */}
       <main className="py-8 sm:py-12 md:py-16" data-purpose="historical-sites-grid">
-        <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
           {/* Section Heading Intro */}
           <div className="mb-8 sm:mb-12 max-w-4xl">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-2 sm:mb-3">
