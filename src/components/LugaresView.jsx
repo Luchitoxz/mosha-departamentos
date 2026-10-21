@@ -110,7 +110,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
   return (
     <div className="bg-[#f8fafc] text-slate-800 antialiased min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeaderAndHero */}
-      <header className="relative w-full h-[510px] md:h-[540px] overflow-hidden text-white flex flex-col justify-between select-none">
+      <header className="relative w-full h-[400px] sm:h-[460px] md:h-[520px] overflow-hidden text-white flex flex-col justify-between select-none">
         {/* Hero Background Image with Overlay */}
         <img
           alt="Cascadas turquesas en Trevelin"
@@ -120,7 +120,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         <div className="absolute inset-0 hero-gradient z-[1]" />
 
         {/* Top Navigation Bar */}
-        <nav aria-label="Navegación principal" className="relative z-10 max-w-7xl mx-auto w-full px-6 py-6 flex items-center justify-between">
+        <nav aria-label="Navegación principal" className="relative z-10 max-w-[1600px] mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-6 flex items-center justify-between">
           {/* Mosha Brand Logo */}
           <button
             onClick={onBack}
@@ -128,7 +128,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
             data-purpose="brand-logo"
           >
             <div className="flex items-center space-x-1.5">
-              <svg className="w-6 h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               <span className="text-xl sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
@@ -139,7 +139,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
           </button>
 
           {/* Action Buttons Right */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Language Switch */}
             <button
               onClick={() => setLang(prev => (prev === 'es' ? 'en' : 'es'))}
@@ -152,25 +152,26 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
             {/* Return to Home Top Button */}
             <button
               onClick={onBack}
-              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/35 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-xs sm:text-sm font-medium tracking-wide transition cursor-pointer"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full border border-white/35 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-xs sm:text-sm font-medium tracking-wide transition cursor-pointer"
             >
               <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span>{currentT.nav.volverInicio || 'Volver al inicio'}</span>
+              <span className="hidden sm:inline">{currentT.nav.volverInicio || 'Volver al inicio'}</span>
+              <span className="sm:hidden">Inicio</span>
             </button>
           </div>
         </nav>
 
         {/* Hero Titles and Subtitle */}
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pb-16 pt-6">
+        <div className="relative z-10 max-w-[1600px] mx-auto w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pb-10 sm:pb-16 pt-4 sm:pt-6">
           <p className="text-[11px] md:text-xs font-semibold tracking-[0.28em] uppercase text-slate-200 mb-2">
             {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-3">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-2 sm:mb-3">
             {tPage.title || 'Lugares para visitar'}
           </h1>
-          <p className="text-base sm:text-lg text-slate-200 font-normal max-w-xl leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-slate-200 font-normal max-w-xl leading-relaxed">
             {tPage.subtitle || 'Naturaleza, paisajes y experiencias únicas en Trevelin y sus alrededores.'}
           </p>
         </div>
@@ -178,12 +179,12 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       {/* END: MainHeaderAndHero */}
 
       {/* BEGIN: SubHeaderBar */}
-      <section className="w-full bg-[#f1f5f9]/70 border-b border-slate-200/80 py-4 px-6 select-none" data-purpose="sub-header-navigation">
-        <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-4">
+      <section className="w-full bg-[#f1f5f9]/80 border-b border-slate-200/80 py-3 sm:py-4 px-4 sm:px-6 select-none" data-purpose="sub-header-navigation">
+        <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4 px-0 sm:px-2 md:px-4 lg:px-8 xl:px-10">
           {/* Back to Guide Button */}
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-semibold tracking-wide transition shadow-sm cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-semibold tracking-wide transition shadow-sm cursor-pointer"
           >
             <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M10 19l-7-7m0 0l7-7m-7 7h18" strokeLinecap="round" strokeLinejoin="round" />
@@ -195,11 +196,11 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
           <div className="flex items-center gap-2.5 text-right">
             <div className="text-right">
               <p className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">Trevelin, Chubut</p>
-              <p className="text-[11px] sm:text-xs text-slate-500 font-normal leading-tight">
+              <p className="text-[10px] sm:text-xs text-slate-500 font-normal leading-tight">
                 {tPage.badge || 'Naturaleza en estado puro'}
               </p>
             </div>
-            <div className="w-8 h-8 rounded-full bg-slate-200/70 flex items-center justify-center shrink-0">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-200/70 flex items-center justify-center shrink-0">
               <svg className="w-4 h-4 text-slate-800" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" />
@@ -211,10 +212,10 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       {/* END: SubHeaderBar */}
 
       {/* BEGIN: MainContentSection */}
-      <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16 grow">
+      <main className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 grow">
         {/* Title & Description Intro */}
-        <div className="mb-10 max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#091524] tracking-tight mb-3">
+        <div className="mb-8 sm:mb-10 max-w-4xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#091524] tracking-tight mb-2 sm:mb-3">
             {tPage.sectionTitle || 'Recomendaciones imperdibles'}
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
@@ -223,7 +224,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         </div>
 
         {/* Places 8-Card Grid matching Google Stitch */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-purpose="recommendations-grid">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-7 xl:gap-8" data-purpose="recommendations-grid">
           {places.map((place) => (
             <article
               key={place.id}

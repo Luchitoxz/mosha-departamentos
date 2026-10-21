@@ -117,7 +117,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
   return (
     <div className="bg-[#f8fafc] text-slate-800 antialiased selection:bg-cyan-500 selection:text-white min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeader */}
-      <header className="relative w-full min-h-[460px] md:min-h-[520px] flex flex-col justify-between text-white border-b border-white/10" data-purpose="hero-section">
+      <header className="relative w-full min-h-[380px] sm:min-h-[440px] md:min-h-[500px] flex flex-col justify-between text-white border-b border-white/10" data-purpose="hero-section">
         {/* Hero Background Image */}
         <img
           alt="Servicios médicos en Trevelin"
@@ -127,14 +127,14 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         <div className="absolute inset-0 hero-gradient z-10 pointer-events-none" />
 
         {/* Top Navigation Bar */}
-        <nav aria-label="Navegación principal" className="relative z-20 max-w-7xl w-full mx-auto px-6 py-5 flex items-center justify-between">
+        <nav aria-label="Navegación principal" className="relative z-20 max-w-[1600px] w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-5 flex items-center justify-between">
           {/* Brand Logo */}
           <button
             onClick={onBack}
             className="flex flex-col items-start group cursor-pointer text-left text-white"
           >
             <div className="flex items-center space-x-1.5">
-              <svg className="w-6 h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               <span className="text-xl sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
@@ -145,7 +145,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
           </button>
 
           {/* Right Action Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Language Switch */}
             <button
               onClick={() => setLang(prev => (prev === 'es' ? 'en' : 'es'))}
@@ -158,25 +158,26 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
             {/* Back to Home Button */}
             <button
               onClick={onBack}
-              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/35 bg-white/10 backdrop-blur-md text-xs sm:text-sm font-medium text-white hover:bg-white/20 transition-all shadow-sm cursor-pointer"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full border border-white/35 bg-white/10 backdrop-blur-md text-xs sm:text-sm font-medium text-white hover:bg-white/20 transition-all shadow-sm cursor-pointer"
             >
               <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
               </svg>
-              <span>{currentT.nav.volverInicio || 'Volver al inicio'}</span>
+              <span className="hidden sm:inline">{currentT.nav.volverInicio || 'Volver al inicio'}</span>
+              <span className="sm:hidden">Inicio</span>
             </button>
           </div>
         </nav>
 
         {/* Hero Content */}
-        <div className="relative z-20 max-w-7xl w-full mx-auto px-6 pt-6 pb-16 flex flex-col justify-end">
+        <div className="relative z-20 max-w-[1600px] w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-6 pb-10 sm:pb-16 flex flex-col justify-end">
           <span className="text-[11px] font-bold tracking-[0.25em] text-cyan-200 uppercase mb-2">
             {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-3">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-2 sm:mb-3">
             {tPage.title || 'Servicios médicos'}
           </h1>
-          <p className="text-white/90 text-base md:text-lg max-w-xl font-normal leading-relaxed">
+          <p className="text-white/90 text-sm sm:text-base md:text-lg max-w-xl font-normal leading-relaxed">
             {tPage.subtitle || 'Hospitales, clínicas, farmacias y atención de urgencias en Trevelin y sus alrededores.'}
           </p>
         </div>
@@ -185,11 +186,11 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
 
       {/* BEGIN: SubBar */}
       <section className="bg-white border-b border-slate-200/80 py-3.5 shadow-sm" data-purpose="secondary-toolbar">
-        <div className="max-w-7xl w-full mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-[1600px] w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex items-center justify-between gap-4">
           {/* Back Link Button */}
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-xs sm:text-sm font-semibold text-slate-800 transition shadow-sm cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-xs sm:text-sm font-semibold text-slate-800 transition shadow-sm cursor-pointer"
           >
             <svg className="w-3.5 h-3.5 stroke-slate-700 fill-none stroke-[2.2]" viewBox="0 0 24 24">
               <line x1="19" x2="5" y1="12" y2="12" />
@@ -205,8 +206,8 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
               <circle cx="12" cy="10" r="3" />
             </svg>
             <div className="text-left leading-tight">
-              <div className="text-sm font-bold text-slate-900">Trevelin, Chubut</div>
-              <div className="text-[11px] text-slate-500 font-medium">
+              <div className="text-xs sm:text-sm font-bold text-slate-900">Trevelin, Chubut</div>
+              <div className="text-[10px] sm:text-[11px] text-slate-500 font-medium">
                 {tPage.badge || 'Salud y bienestar durante tu estadía'}
               </div>
             </div>
@@ -216,20 +217,20 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       {/* END: SubBar */}
 
       {/* BEGIN: Quick Emergency Bar */}
-      <section className="bg-red-50/70 border-b border-red-100 py-4 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5 text-red-900">
-            <AlertCircle className="w-5 h-5 text-red-600 shrink-0" />
+      <section className="bg-red-50/70 border-b border-red-100 py-3.5 sm:py-4 px-4 sm:px-6">
+        <div className="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 px-0 sm:px-2 md:px-4 lg:px-8 xl:px-10">
+          <div className="flex items-center gap-2 text-red-900">
+            <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 shrink-0" />
             <span className="text-xs sm:text-sm font-bold uppercase tracking-wider">
               {tPage.quickUrgent || 'Líneas directas de emergencia'}:
             </span>
           </div>
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto">
             {quickDials.map((qd) => (
               <a
                 key={qd.num}
                 href={`tel:${qd.num}`}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white hover:bg-red-600 hover:text-white border border-red-200 text-slate-800 text-xs font-bold transition shadow-xs group"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-2 sm:py-1.5 rounded-full bg-white hover:bg-red-600 hover:text-white border border-red-200 text-slate-800 text-xs font-bold transition shadow-xs group"
               >
                 <span>{qd.icon}</span>
                 <span>{qd.label}</span>
@@ -242,10 +243,10 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       {/* END: Quick Emergency Bar */}
 
       {/* BEGIN: MainContent */}
-      <main className="max-w-7xl w-full mx-auto px-6 py-12" data-purpose="medical-directory">
+      <main className="max-w-[1600px] w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16" data-purpose="medical-directory">
         {/* Header Titles */}
-        <div className="mb-10 max-w-4xl">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+        <div className="mb-8 sm:mb-10 max-w-4xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-2 sm:mb-3">
             {tPage.sectionTitle || 'Información útil para tu tranquilidad'}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -254,7 +255,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         </div>
 
         {/* Cards Grid (2 rows x 4 columns) matching Google Stitch */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-purpose="directory-grid">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-7 xl:gap-8" data-purpose="directory-grid">
           {services.map((svc) => (
             <article
               key={svc.id}

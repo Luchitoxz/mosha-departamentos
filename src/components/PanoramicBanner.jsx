@@ -22,24 +22,24 @@ export default function PanoramicBanner({
       <div className="absolute inset-0 banner-gradient" />
 
       {/* Banner Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 w-full">
-        <div className="max-w-xl text-left">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-14 lg:py-24 w-full">
+        <div className="max-w-2xl text-left">
           <span className="text-xs font-bold tracking-[0.25em] text-white/90 uppercase block mb-3">
             {eyebrow}
           </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
             {title}
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-200 leading-relaxed mb-8 max-w-lg">
+          <p className="text-sm sm:text-base text-slate-200 leading-relaxed mb-8 max-w-xl">
             {subtitle}
           </p>
 
           <button
             type="button"
             onClick={onButtonClick}
-            className="inline-flex items-center space-x-3 bg-white text-[#0c1a2d] hover:bg-slate-100 font-bold px-7 py-3.5 rounded-full shadow-lg transition-transform hover:scale-105 duration-200 text-sm cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-3 bg-white text-[#0c1a2d] hover:bg-slate-100 font-bold px-7 py-3.5 rounded-full shadow-lg transition-transform hover:scale-105 duration-200 text-sm cursor-pointer"
           >
             {isSubpage && (
               <svg className="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

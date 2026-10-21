@@ -47,7 +47,7 @@ export default function Navbar({ lang, setLang, tNav, onSelectSection }) {
           : 'bg-gradient-to-b from-[#0c1a2d]/90 to-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
         {/* Brand Logo - Google Stitch Alpine Design */}
         <a
           aria-label="Mosha Departamentos"
@@ -165,31 +165,35 @@ export default function Navbar({ lang, setLang, tNav, onSelectSection }) {
 
       {/* Mobile Navigation Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0c1a2d]/98 backdrop-blur-md px-6 pt-3 pb-6 border-b border-white/10 shadow-2xl animate-in slide-in-from-top-2 duration-200">
-          <div className="flex flex-col space-y-3 text-sm font-medium text-white">
+        <div className="md:hidden bg-[#0c1a2d]/98 backdrop-blur-md px-5 pt-3 pb-6 border-b border-white/10 shadow-2xl animate-in slide-in-from-top-2 duration-200">
+          <div className="flex flex-col space-y-1 text-sm font-medium text-white">
             <button
               onClick={() => handleNavClick('inicio')}
-              className="py-2.5 text-left border-b border-white/10 cursor-pointer hover:text-cyan-200"
+              className="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-white/10 transition cursor-pointer text-left"
             >
-              {tNav.inicio || 'Inicio'}
+              <span>{tNav.inicio || 'Inicio'}</span>
+              <span className="text-xs text-slate-400">01</span>
             </button>
             <button
               onClick={() => handleNavClick('guia')}
-              className="py-2.5 text-left border-b border-white/10 cursor-pointer hover:text-cyan-200"
+              className="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-white/10 transition cursor-pointer text-left"
             >
-              {tNav.guia || 'Guía'}
+              <span>{tNav.guia || 'Guía de Huéspedes'}</span>
+              <span className="text-xs text-slate-400">02</span>
             </button>
             <button
               onClick={() => handleNavClick('servicios')}
-              className="py-2.5 text-left border-b border-white/10 cursor-pointer hover:text-cyan-200"
+              className="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-white/10 transition cursor-pointer text-left"
             >
-              {tNav.servicios || 'Servicios'}
+              <span>{tNav.servicios || 'WiFi & Servicios'}</span>
+              <span className="text-xs text-slate-400">03</span>
             </button>
             <button
               onClick={() => handleNavClick('contacto')}
-              className="py-2.5 text-left cursor-pointer hover:text-cyan-200"
+              className="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-white/10 transition cursor-pointer text-left"
             >
-              {tNav.contacto || 'Contacto'}
+              <span>{tNav.contacto || 'Contacto / WhatsApp'}</span>
+              <span className="text-xs text-emerald-400">● Online</span>
             </button>
           </div>
         </div>

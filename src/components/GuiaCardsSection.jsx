@@ -68,28 +68,28 @@ export default function GuiaCardsSection({
   ];
 
   return (
-    <section className="py-14 lg:py-20 bg-[#f8fafc]" id="guia">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[#f8fafc]" id="guia">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         {/* Header Section Info */}
-        <div className="mb-10 lg:mb-12">
-          <span className="text-xs sm:text-sm font-bold tracking-[0.2em] text-[#1e3e62] uppercase block mb-1">
+        <div className="mb-8 sm:mb-12">
+          <span className="text-xs sm:text-sm font-bold tracking-[0.2em] text-[#1e3e62] uppercase block mb-1.5">
             {tGuia.eyebrow || 'DESCUBRÍ TREVELIN'}
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0c1a2d] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0c1a2d] tracking-tight">
             {tGuia.title || 'Explorá, disfrutá y viví la experiencia'}
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 mt-2 max-w-3xl leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 mt-2.5 max-w-4xl leading-relaxed">
             {tGuia.subtitle || 'Accedé a nuestra guía con los mejores lugares para visitar, dónde comer, puntos históricos y servicios médicos en Trevelin y sus alrededores.'}
           </p>
         </div>
 
         {/* 4-Columns Category Cards matching Google Stitch */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-7 xl:gap-8">
           {cards.map((card) => (
             <article
               key={card.id}
               onClick={card.onClick}
-              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 h-[410px] flex flex-col justify-end bg-slate-900 cursor-pointer select-none"
+              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1.5 h-[270px] sm:h-[340px] md:h-[380px] lg:h-[430px] xl:h-[450px] flex flex-col justify-end bg-slate-900 cursor-pointer select-none"
             >
               {/* Cover Image */}
               <img
@@ -105,16 +105,16 @@ export default function GuiaCardsSection({
               <div className="absolute inset-0 card-vignette" />
 
               {/* Card Footer Content */}
-              <div className="relative z-10 p-5 flex items-end justify-between">
+              <div className="relative z-10 p-4 sm:p-5 lg:p-6 flex items-end justify-between">
                 <div className="pr-2">
                   {/* Icon + Title */}
-                  <div className="flex items-center space-x-2.5 mb-1.5">
+                  <div className="flex items-center space-x-2 sm:space-x-2.5 mb-1 sm:mb-1.5">
                     {card.icon}
-                    <h3 className="text-xl font-bold text-white leading-tight">
+                    <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">
                       {card.titleSplit[0]} <br /> {card.titleSplit[1]}
                     </h3>
                   </div>
-                  <p className="text-xs text-slate-300 line-clamp-2 mt-2 leading-relaxed">
+                  <p className="text-xs sm:text-[13px] text-slate-300 line-clamp-2 mt-1 sm:mt-2 leading-relaxed">
                     {card.desc}
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export default function GuiaCardsSection({
                 {/* Floating Action Arrow */}
                 <button
                   aria-label={`Ver ${card.title}`}
-                  className="w-10 h-10 rounded-full bg-white/95 text-[#0c1a2d] group-hover:bg-white group-hover:scale-110 shadow-md flex items-center justify-center shrink-0 transition-transform cursor-pointer"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/95 text-[#0c1a2d] group-hover:bg-white group-hover:scale-110 shadow-md flex items-center justify-center shrink-0 transition-transform cursor-pointer"
                   type="button"
                 >
                   <svg className="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

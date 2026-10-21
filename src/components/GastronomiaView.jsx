@@ -104,7 +104,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
   return (
     <div className="bg-[#f6f8fa] text-slate-800 antialiased selection:bg-slate-800 selection:text-white min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeaderAndHero */}
-      <header className="relative w-full overflow-hidden min-h-[460px] md:min-h-[520px] flex flex-col justify-between" data-purpose="hero-header-section">
+      <header className="relative w-full overflow-hidden min-h-[380px] sm:min-h-[440px] md:min-h-[500px] flex flex-col justify-between" data-purpose="hero-header-section">
         {/* Background Hero Image */}
         <img
           alt="Gastronomía en Trevelin"
@@ -116,14 +116,14 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
 
         {/* Navigation Bar */}
         <div className="relative z-20 w-full border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between">
+          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-4 sm:py-5 flex items-center justify-between">
             {/* Logo Mosha */}
             <button
               onClick={onBack}
               className="flex flex-col items-start group cursor-pointer text-left text-white"
             >
               <div className="flex items-center space-x-1.5">
-                <svg className="w-6 h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span className="text-xl sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
@@ -134,7 +134,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
             </button>
 
             {/* Right Buttons */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               {/* Language Switch */}
               <button
                 onClick={() => setLang(prev => (prev === 'es' ? 'en' : 'es'))}
@@ -147,27 +147,28 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
               {/* Back to Home Button */}
               <button
                 onClick={onBack}
-                className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white text-xs sm:text-sm font-medium transition-all shadow-sm cursor-pointer"
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white text-xs sm:text-sm font-medium transition-all shadow-sm cursor-pointer"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                 </svg>
-                <span>{currentT.nav.volverInicio || 'Volver al inicio'}</span>
+                <span className="hidden sm:inline">{currentT.nav.volverInicio || 'Volver al inicio'}</span>
+                <span className="sm:hidden">Inicio</span>
               </button>
             </div>
           </div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-20 max-w-7xl mx-auto px-5 sm:px-8 pt-10 pb-16 md:pb-24 w-full">
-          <div className="max-w-2xl text-white">
+        <div className="relative z-20 max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-8 sm:pt-12 pb-12 sm:pb-20 w-full">
+          <div className="max-w-3xl text-white">
             <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-white/85 mb-2 sm:mb-3">
               {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-4">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-3 sm:mb-4">
               {tPage.title || 'Dónde comer'}
             </h1>
-            <p className="text-base sm:text-lg text-white/90 font-normal leading-relaxed max-w-xl text-shadow-sm">
+            <p className="text-sm sm:text-base md:text-lg text-white/90 font-normal leading-relaxed max-w-xl text-shadow-sm">
               {tPage.subtitle || 'Restaurantes, cafeterías y sabores locales para disfrutar la gastronomía de Trevelin y sus alrededores.'}
             </p>
           </div>
@@ -177,11 +178,11 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
 
       {/* BEGIN: SubNavigationBanner */}
       <section className="w-full bg-white border-b border-slate-200/80 relative z-30" data-purpose="breadcrumb-and-location-bar">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-3.5 sm:py-4 flex items-center justify-between gap-4">
           {/* Back button pill */}
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-slate-300 text-slate-700 hover:text-slate-900 hover:border-slate-400 bg-white text-xs sm:text-sm font-semibold transition-all cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-slate-300 text-slate-700 hover:text-slate-900 hover:border-slate-400 bg-white text-xs sm:text-sm font-semibold transition-all cursor-pointer"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M10 19l-7-7m0 0l7-7m-7 7h18" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
@@ -190,16 +191,16 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
           </button>
 
           {/* Region indicator pill */}
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-700">
-              <svg className="w-5 h-5 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-700">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                 <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
               </svg>
             </div>
             <div>
               <h2 className="text-xs sm:text-sm font-bold text-slate-900 leading-none">Trevelin, Chubut</h2>
-              <p className="text-[11px] sm:text-xs text-slate-500 mt-1">
+              <p className="text-[10px] sm:text-xs text-slate-500 mt-0.5 sm:mt-1">
                 {tPage.badge || 'Gastronomía regional y sabores únicos'}
               </p>
             </div>
@@ -209,10 +210,10 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       {/* END: SubNavigationBanner */}
 
       {/* BEGIN: MainContent */}
-      <main className="max-w-7xl mx-auto px-5 sm:px-8 py-12 md:py-16" data-purpose="gastronomy-catalog">
+      <main className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16" data-purpose="gastronomy-catalog">
         {/* Intro text */}
-        <div className="max-w-3xl mb-12">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0b192c] tracking-tight mb-4">
+        <div className="max-w-4xl mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0b192c] tracking-tight mb-2 sm:mb-3">
             {tPage.sectionTitle || 'Sabores para descubrir'}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
@@ -221,7 +222,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         </div>
 
         {/* Cards Grid matching Google Stitch */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7" data-purpose="cards-grid">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-7 xl:gap-8" data-purpose="cards-grid">
           {places.map((place) => (
             <article
               key={place.id}

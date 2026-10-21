@@ -5,7 +5,7 @@ export default function Footer({ tFooter, onOpenPrivacy }) {
 
   return (
     <footer className="bg-[#0c1a2d] text-white border-t border-slate-800" id="contacto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-12">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-10 lg:py-16">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
           
           {/* Logo and Slogan */}

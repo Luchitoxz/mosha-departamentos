@@ -110,7 +110,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
   return (
     <div className="bg-[#fcfdfe] text-slate-800 antialiased min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeader */}
-      <header className="relative w-full overflow-hidden bg-slate-900 min-h-[460px] md:min-h-[520px] flex flex-col justify-between" data-purpose="hero-header">
+      <header className="relative w-full overflow-hidden bg-slate-900 min-h-[380px] sm:min-h-[440px] md:min-h-[500px] flex flex-col justify-between" data-purpose="hero-header">
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
           <img
@@ -122,15 +122,15 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
         </div>
 
         {/* Navigation Top Bar */}
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full border-b border-white/15">
-          <nav aria-label="Navegación principal" className="flex h-20 items-center justify-between">
+        <div className="relative z-10 mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 w-full border-b border-white/15">
+          <nav aria-label="Navegación principal" className="flex h-16 sm:h-20 items-center justify-between">
             {/* Logo Mosha Departamentos */}
             <button
               onClick={onBack}
               className="group flex flex-col items-start cursor-pointer text-left text-white"
             >
               <div className="flex items-center space-x-1.5">
-                <svg className="w-6 h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span className="text-xl sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
@@ -141,7 +141,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
             </button>
 
             {/* Right Buttons */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               {/* Language Switch */}
               <button
                 onClick={() => setLang(prev => (prev === 'es' ? 'en' : 'es'))}
@@ -154,27 +154,28 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
               {/* Back to Home Button */}
               <button
                 onClick={onBack}
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-4 py-2 text-xs sm:text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white hover:text-slate-900 cursor-pointer shadow-sm"
+                className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-white/40 bg-white/10 px-3.5 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white hover:text-slate-900 cursor-pointer shadow-sm"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                 </svg>
-                <span>{currentT.nav.volverInicio || 'Volver al inicio'}</span>
+                <span className="hidden sm:inline">{currentT.nav.volverInicio || 'Volver al inicio'}</span>
+                <span className="sm:hidden">Inicio</span>
               </button>
             </div>
           </nav>
         </div>
 
         {/* Hero Typography Section */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
-          <div className="max-w-2xl text-left">
-            <span className="text-xs font-bold tracking-[0.28em] text-cyan-200 uppercase block mb-3">
+        <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-10 sm:py-16 md:py-20 w-full">
+          <div className="max-w-3xl text-left">
+            <span className="text-xs font-bold tracking-[0.28em] text-cyan-200 uppercase block mb-2 sm:mb-3">
               {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 drop-shadow-md">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-3 sm:mb-4 drop-shadow-md">
               {tPage.title || 'Puntos históricos'}
             </h1>
-            <p className="text-base sm:text-lg text-slate-100 font-normal leading-relaxed max-w-xl drop-shadow">
+            <p className="text-sm sm:text-base md:text-lg text-slate-100 font-normal leading-relaxed max-w-xl drop-shadow">
               {tPage.subtitle || 'Historia, cultura y legado galés de Trevelin y sus alrededores.'}
             </p>
           </div>
@@ -184,11 +185,11 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
 
       {/* BEGIN: SecondarySubNav */}
       <section className="border-b border-slate-200/80 bg-white shadow-xs" data-purpose="breadcrumb-location-bar">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 px-4 py-3.5 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           {/* Back to Guide Button */}
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white px-5 py-2 text-xs sm:text-sm font-semibold text-slate-700 shadow-xs transition-colors hover:border-slate-400 hover:bg-slate-50 cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white px-4 sm:px-5 py-2 text-xs sm:text-sm font-semibold text-slate-700 shadow-xs transition-colors hover:border-slate-400 hover:bg-slate-50 cursor-pointer"
           >
             <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M10 19l-7-7m0 0l7-7m-7 7h18" strokeLinecap="round" strokeLinejoin="round" />
@@ -197,16 +198,16 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
           </button>
 
           {/* Region & Category Badge */}
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+          <div className="flex items-center gap-2.5 sm:gap-3">
+            <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-slate-100 text-slate-700">
               <svg className="w-4 h-4 text-slate-800" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
             <div className="text-left">
-              <div className="text-sm font-bold leading-none text-slate-900">Trevelin, Chubut</div>
-              <div className="text-xs text-slate-500 mt-1">{tPage.badge || 'Historia, cultura y patrimonio'}</div>
+              <div className="text-xs sm:text-sm font-bold leading-none text-slate-900">Trevelin, Chubut</div>
+              <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5 sm:mt-1">{tPage.badge || 'Historia, cultura y patrimonio'}</div>
             </div>
           </div>
         </div>
@@ -214,20 +215,20 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
       {/* END: SecondarySubNav */}
 
       {/* BEGIN: MainContentSection */}
-      <main className="py-14 sm:py-16 lg:py-20" data-purpose="historical-sites-grid">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <main className="py-8 sm:py-12 md:py-16" data-purpose="historical-sites-grid">
+        <div className="mx-auto max-w-[1600px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           {/* Section Heading Intro */}
-          <div className="mb-12">
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          <div className="mb-8 sm:mb-12 max-w-4xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-2 sm:mb-3">
               {tPage.sectionTitle || 'Un recorrido por la historia'}
             </h2>
-            <p className="mt-3 max-w-3xl text-sm font-normal text-slate-600 sm:text-base leading-relaxed">
+            <p className="max-w-3xl text-sm font-normal text-slate-600 sm:text-base leading-relaxed">
               {tPage.sectionDesc || 'Descubrí los lugares más emblemáticos de Trevelin, su herencia cultural galesa y sitios históricos que forman parte de la identidad de la región.'}
             </p>
           </div>
 
           {/* 8 Historical Places Grid matching Google Stitch */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-7 xl:gap-8">
             {places.map((place) => (
               <article
                 key={place.id}
