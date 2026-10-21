@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import HeroBanner from './components/HeroBanner';
-import WifiDirectSection from './components/WifiDirectSection';
 import GuiaCardsSection from './components/GuiaCardsSection';
-import EmergenciasSection from './components/EmergenciasSection';
-import NormasSection from './components/NormasSection';
-import UbicacionSection from './components/UbicacionSection';
+import PracticalInfoSection from './components/PracticalInfoSection';
+import PanoramicBanner from './components/PanoramicBanner';
 import Footer from './components/Footer';
 
 import LugaresView from './components/LugaresView';
 import GastronomiaView from './components/GastronomiaView';
-import EsencialesView from './components/EsencialesView';
+import PuntosHistoricosView from './components/PuntosHistoricosView';
+import ServiciosMedicosView from './components/ServiciosMedicosView';
+
 import Toast from './components/Toast';
 import PoliticaModal from './components/PoliticaModal';
 import { t } from './data/translations';
 
 export default function App() {
   const [lang, setLang] = useState('es'); // 'es' or 'en'
-  const [currentView, setCurrentView] = useState('home'); // 'home', 'lugares', 'gastronomia', 'esenciales'
+  const [currentView, setCurrentView] = useState('home'); // 'home', 'lugares', 'gastronomia', 'historicos', 'medicos'
   const [toastMessage, setToastMessage] = useState('');
   const [privacyOpen, setPrivacyOpen] = useState(false);
 
   const currentT = t[lang] || t.es;
 
-  // Sample credentials
+  // Real Complex Credentials & Contact
   const wifiSSID = "Mosha_Departamentos_Fibra";
   const wifiPassword = "Trevelin2026!";
   const hostPhone = "02945 64-5700";
@@ -39,8 +39,13 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleOpenEsenciales = () => {
-    setCurrentView('esenciales');
+  const handleOpenHistoricos = () => {
+    setCurrentView('historicos');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleOpenMedicos = () => {
+    setCurrentView('medicos');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -55,6 +60,14 @@ export default function App() {
   };
 
   const handleSelectSection = (id) => {
+    if (id === 'contacto') {
+      window.open(
+        'https://wa.me/5492945645700?text=Hola%20Mosha!%20Estoy%20en%20el%20departamento%20y%20quer%C3%ADa%20hacerles%20una%20consulta',
+        '_blank'
+      );
+      return;
+    }
+
     if (currentView !== 'home') {
       setCurrentView('home');
       setTimeout(() => {
@@ -66,11 +79,6 @@ export default function App() {
   };
 
   const scrollToSection = (id) => {
-    if (id === 'contacto') {
-      window.open('https://wa.me/5492945645700?text=Hola%20Mosha!%20Estoy%20en%20el%20departamento%20y%20quer%C3%ADa%20hacerles%20una%20consulta', '_blank');
-      return;
-    }
-
     if (id === 'inicio') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -78,96 +86,119 @@ export default function App() {
 
     const el = document.getElementById(id);
     if (el) {
-      const navOffset = 75;
+      const navOffset = 70;
       const elementPosition = el.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - navOffset;
       window.scrollTo({
         top: Math.max(0, offsetPosition),
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#0f2537] flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
       
-      {/* VISTA 1: LUGARES PARA VISITAR */}
+      {/* SCREEN 2: LUGARES PARA VISITAR */}
       {currentView === 'lugares' && (
-        <LugaresView lang={lang} setLang={setLang} onBack={handleBackToHome} />
+        <LugaresView
+          lang={lang}
+          setLang={setLang}
+          onBack={handleBackToHome}
+          onOpenPrivacy={() => setPrivacyOpen(true)}
+        />
       )}
 
-      {/* VISTA 2: RESTAURANTES & BARES */}
+      {/* SCREEN 3: DÓNDE COMER */}
       {currentView === 'gastronomia' && (
-        <GastronomiaView lang={lang} setLang={setLang} onBack={handleBackToHome} />
+        <GastronomiaView
+          lang={lang}
+          setLang={setLang}
+          onBack={handleBackToHome}
+          onOpenPrivacy={() => setPrivacyOpen(true)}
+        />
       )}
 
-      {/* VISTA 3: COMERCIOS & ESENCIALES */}
-      {currentView === 'esenciales' && (
-        <EsencialesView lang={lang} setLang={setLang} onBack={handleBackToHome} />
+      {/* SCREEN 4: PUNTOS HISTÓRICOS */}
+      {currentView === 'historicos' && (
+        <PuntosHistoricosView
+          lang={lang}
+          setLang={setLang}
+          onBack={handleBackToHome}
+          onOpenPrivacy={() => setPrivacyOpen(true)}
+        />
       )}
 
-      {/* VISTA PRINCIPAL: HOME COMPLETA */}
+      {/* SCREEN 5: SERVICIOS MÉDICOS */}
+      {currentView === 'medicos' && (
+        <ServiciosMedicosView
+          lang={lang}
+          setLang={setLang}
+          onBack={handleBackToHome}
+          onOpenPrivacy={() => setPrivacyOpen(true)}
+        />
+      )}
+
+      {/* SCREEN 1: GUÍA DE HUÉSPEDES (HOME PRINCIPAL) */}
       {currentView === 'home' && (
         <>
-          {/* 1. Header Navigation Bar */}
-          <Navbar 
-            lang={lang} 
-            setLang={setLang} 
-            tNav={currentT.nav} 
-            onSelectSection={handleSelectSection} 
+          {/* Main Alpine Header */}
+          <Navbar
+            lang={lang}
+            setLang={setLang}
+            tNav={currentT.nav}
+            onSelectSection={handleSelectSection}
           />
 
-          {/* Main Page Content */}
           <main className="flex-1">
-            {/* 1. Hero Section with Facade Photo and Headline (Compact on Mobile) */}
+            {/* Hero Section */}
             <HeroBanner tHero={currentT.hero} />
 
-            {/* 2. Wi-Fi & Atención al Huésped (Prioridad #1 del huésped al llegar) */}
-            <WifiDirectSection
-              tWifi={currentT.wifiSection}
+            {/* 4-Columns Category Cards Section */}
+            <GuiaCardsSection
+              tGuia={currentT.guia}
+              onOpenLugares={handleOpenLugares}
+              onOpenGastronomia={handleOpenGastronomia}
+              onOpenHistoricos={handleOpenHistoricos}
+              onOpenMedicos={handleOpenMedicos}
+            />
+
+            {/* Practical Info Panels (WiFi, Contact, Care Rules) */}
+            <PracticalInfoSection
+              tServicios={currentT.servicios}
               wifiSSID={wifiSSID}
               wifiPassword={wifiPassword}
               hostPhone={hostPhone}
               onShowToast={triggerToast}
             />
 
-            {/* 3. Guía de Atractivos: Carrusel táctil horizontal en celular, grid en desktop */}
-            <GuiaCardsSection
-              tGuia={currentT.guiaCards}
-              onOpenLugares={handleOpenLugares}
-              onOpenGastronomia={handleOpenGastronomia}
-              onOpenEsenciales={handleOpenEsenciales}
+            {/* Panoramic Mid-Page Trevelin Banner */}
+            <PanoramicBanner
+              eyebrow={currentT.banner.eyebrow || 'TREVELIN, CHUBUT'}
+              title={currentT.banner.title || 'Naturaleza, historia y sabores únicos'}
+              subtitle={currentT.banner.subtitle || 'Un destino que combina paisajes increíbles, cultura galesa, buena gastronomía y la calidez de su gente. Descubrí todo lo que Trevelin tiene para ofrecerte.'}
+              buttonText={currentT.banner.btn || 'Conocé más sobre Trevelin'}
+              onButtonClick={() => scrollToSection('guia')}
+              isSubpage={false}
             />
-
-            {/* 4. Hospital, Farmacias & Emergencias 24h (Compacto + Botones directos) */}
-            <EmergenciasSection 
-              tEmergencias={currentT.emergenciasSection} 
-              hostPhone={hostPhone} 
-            />
-
-            {/* 5. Cómo cuidar el departamento & Normas (Resumen de reglas clave + Desplegable) */}
-            <NormasSection tNormas={currentT.normasSection} />
-
-            {/* 6. Ubicación & Cómo llegar (In-page) */}
-            <UbicacionSection tUbi={currentT.ubicacionSection} />
           </main>
 
-          {/* 7. Footer Institucional */}
-          <Footer 
-            tFooter={currentT.footer} 
-            onOpenPrivacy={() => setPrivacyOpen(true)} 
+          {/* Institutional Alpine Footer */}
+          <Footer
+            tFooter={currentT.footer}
+            onOpenPrivacy={() => setPrivacyOpen(true)}
           />
         </>
       )}
 
       {/* Privacy Policy & Terms Modal */}
-      <PoliticaModal 
-        isOpen={privacyOpen} 
-        onClose={() => setPrivacyOpen(false)} 
-        lang={lang} 
+      <PoliticaModal
+        isOpen={privacyOpen}
+        onClose={() => setPrivacyOpen(false)}
+        lang={lang}
       />
 
-      {/* Feedback Toast */}
+      {/* Toast Notification */}
       <Toast message={toastMessage} />
     </div>
   );

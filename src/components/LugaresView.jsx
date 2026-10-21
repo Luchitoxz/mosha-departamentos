@@ -1,335 +1,296 @@
-import React, { useState } from 'react';
-import { 
-  ArrowLeft, 
-  MapPin, 
-  Navigation, 
-  Star, 
-  Sparkles, 
-  Compass, 
-  Clock, 
-  ExternalLink,
-  ChevronRight,
-  Globe
-} from 'lucide-react';
+import React from 'react';
+import { Globe } from 'lucide-react';
+import Footer from './Footer';
+import PanoramicBanner from './PanoramicBanner';
+import { t } from '../data/translations';
 
-export default function LugaresView({ lang = 'es', setLang, onBack }) {
-  const [selectedTag, setSelectedTag] = useState('todos');
+export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
+  const currentT = t[lang] || t.es;
+  const tPage = currentT.lugaresPage;
 
-  const isEn = lang === 'en';
-
-  const filterPills = isEn ? [
-    { id: 'todos', label: 'All Places' },
-    { id: 'naturaleza', label: 'Waterfalls & Parks' },
-    { id: 'imperdible', label: 'Tulips' },
-    { id: 'cultura', label: 'History & Culture' },
-    { id: 'vinos', label: 'Vineyards & Wine' },
-  ] : [
-    { id: 'todos', label: 'Todos los lugares' },
-    { id: 'naturaleza', label: 'Cascadas & Parques' },
-    { id: 'imperdible', label: 'Tulipanes' },
-    { id: 'cultura', label: 'Historia & Museos' },
-    { id: 'vinos', label: 'Viñedos & Bodegas' },
-  ];
-
-  const lugares = [
+  const places = [
     {
-      id: 'cascadas',
-      title: isEn ? 'Nant y Fall Waterfalls Nature Reserve' : 'Reserva Natural Cascadas Nant y Fall',
-      tag: 'naturaleza',
-      categoryLabel: isEn ? 'Nature & Waterfalls' : 'Naturaleza & Saltos de Agua',
+      id: 'nant-y-fall',
+      title: lang === 'es' ? 'Cascadas Nant y Fall' : 'Nant y Fall Waterfalls',
+      location: 'Trevelin',
+      category: lang === 'es' ? 'Naturaleza' : 'Nature',
+      desc: lang === 'es'
+        ? 'Un entorno natural increíble con cascadas, bosques nativos y senderos para recorrer.'
+        : 'A breathtaking natural environment with cascading waterfalls, native forests and walking trails.',
       image: './cascadas-nant-y-fall.png',
-      rating: '4.8',
-      reviews: '2.797',
-      distance: isEn ? '17 km from Mosha • 20 min drive' : 'A 17 km de Mosha • 20 min en auto',
-      road: 'Ruta 259',
-      desc: isEn 
-        ? 'A striking river canyon featuring crystal-clear waterfalls surrounded by native Andean cypress forest. Features well-marked walking trails, scenic lookout points, and wooden walkways.'
-        : 'Un imponente cañadón del río Nant y Fall con una serie de saltos de agua cristalina rodeados de bosque nativo de cipreses y coihues. Cuenta con senderos señalizados, miradores panorámicos y pasarelas muy accesibles.',
-      tip: isEn 
-        ? 'Best visited in the morning or early afternoon. Wear comfortable walking shoes and bring your camera.'
-        : 'Ideales para visitar a la mañana o después de almorzar. Llevar calzado cómodo y cámara de fotos.',
-      mapsQuery: 'Reserva Natural Cascadas Nant y Fall Trevelin',
+      mapsUrl: 'https://maps.app.goo.gl/9Zc1j3d3BsmhVnN26',
     },
     {
       id: 'tulipanes',
-      title: isEn ? 'Trevelin Tulip Fields' : 'Campo de Tulipanes Trevelin',
-      tag: 'imperdible',
-      categoryLabel: isEn ? 'Patagonian Landmark' : 'Postal Emblema de la Patagonia',
+      title: lang === 'es' ? 'Campo de Tulipanes' : 'Tulip Fields',
+      location: 'Trevelin',
+      category: lang === 'es' ? 'Primavera (Oct-Nov)' : 'Spring (Oct-Nov)',
+      desc: lang === 'es'
+        ? 'Un paisaje único en primavera con millones de tulipanes florecidos con el fondo de la cordillera nevada.'
+        : 'A unique spring wonderland featuring millions of vibrant blooming tulips framed by snow-capped Andean peaks.',
       image: './tulipanes.jpg',
-      rating: '4.9',
-      reviews: '3.410',
-      distance: isEn ? '14 km from Mosha • 15 min drive' : 'A 14 km de Mosha • 15 min en auto',
-      road: 'Ruta 259 km 50',
-      desc: isEn
-        ? 'One of the world’s most scenic flower fields. Millions of tulips across 30+ varieties bloom against snow-capped Mount Greda. Open every spring during October and early November.'
-        : 'Uno de los espectáculos visuales más famosos del mundo. Millones de tulipanes de más de 30 variedades florecen en franjas multicolores con el cerro nevado Greda de fondo. Abierto cada año durante octubre y principios de noviembre.',
-      tip: isEn
-        ? 'During blooming season, book tickets ahead of time and enjoy tea or lunch right at the field restaurant.'
-        : 'Si viajas en temporada, conviene reservar entrada anticipada y disfrutar del servicio de té o almuerzo en el predio.',
-      mapsQuery: 'Campo de Tulipanes Trevelin',
+      mapsUrl: 'https://maps.app.goo.gl/5p7kL7LhY3GZkmZ78',
     },
     {
-      id: 'alerces',
-      title: isEn ? 'Los Alerces National Park (UNESCO)' : 'Parque Nacional Los Alerces',
-      tag: 'naturaleza',
-      categoryLabel: isEn ? 'World Heritage Site (UNESCO)' : 'Patrimonio de la Humanidad (UNESCO)',
+      id: 'los-alerces',
+      title: lang === 'es' ? 'Parque Nacional Los Alerces' : 'Los Alerces National Park',
+      location: 'Esquel / Trevelin',
+      category: lang === 'es' ? 'Parque Nacional' : 'National Park',
+      desc: lang === 'es'
+        ? 'Lagos glaciares de aguas turquesas, bosques milenarios de alerce y vistas impresionantes declaradas Patrimonio Mundial.'
+        : 'Turquoise glacial lakes, ancient millennial alerce forests and UNESCO World Heritage mountain landscapes.',
       image: './los-alerces.jpg',
-      rating: '4.9',
-      reviews: '5.820',
-      distance: isEn ? '24 km from Mosha • 25 min drive' : 'A 24 km de Mosha • 25 min en auto',
-      road: 'Ruta 71 (Portal Centro / Lago Futalaufquen)',
-      desc: isEn
-        ? 'Pristine turquoise lakes, glacier rivers, and ancient temperate rainforests home to giant alerce trees over 2,600 years old. Highlights: Arrayanes River, Green Lake, and Menéndez Lake catamaran cruise.'
-        : 'Un paraíso virgen de lagos turquesas, ríos de deshielo y bosques milenarios donde habitan los alerces (lahuán) de más de 2.600 años. Imperdibles: Río Arrayanes, Lago Verde, Pasarela colgante y Lago Menéndez.',
-      tip: isEn
-        ? 'Dedicate at least one full day. Boat tours to the ancient Alerzal grove depart from Puerto Chucao.'
-        : 'Dedicá al menos un día entero. Podés hacer excursiones lacustres en catamarán hacia el Alerzal Milenario.',
-      mapsQuery: 'Parque Nacional Los Alerces Portada Centro',
+      mapsUrl: 'https://maps.app.goo.gl/P85cQ3PzXhU1p8M57',
     },
     {
-      id: 'molino',
-      title: isEn ? 'Nant Fach Historic Flour Mill' : 'Molino Harinero Nant Fach',
-      tag: 'cultura',
-      categoryLabel: isEn ? 'Welsh Heritage & Living Museum' : 'Historia Galesa & Museo Vivo',
+      id: 'molino-nant-fach',
+      title: lang === 'es' ? 'Molino Nant Fach' : 'Nant Fach Mill Museum',
+      location: 'Trevelin',
+      category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
+      desc: lang === 'es'
+        ? 'Museo histórico del primer molino harinero de la zona impulsado por rueda hidráulica y rodeado de naturaleza.'
+        : 'Historic watermill museum recreating the pioneering Welsh agricultural era in an idyllic setting.',
       image: './molino-nant-fach.jpg',
-      rating: '4.7',
-      reviews: '1.450',
-      distance: isEn ? '17 km from Mosha • 20 min drive' : 'A 17 km de Mosha • 20 min en auto',
-      road: 'Ruta 259 km 56',
-      desc: isEn
-        ? 'A working replica of early Welsh settlers watermills, powered by real river hydro energy to grind organic wheat. The museum displays pioneer artifacts, carriages, and agricultural machinery.'
-        : 'Réplica fiel de los molinos de agua de los primeros colonos galeses construida por Mervyn Evans. Funciona con energía hidráulica real moliendo trigo. El museo exhibe herramientas históricas, carruajes y artefactos pioneros.',
-      tip: isEn
-        ? 'Guided tours are led by the founder himself, rich with pioneer storytelling and milling demonstrations.'
-        : 'Las visitas son guiadas por su propio creador, llenas de relatos históricos fascinantes y demostración de molienda.',
-      mapsQuery: 'Molino Harinero Nant Fach Trevelin',
+      mapsUrl: 'https://maps.app.goo.gl/uK5UfM8k6dGkZkM47',
     },
     {
-      id: 'vinas',
-      title: isEn ? 'Viñas del Nant y Fall Winery' : 'Viñas del Nant y Fall',
-      tag: 'vinos',
-      categoryLabel: isEn ? 'Southernmost Wine Tourism' : 'Enoturismo Austral & Bodega',
+      id: 'lago-futalaufquen',
+      title: lang === 'es' ? 'Lago Futalaufquen' : 'Futalaufquen Lake',
+      location: 'Parque Nacional Los Alerces',
+      category: lang === 'es' ? 'Lago glaciar' : 'Glacial Lake',
+      desc: lang === 'es'
+        ? 'Aguas cristalinas y playas de montaña ideales para relajarse, navegar y disfrutar la tranquilidad de la Patagonia.'
+        : 'Crystal-clear waters and mountain beaches, ideal for relaxation, boat excursions and serene nature contemplation.',
+      image: './stitch/hero-lugares.png',
+      mapsUrl: 'https://maps.app.goo.gl/kG1v9U7hE9GZ1',
+    },
+    {
+      id: 'mirador-cerro-cruz',
+      title: lang === 'es' ? 'Mirador del Valle (Cerro La Cruz)' : 'Valley Viewpoint (Cerro La Cruz)',
+      location: 'Trevelin',
+      category: lang === 'es' ? 'Mirador panorámico' : 'Panoramic Viewpoint',
+      desc: lang === 'es'
+        ? 'Una vista panorámica increíble del valle productivo y los cordones montañosos a pocos minutos del centro.'
+        : 'A breathtaking 360° panoramic view of the agricultural valley and mountain ranges just minutes from downtown.',
+      image: './mirador-cerro-la-cruz.jpg',
+      mapsUrl: 'https://maps.app.goo.gl/4r3d8sK9nL2m1pQ49',
+    },
+    {
+      id: 'vinas-nant-fall',
+      title: lang === 'es' ? 'Viñas del Nant y Fall' : 'Nant y Fall Vineyards',
+      location: 'Trevelin',
+      category: lang === 'es' ? 'Enoturismo & Senderos' : 'Wine Tourism & Trails',
+      desc: lang === 'es'
+        ? 'Viñedos patagónicos de clima frío, degustaciones guiadas de Pinot Noir y paseos junto al arroyo.'
+        : 'Southern cold-climate vineyards, guided Pinot Noir wine tastings and tranquil walks alongside the creek.',
       image: './vinas-nant-fall.jpg',
-      rating: '4.8',
-      reviews: '1.230',
-      distance: isEn ? '15 km from Mosha • 18 min drive' : 'A 15 km de Mosha • 18 min en auto',
-      road: 'Ruta 259 km 56',
-      desc: isEn
-        ? 'Pioneers of cool-climate viticulture in the Trevelin Valley, producing world-class Pinot Noir, Sauvignon Blanc, and Riesling with mountain views.'
-        : 'Pioneros de la vitivinicultura en el Valle de Trevelin, una de las zonas vitivinícolas más australes del planeta. Producen variedades de clima frío de clase mundial como Pinot Noir, Sauvignon Blanc y Riesling.',
-      tip: isEn
-        ? 'Enjoy vineyard tours, glass tastings, and artisanal cold-cut and regional cheese pairings.'
-        : 'Ofrecen visitas guiadas por el viñedo, degustación de copas y tablas de fiambres y quesos artesanales.',
-      mapsQuery: 'Vinas del Nant y Fall Trevelin',
+      mapsUrl: 'https://maps.app.goo.gl/vinasnantfall',
     },
     {
-      id: 'trochita',
-      title: isEn ? 'La Trochita (Old Patagonian Express)' : 'La Trochita (Viejo Expreso Patagónico)',
-      tag: 'cultura',
-      categoryLabel: isEn ? 'National Historic Monument' : 'Monumento Histórico Nacional',
-      image: './la-trochita.jpg?v=2',
-      rating: '4.8',
-      reviews: '4.100',
-      distance: isEn ? '25 km from Mosha • 25 min drive (Esquel Station)' : 'A 25 km de Mosha • 25 min en auto (Estación Esquel)',
-      road: 'Ruta 259',
-      desc: isEn
-        ? 'The legendary narrow-gauge (75 cm) steam train that still traverses the Patagonian steppe. Cozy wooden carriages warmed by iron wood-stoves offer a nostalgic journey through time.'
-        : 'El mítico tren a vapor de trocha angosta (75 cm) que sigue recorriendo la estepa patagónica como hace casi un siglo. Sus vagones de madera calefaccionados con salamandras brindan un viaje en el tiempo inolvidable.',
-      tip: isEn
-        ? 'Departs from Esquel station towards Nahuel Pan community. Check schedule and purchase tickets in advance.'
-        : 'Sale desde la estación de Esquel hacia la comunidad Nahuel Pan. Consultar salidas y comprar pasaje con anticipación.',
-      mapsQuery: 'Estacion La Trochita Esquel',
-    },
-    {
-      id: 'mirador-cruz',
-      title: isEn ? 'La Cruz Viewpoint' : 'Mirador de la Cruz & Cerro La Cruz',
-      tag: 'naturaleza',
-      categoryLabel: isEn ? 'Panoramic Hike & Viewpoint' : 'Senderismo & Vistas Panorámicas',
-      image: './mirador-cerro-la-cruz.jpg?v=2',
-      rating: '4.6',
-      reviews: '420',
-      distance: isEn ? '2.5 km from Mosha • 5 min drive / hike' : 'A 2.5 km de Mosha • 5 min en auto o caminata',
-      road: 'Acceso desde Trevelin',
-      desc: isEn
-        ? 'The best vantage point for 360-degree vistas of Trevelin, cultivated valleys, and the dramatic Situación mountain range.'
-        : 'El mejor mirador para contemplar una vista panorámica de 360 grados de todo el pueblo de Trevelin, los valles cultivados y el imponente Cordón Situación.',
-      tip: isEn
-        ? 'Spectacular at sunset when the mountain ridges turn deep orange and gold.'
-        : 'Espectacular para subir al atardecer cuando las montañas se tiñen de tonos dorados y rojizos.',
-      mapsQuery: 'Mirador de la Cruz Trevelin',
+      id: 'cordillera-alrededores',
+      title: lang === 'es' ? 'Cordillera y alrededores' : 'Andes & Scenic Surroundings',
+      location: 'Trevelin',
+      category: lang === 'es' ? 'Rutas escénicas' : 'Scenic Routes',
+      desc: lang === 'es'
+        ? 'Rutas escénicas hacia el paso internacional, ríos de deshielo y paisajes únicos en todas las estaciones del año.'
+        : 'Scenic driving routes towards the border pass, meltwater rivers and awe-inspiring alpine scenery in every season.',
+      image: './stitch/banner-panoramico.png',
+      mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
   ];
 
-  const filteredLugares = selectedTag === 'todos' 
-    ? lugares 
-    : lugares.filter(l => l.tag === selectedTag);
-
   return (
-    <div className="min-h-screen bg-[#fafbfc] text-[#0f2537] pb-16">
-      {/* Top Header Navigation */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
+    <div className="bg-[#f8fafc] text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+      {/* BEGIN: MainHeaderAndHero */}
+      <header className="relative w-full h-[510px] md:h-[540px] overflow-hidden text-white flex flex-col justify-between select-none">
+        {/* Hero Background Image with Overlay */}
+        <img
+          alt="Cascadas turquesas en Trevelin"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0 transform scale-105"
+          src="./stitch/hero-lugares.png"
+        />
+        <div className="absolute inset-0 hero-gradient z-[1]" />
+
+        {/* Top Navigation Bar */}
+        <nav aria-label="Navegación principal" className="relative z-10 max-w-7xl mx-auto w-full px-6 py-6 flex items-center justify-between">
+          {/* Mosha Brand Logo */}
           <button
             onClick={onBack}
-            className="group flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold text-[#0f2537] hover:bg-slate-100 transition-all active:scale-95 cursor-pointer"
+            className="flex flex-col items-start group cursor-pointer text-left"
+            data-purpose="brand-logo"
           >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span>{isEn ? 'Back to Home' : 'Volver al Inicio'}</span>
+            <div className="flex items-center space-x-1.5">
+              <svg className="w-6 h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span className="text-xl sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
+            </div>
+            <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.38em] text-slate-200 uppercase pl-0.5">
+              DEPARTAMENTOS
+            </span>
           </button>
 
+          {/* Action Buttons Right */}
           <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-2 text-xs font-semibold text-slate-500">
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span>Trevelin & Alrededores</span>
-            </div>
+            {/* Language Switch */}
+            <button
+              onClick={() => setLang(prev => (prev === 'es' ? 'en' : 'es'))}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition cursor-pointer"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span>{lang.toUpperCase()}</span>
+            </button>
 
-            {setLang && (
-              <button
-                onClick={() => setLang(prev => (prev === 'es' ? 'en' : 'es'))}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-[#0f2537] text-xs font-bold border border-slate-200 transition-all active:scale-95 cursor-pointer shadow-xs"
-                title="Cambiar idioma / Switch language"
-              >
-                <Globe className="w-3.5 h-3.5 text-sky-600" />
-                <span className={lang === 'es' ? 'text-sky-600 font-extrabold' : 'text-slate-400'}>ES</span>
-                <span className="text-slate-300">|</span>
-                <span className={lang === 'en' ? 'text-sky-600 font-extrabold' : 'text-slate-400'}>EN</span>
-              </button>
-            )}
+            {/* Return to Home Top Button */}
+            <button
+              onClick={onBack}
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/35 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-xs sm:text-sm font-medium tracking-wide transition cursor-pointer"
+            >
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span>{currentT.nav.volverInicio || 'Volver al inicio'}</span>
+            </button>
           </div>
+        </nav>
+
+        {/* Hero Titles and Subtitle */}
+        <div className="relative z-10 max-w-7xl mx-auto w-full px-6 pb-16 pt-6">
+          <p className="text-[11px] md:text-xs font-semibold tracking-[0.28em] uppercase text-slate-200 mb-2">
+            {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
+          </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-3">
+            {tPage.title || 'Lugares para visitar'}
+          </h1>
+          <p className="text-base sm:text-lg text-slate-200 font-normal max-w-xl leading-relaxed">
+            {tPage.subtitle || 'Naturaleza, paisajes y experiencias únicas en Trevelin y sus alrededores.'}
+          </p>
         </div>
       </header>
+      {/* END: MainHeaderAndHero */}
 
-      {/* Hero Banner of the Places Section */}
-      <div className="bg-[#0f2537] text-white py-10 sm:py-14 px-4 sm:px-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          <p className="text-[11px] font-bold tracking-[0.25em] text-[#38bdf8] uppercase mb-2">
-            {isEn ? 'SIGHTSEEING & ADVENTURE GUIDE' : 'GUÍA DE ATRACTIVOS & PASEOS'}
-          </p>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-3">
-            {isEn ? 'Places to visit' : 'Lugares para visitar'}
-          </h1>
-          <p className="text-sm sm:text-base text-slate-300 max-w-2xl font-light leading-relaxed">
-            {isEn
-              ? 'Crystal waterfalls, national parks, flower meadows, and southern wineries just minutes from Mosha Apartments.'
-              : 'Cascadas cristalinas, parques nacionales, campos de flores y bodegas australes a pocos minutos de Mosha Departamentos.'}
-          </p>
-
-          {/* Filter Pills with mobile horizontal swipe */}
-          <div className="flex gap-2 pt-6 overflow-x-auto scrollbar-none pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
-            {filterPills.map(pill => (
-              <button
-                key={pill.id}
-                onClick={() => setSelectedTag(pill.id)}
-                className={`shrink-0 px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                  selectedTag === pill.id
-                    ? 'bg-white text-[#0f2537] shadow-md font-bold'
-                    : 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white'
-                }`}
-              >
-                {pill.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Main Places Grid */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-8 pt-8 sm:pt-10">
-        <div className="flex items-center justify-between text-xs text-slate-400 mb-6 px-1">
-          <span>{isEn ? 'Showing' : 'Mostrando'} <strong>{filteredLugares.length}</strong> {isEn ? 'must-visit attractions' : 'atractivos turísticos imperdibles'}</span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7">
-          {filteredLugares.map((item) => (
-            <div
-              key={item.id}
-              className="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                {/* Photo Banner with Badges */}
-                <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-slate-100">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-                  {/* Top Badge: Category */}
-                  <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-white/95 text-[#0f2537] backdrop-blur-md shadow-sm">
-                      {item.categoryLabel}
-                    </span>
-                  </div>
-
-                  {/* Top Right: Rating */}
-                  <div className="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-black/60 text-white backdrop-blur-md">
-                    <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                    <span>{item.rating}</span>
-                    <span className="text-[10px] text-slate-300 font-normal">({item.reviews})</span>
-                  </div>
-
-                  {/* Bottom of Image: Distance from Mosha */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center gap-1.5 text-xs text-white font-medium drop-shadow-md">
-                    <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                    <span>{item.distance}</span>
-                  </div>
-                </div>
-
-                {/* Body Content */}
-                <div className="p-5 sm:p-6 space-y-3">
-                  <h3 className="text-xl font-bold text-[#0f2537] leading-snug group-hover:text-blue-600 transition-colors">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    {item.desc}
-                  </p>
-
-                  {/* Tip de Mosha Box */}
-                  <div className="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200/60">
-                    <div className="flex items-center gap-1.5 text-[11px] font-bold text-amber-800 uppercase tracking-wider mb-1">
-                      <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-                      <span>{isEn ? "Mosha's Recommendation" : 'Recomendación de Mosha'}</span>
-                    </div>
-                    <p className="text-xs text-amber-950/90 italic leading-relaxed">
-                      "{item.tip}"
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Action Footer */}
-              <div className="px-5 sm:px-6 pb-5 pt-0">
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapsQuery)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-[#0f2537] hover:bg-[#1c3a54] text-white font-bold text-xs shadow-md transition-all active:scale-95"
-                >
-                  <Navigation className="w-4 h-4 text-emerald-400" />
-                  <span>{isEn ? 'Directions on Google Maps' : 'Cómo llegar en Google Maps'}</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Back Button */}
-        <div className="mt-12 text-center">
+      {/* BEGIN: SubHeaderBar */}
+      <section className="w-full bg-[#f1f5f9]/70 border-b border-slate-200/80 py-4 px-6 select-none" data-purpose="sub-header-navigation">
+        <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-4">
+          {/* Back to Guide Button */}
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0f2537] hover:bg-[#1c3a54] text-white font-bold text-xs shadow-lg transition-all active:scale-95 cursor-pointer"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-semibold tracking-wide transition shadow-sm cursor-pointer"
           >
-            <ArrowLeft className="w-4 h-4" />
-            <span>{isEn ? 'Back to Main Page' : 'Volver a la página principal'}</span>
+            <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M10 19l-7-7m0 0l7-7m-7 7h18" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <span>{currentT.nav.volverGuia || 'Volver a la guía'}</span>
           </button>
+
+          {/* Location Indicator Right */}
+          <div className="flex items-center gap-2.5 text-right">
+            <div className="text-right">
+              <p className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">Trevelin, Chubut</p>
+              <p className="text-[11px] sm:text-xs text-slate-500 font-normal leading-tight">
+                {tPage.badge || 'Naturaleza en estado puro'}
+              </p>
+            </div>
+            <div className="w-8 h-8 rounded-full bg-slate-200/70 flex items-center justify-center shrink-0">
+              <svg className="w-4 h-4 text-slate-800" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* END: SubHeaderBar */}
+
+      {/* BEGIN: MainContentSection */}
+      <main className="w-full max-w-7xl mx-auto px-6 py-12 md:py-16 grow">
+        {/* Title & Description Intro */}
+        <div className="mb-10 max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#091524] tracking-tight mb-3">
+            {tPage.sectionTitle || 'Recomendaciones imperdibles'}
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            {tPage.sectionDesc || 'Descubrí los mejores lugares para conocer, disfrutar de la naturaleza y vivir experiencias únicas en Trevelin y sus alrededores. Todos los destinos están muy cerca de tu estadía.'}
+          </p>
+        </div>
+
+        {/* Places 8-Card Grid matching Google Stitch */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-purpose="recommendations-grid">
+          {places.map((place) => (
+            <article
+              key={place.id}
+              className="bg-white rounded-2xl overflow-hidden card-shadow border border-slate-100 flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1"
+            >
+              <div>
+                <div className="h-48 w-full overflow-hidden relative">
+                  <img
+                    alt={place.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    src={place.image}
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-2.5">
+                    {place.title}
+                  </h3>
+                  <div className="flex items-center gap-3 text-xs text-slate-500 font-medium mb-3">
+                    <span className="inline-flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      {place.location}
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                      <svg className="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path d="M3 17l6-6 4 4 8-8" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      {place.category}
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal">
+                    {place.desc}
+                  </p>
+                </div>
+              </div>
+
+              <div className="px-5 pb-5 pt-1">
+                <a
+                  className="w-full inline-flex items-center justify-between px-4 py-2.5 bg-[#0b1b30] hover:bg-[#132847] text-white text-xs font-semibold rounded-xl transition-colors cursor-pointer"
+                  href={place.mapsUrl}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span className="inline-flex items-center gap-2">
+                    <svg className="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    {tPage.btnMaps || 'Ver en Google Maps'}
+                  </span>
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </main>
+      {/* END: MainContentSection */}
+
+      {/* BEGIN: ClosingPanoramicBanner */}
+      <PanoramicBanner
+        eyebrow={currentT.banner.descubriMas || 'DESCUBRÍ MÁS'}
+        title={currentT.banner.entornoTitle || 'Trevelin y su entorno'}
+        subtitle={currentT.banner.entornoDesc || 'Cada rincón de Trevelin ofrece paisajes, historia y experiencias únicas. ¡Animate a explorar y vivir la Patagonia!'}
+        buttonText={currentT.banner.btnVolver || 'Volver al inicio'}
+        onButtonClick={onBack}
+        isSubpage={true}
+      />
+      {/* END: ClosingPanoramicBanner */}
+
+      {/* BEGIN: Footer */}
+      <Footer tFooter={currentT.footer} onOpenPrivacy={onOpenPrivacy} />
     </div>
   );
 }

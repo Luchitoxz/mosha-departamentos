@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe, MessageCircle } from 'lucide-react';
+import { Globe } from 'lucide-react';
 
 export default function Navbar({ lang, setLang, tNav, onSelectSection }) {
   const [scrolled, setScrolled] = useState(false);
@@ -10,9 +10,8 @@ export default function Navbar({ lang, setLang, tNav, onSelectSection }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
 
-      // Section scroll spy to update active button
-      const sectionIds = ['ubicacion', 'normas', 'emergencias', 'guia', 'servicios', 'inicio'];
-      const scrollPosition = window.scrollY + 130;
+      const sectionIds = ['contacto', 'servicios', 'guia', 'inicio'];
+      const scrollPosition = window.scrollY + 120;
 
       for (const id of sectionIds) {
         const el = document.getElementById(id);
@@ -28,23 +27,11 @@ export default function Navbar({ lang, setLang, tNav, onSelectSection }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { id: 'inicio', label: tNav.inicio || 'Inicio' },
-    { id: 'servicios', label: tNav.wifi || tNav.servicios || 'Wi-Fi' },
-    { id: 'guia', label: tNav.guia || 'Guía' },
-    { id: 'emergencias', label: tNav.emergencias || tNav.urgencias || 'Urgencias' },
-    { id: 'normas', label: tNav.normas || (lang === 'en' ? 'Rules' : 'Normas') },
-    { id: 'ubicacion', label: tNav.ubicacion || 'Ubicación' },
-    { id: 'contacto', label: tNav.contacto || 'WhatsApp' },
-  ];
-
   const handleNavClick = (id) => {
     setActiveTab(id);
     setMobileMenuOpen(false);
     if (onSelectSection) {
-      setTimeout(() => {
-        onSelectSection(id);
-      }, 70);
+      onSelectSection(id);
     }
   };
 
@@ -53,165 +40,160 @@ export default function Navbar({ lang, setLang, tNav, onSelectSection }) {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-[#0b192c]/95 backdrop-blur-md shadow-lg py-2.5 sm:py-3 border-b border-white/10' 
-          : 'bg-[#0b192c]/75 backdrop-blur-md sm:bg-gradient-to-b sm:from-black/70 sm:to-transparent py-3 sm:py-4 border-b border-white/5 sm:border-transparent'
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-[#0c1a2d]/95 backdrop-blur-md shadow-lg py-3.5 border-b border-white/10'
+          : 'bg-gradient-to-b from-[#0c1a2d]/90 to-transparent py-5'
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 flex items-center justify-between">
-        
-        {/* Minimalist Logo */}
-        <a 
-          href="#inicio" 
-          onClick={(e) => { e.preventDefault(); handleNavClick('inicio'); }}
-          className="flex flex-col items-start group select-none text-white py-1 cursor-pointer"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* Brand Logo - Google Stitch Alpine Design */}
+        <a
+          aria-label="Mosha Departamentos"
+          className="flex flex-col items-start group cursor-pointer"
+          href="#inicio"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick('inicio');
+          }}
         >
-          <svg
-            className="w-5 h-3 text-white mb-0.5 group-hover:-translate-y-0.5 transition-transform"
-            viewBox="0 0 24 14"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="2 12 12 2 22 12" />
-          </svg>
-          <span className="text-xl sm:text-2xl font-bold tracking-[0.2em] leading-none uppercase font-sans">
-            MOSHA
-          </span>
-          <span className="text-[8px] sm:text-[9px] tracking-[0.38em] font-medium leading-tight text-white/85 uppercase mt-0.5">
+          <div className="flex items-center space-x-1.5">
+            <svg
+              className="w-6 h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <span className="text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
+          </div>
+          <span className="text-[9px] font-semibold tracking-[0.38em] text-slate-200 uppercase pl-0.5">
             DEPARTAMENTOS
           </span>
         </a>
 
-        {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-7">
-          {navLinks.map((item) => {
-            const isActive = activeTab === item.id;
-            const isContact = item.id === 'contacto';
-
-            if (isContact) {
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-sm active:scale-95 cursor-pointer ml-1"
-                >
-                  <MessageCircle className="w-3.5 h-3.5" />
-                  <span>{item.label}</span>
-                </button>
-              );
-            }
-
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`text-xs xl:text-sm font-semibold tracking-wide transition-all relative py-1 cursor-pointer ${
-                  isActive ? 'text-white font-bold' : 'text-white/80 hover:text-white'
-                }`}
-              >
-                {item.label}
-                {isActive && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4/5 h-[2px] bg-sky-400 rounded-full transition-all" />
-                )}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Right side controls: Language Selector + Mobile Menu Toggle */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          
-          {/* Language Switcher Pill */}
+        {/* Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-white/90">
           <button
-            onClick={toggleLang}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 hover:bg-white/25 text-white text-xs font-bold border border-white/20 transition-all active:scale-95 shadow-sm cursor-pointer"
-            title="Cambiar idioma / Switch language"
+            onClick={() => handleNavClick('inicio')}
+            className={`cursor-pointer transition-colors duration-200 ${
+              activeTab === 'inicio'
+                ? 'relative py-1 text-white font-semibold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white rounded-full'
+                : 'hover:text-white'
+            }`}
           >
-            <Globe className="w-3.5 h-3.5 text-sky-300" />
-            <span className={lang === 'es' ? 'text-amber-300 font-extrabold' : 'text-white/70'}>ES</span>
-            <span className="text-white/40">|</span>
-            <span className={lang === 'en' ? 'text-amber-300 font-extrabold' : 'text-white/70'}>EN</span>
+            {tNav.inicio || 'Inicio'}
           </button>
 
-          {/* Mobile Hamburger Button */}
-          <div className="lg:hidden">
+          <button
+            onClick={() => handleNavClick('guia')}
+            className={`cursor-pointer transition-colors duration-200 ${
+              activeTab === 'guia'
+                ? 'relative py-1 text-white font-semibold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white rounded-full'
+                : 'hover:text-white'
+            }`}
+          >
+            {tNav.guia || 'Guía'}
+          </button>
+
+          <button
+            onClick={() => handleNavClick('servicios')}
+            className={`cursor-pointer transition-colors duration-200 ${
+              activeTab === 'servicios'
+                ? 'relative py-1 text-white font-semibold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white rounded-full'
+                : 'hover:text-white'
+            }`}
+          >
+            {tNav.servicios || 'Servicios'}
+          </button>
+
+          <button
+            onClick={() => handleNavClick('contacto')}
+            className={`cursor-pointer transition-colors duration-200 ${
+              activeTab === 'contacto'
+                ? 'relative py-1 text-white font-semibold after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-white rounded-full'
+                : 'hover:text-white'
+            }`}
+          >
+            {tNav.contacto || 'Contacto'}
+          </button>
+
+          {/* Language Switcher */}
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 text-xs font-semibold tracking-wider text-white transition-all cursor-pointer shadow-sm"
+            title={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+          >
+            <Globe className="w-3.5 h-3.5" />
+            <span>{lang.toUpperCase()}</span>
+          </button>
+        </nav>
+
+        {/* Mobile Buttons (Lang + Hamburger) */}
+        <div className="flex items-center gap-2.5 md:hidden">
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1 px-2.5 py-1 rounded-full border border-white/30 bg-white/10 text-xs font-semibold text-white cursor-pointer"
+          >
+            <Globe className="w-3 h-3" />
+            <span>{lang.toUpperCase()}</span>
+          </button>
+
+          <button
+            aria-label="Abrir menú"
+            className="text-white p-2 rounded-lg hover:bg-white/10 transition cursor-pointer"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            type="button"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation Dropdown */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-[#0c1a2d]/98 backdrop-blur-md px-6 pt-3 pb-6 border-b border-white/10 shadow-2xl animate-in slide-in-from-top-2 duration-200">
+          <div className="flex flex-col space-y-3 text-sm font-medium text-white">
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-white bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
-              aria-label="Abrir menú"
+              onClick={() => handleNavClick('inicio')}
+              className="py-2.5 text-left border-b border-white/10 cursor-pointer hover:text-cyan-200"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {tNav.inicio || 'Inicio'}
+            </button>
+            <button
+              onClick={() => handleNavClick('guia')}
+              className="py-2.5 text-left border-b border-white/10 cursor-pointer hover:text-cyan-200"
+            >
+              {tNav.guia || 'Guía'}
+            </button>
+            <button
+              onClick={() => handleNavClick('servicios')}
+              className="py-2.5 text-left border-b border-white/10 cursor-pointer hover:text-cyan-200"
+            >
+              {tNav.servicios || 'Servicios'}
+            </button>
+            <button
+              onClick={() => handleNavClick('contacto')}
+              className="py-2.5 text-left cursor-pointer hover:text-cyan-200"
+            >
+              {tNav.contacto || 'Contacto'}
             </button>
           </div>
         </div>
-
-      </div>
-
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0b192c]/98 backdrop-blur-2xl border-b border-white/10 px-6 py-5 space-y-2 animate-in fade-in duration-200">
-          {navLinks.map((item) => {
-            const isContact = item.id === 'contacto';
-            const isActive = activeTab === item.id;
-
-            if (isContact) {
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  className="w-full mt-2 py-3 px-4 rounded-xl bg-emerald-600 text-white font-bold text-sm flex items-center justify-center gap-2 active:scale-98 shadow-sm cursor-pointer"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>{item.label} (Anfitrión)</span>
-                </button>
-              );
-            }
-
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                className={`block w-full text-left py-2.5 text-base font-semibold border-b border-white/5 cursor-pointer ${
-                  isActive ? 'text-sky-300 font-bold' : 'text-white/85'
-                }`}
-              >
-                {item.label}
-              </button>
-            );
-          })}
-
-          {/* Language selector row in mobile drawer */}
-          <div className="pt-3 flex items-center justify-between text-xs text-white/80">
-            <span className="font-medium flex items-center gap-1.5">
-              <Globe className="w-3.5 h-3.5 text-sky-400" />
-              Idioma / Language:
-            </span>
-            <div className="flex items-center gap-1 bg-white/10 p-1 rounded-full border border-white/10">
-              <button
-                onClick={() => setLang('es')}
-                className={`px-3 py-1 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  lang === 'es' ? 'bg-amber-400 text-[#0b192c] shadow' : 'text-white/70 hover:text-white'
-                }`}
-              >
-                Español
-              </button>
-              <button
-                onClick={() => setLang('en')}
-                className={`px-3 py-1 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  lang === 'en' ? 'bg-amber-400 text-[#0b192c] shadow' : 'text-white/70 hover:text-white'
-                }`}
-              >
-                English
-              </button>
-            </div>
-          </div>
-        </div>
       )}
-    </nav>
+    </header>
   );
 }
