@@ -17,7 +17,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Un entorno natural increíble con cascadas, bosques nativos y senderos para recorrer.'
         : 'A breathtaking natural environment with cascading waterfalls, native forests and walking trails.',
-      image: './cascadas-nant-y-fall.png',
+      image: './stitch/lugares-1-nantyfall.jpg',
       mapsUrl: 'https://maps.app.goo.gl/9Zc1j3d3BsmhVnN26',
     },
     {
@@ -28,7 +28,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Un paisaje único en primavera con millones de tulipanes florecidos con el fondo de la cordillera nevada.'
         : 'A unique spring wonderland featuring millions of vibrant blooming tulips framed by snow-capped Andean peaks.',
-      image: './tulipanes.jpg',
+      image: './stitch/lugares-2-tulipanes.jpg',
       mapsUrl: 'https://maps.app.goo.gl/5p7kL7LhY3GZkmZ78',
     },
     {
@@ -39,7 +39,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Lagos glaciares de aguas turquesas, bosques milenarios de alerce y vistas impresionantes declaradas Patrimonio Mundial.'
         : 'Turquoise glacial lakes, ancient millennial alerce forests and UNESCO World Heritage mountain landscapes.',
-      image: './los-alerces.jpg',
+      image: './stitch/lugares-3-alerces.jpg',
       mapsUrl: 'https://maps.app.goo.gl/P85cQ3PzXhU1p8M57',
     },
     {
@@ -50,7 +50,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Museo histórico del primer molino harinero de la zona impulsado por rueda hidráulica y rodeado de naturaleza.'
         : 'Historic watermill museum recreating the pioneering Welsh agricultural era in an idyllic setting.',
-      image: './molino-nant-fach.jpg',
+      image: './stitch/lugares-4-molino.jpg',
       mapsUrl: 'https://maps.app.goo.gl/uK5UfM8k6dGkZkM47',
     },
     {
@@ -59,42 +59,42 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       location: 'Parque Nacional Los Alerces',
       category: lang === 'es' ? 'Lago glaciar' : 'Glacial Lake',
       desc: lang === 'es'
-        ? 'Aguas cristalinas y playas de montaña ideales para relajarse, navegar y disfrutar la tranquilidad de la Patagonia.'
+        ? 'Aguas cristalinas y paisajes increíbles, ideal para relajarse y disfrutar la naturaleza en estado puro.'
         : 'Crystal-clear waters and mountain beaches, ideal for relaxation, boat excursions and serene nature contemplation.',
-      image: './stitch/hero-lugares.png',
+      image: './stitch/lugares-3-alerces.jpg',
       mapsUrl: 'https://maps.app.goo.gl/kG1v9U7hE9GZ1',
     },
     {
       id: 'mirador-cerro-cruz',
-      title: lang === 'es' ? 'Mirador del Valle (Cerro La Cruz)' : 'Valley Viewpoint (Cerro La Cruz)',
+      title: lang === 'es' ? 'Mirador del Valle' : 'Valley Viewpoint',
       location: 'Trevelin',
       category: lang === 'es' ? 'Mirador panorámico' : 'Panoramic Viewpoint',
       desc: lang === 'es'
-        ? 'Una vista panorámica increíble del valle productivo y los cordones montañosos a pocos minutos del centro.'
+        ? 'Una vista panorámica increíble del valle y la cordillera a pocos minutos del centro.'
         : 'A breathtaking 360° panoramic view of the agricultural valley and mountain ranges just minutes from downtown.',
-      image: './mirador-cerro-la-cruz.jpg',
+      image: './stitch/lugares-6-mirador.jpg',
       mapsUrl: 'https://maps.app.goo.gl/4r3d8sK9nL2m1pQ49',
     },
     {
-      id: 'vinas-nant-fall',
-      title: lang === 'es' ? 'Viñas del Nant y Fall' : 'Nant y Fall Vineyards',
+      id: 'senderos-trekking',
+      title: lang === 'es' ? 'Senderos y trekking' : 'Trails & Trekking',
       location: 'Trevelin',
-      category: lang === 'es' ? 'Enoturismo & Senderos' : 'Wine Tourism & Trails',
+      category: lang === 'es' ? 'Senderos' : 'Trails',
       desc: lang === 'es'
-        ? 'Viñedos patagónicos de clima frío, degustaciones guiadas de Pinot Noir y paseos junto al arroyo.'
-        : 'Southern cold-climate vineyards, guided Pinot Noir wine tastings and tranquil walks alongside the creek.',
-      image: './vinas-nant-fall.jpg',
+        ? 'Distintos senderos para disfrutar del bosque, la flora local y la tranquilidad cordillerana.'
+        : 'Diverse trails through native Andean woods, local flora and mountain tranquility.',
+      image: './stitch/lugares-7-senderos.jpg',
       mapsUrl: 'https://maps.app.goo.gl/vinasnantfall',
     },
     {
       id: 'cordillera-alrededores',
       title: lang === 'es' ? 'Cordillera y alrededores' : 'Andes & Scenic Surroundings',
       location: 'Trevelin',
-      category: lang === 'es' ? 'Rutas escénicas' : 'Scenic Routes',
+      category: lang === 'es' ? 'Paisajes' : 'Scenic Routes',
       desc: lang === 'es'
-        ? 'Rutas escénicas hacia el paso internacional, ríos de deshielo y paisajes únicos en todas las estaciones del año.'
+        ? 'Rutas escénicas y paisajes únicos en todas las estaciones del año en el corazón de la Patagonia.'
         : 'Scenic driving routes towards the border pass, meltwater rivers and awe-inspiring alpine scenery in every season.',
-      image: './stitch/banner-panoramico.png',
+      image: './stitch/home-banner.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
   ];
@@ -107,7 +107,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         <img
           alt="Cascadas turquesas en Trevelin"
           className="absolute inset-0 w-full h-full object-cover object-center z-0 transform scale-105"
-          src="./stitch/hero-lugares.png"
+          src="./stitch/lugares-hero.jpg"
         />
         <div className="absolute inset-0 hero-gradient z-[1]" />
 
@@ -286,6 +286,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         buttonText={currentT.banner.btnVolver || 'Volver al inicio'}
         onButtonClick={onBack}
         isSubpage={true}
+        image="./stitch/home-banner.jpg"
       />
       {/* END: ClosingPanoramicBanner */}
 

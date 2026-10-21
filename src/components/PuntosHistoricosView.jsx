@@ -15,86 +15,86 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
       category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Emblemática capilla de la colonia galesa construida en 1897, símbolo vivo de la fe y perseverancia de los pioneros.'
-        : 'Iconic Welsh colony chapel built in 1897, standing as a living testament to pioneer faith and community endurance.',
-      image: './stitch/hero-historicos.png',
+        ? 'Emblemática capilla de la colonia galesa construida en piedra y madera.'
+        : 'Iconic Welsh colony chapel built in stone and native wood in 1897.',
+      image: './stitch/historicos-1-bethel.jpg',
       mapsUrl: 'https://maps.app.goo.gl/capillabethel',
     },
     {
       id: 'museo-regional',
       title: lang === 'es' ? 'Museo Regional Trevelin' : 'Trevelin Regional Museum',
-      category: lang === 'es' ? 'Museo & Patrimonio' : 'Museum & Heritage',
+      category: lang === 'es' ? 'Museo' : 'Museum',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Emplazado en el histórico Molino Harinero Andes de 1918. Recorre la historia local, las familias fundadoras y herramientas de época.'
-        : 'Housed in the historic 1918 Andes Flour Mill. Showcasing indigenous artifacts, founding families and pioneer machinery.',
-      image: './molino-nant-fach.jpg',
+        ? 'Recorre la historia local, la cultura galesa y el desarrollo de la región.'
+        : 'Explore local frontier history, Welsh culture and regional valley development.',
+      image: './stitch/historicos-2-museo.jpg',
       mapsUrl: 'https://maps.app.goo.gl/museoregional',
     },
     {
       id: 'la-trochita',
-      title: lang === 'es' ? 'La Trochita (Viejo Expreso Patagónico)' : 'La Trochita (Old Patagonian Express)',
-      category: lang === 'es' ? 'Patrimonio Histórico' : 'National Heritage',
-      location: 'Trevelin / Esquel',
+      title: lang === 'es' ? 'La Trochita' : 'La Trochita Steam Train',
+      category: lang === 'es' ? 'Patrimonio' : 'Heritage',
+      location: 'Trevelin',
       desc: lang === 'es'
-        ? 'El histórico tren a vapor de trocha angosta (0.75m), una joya viva de la ingeniería ferroviaria mundial que recorre la estepa.'
-        : 'Legendary narrow-gauge (0.75m) steam train, a globally celebrated living relic of railway history journeying through the steppe.',
-      image: './la-trochita.jpg',
+        ? 'El histórico tren patagónico que conecta paisajes, historia y tradición.'
+        : 'The historic narrow-gauge steam train connecting breathtaking landscapes, history and lore.',
+      image: './stitch/historicos-3-trochita.jpg',
       mapsUrl: 'https://maps.app.goo.gl/latrochita',
     },
     {
       id: 'molino-nant-fach',
-      title: lang === 'es' ? 'Molino Nant Fach' : 'Nant Fach Watermill',
-      category: lang === 'es' ? 'Sitio histórico' : 'Historic Watermill',
+      title: lang === 'es' ? 'Molino Nant Fach' : 'Nant Fach Mill',
+      category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Primer molino harinero de la zona impulsado por rueda hidráulica, testimonio del florecimiento triguero en el Valle 16 de Octubre.'
-        : 'Working historic flour mill driven by a waterwheel, illustrating the golden wheat era of the Welsh settlement.',
-      image: './molino-nant-fach.jpg',
+        ? 'Primer molino harinero de la zona, testimonio del legado galés en la región.'
+        : 'First flour mill in the area, a testament to Welsh agricultural pioneering.',
+      image: './stitch/historicos-4-molino.jpg',
       mapsUrl: 'https://maps.app.goo.gl/uK5UfM8k6dGkZkM47',
     },
     {
       id: 'escuela-corintos',
-      title: lang === 'es' ? 'Ruinas de la Escuela Nº 1 (Río Corintos)' : 'Historic School No. 1 Ruins',
-      category: lang === 'es' ? 'Monumento Nacional' : 'National Monument',
+      title: lang === 'es' ? 'Ruinas de la Escuela Nº 1' : 'School No. 1 Ruins',
+      category: lang === 'es' ? 'Patrimonio' : 'Heritage',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Sitio del histórico Plebiscito de 1902 donde los colonos galeses votaron unánimemente permanecer bajo soberanía argentina.'
-        : 'Site of the historic 1902 Plebiscite where Welsh settlers voted unanimously to remain under Argentine sovereignty.',
-      image: './stitch/banner-panoramico.png',
+        ? 'Restos del antiguo edificio escolar, parte de la historia educativa de la colonia.'
+        : 'Ruins of the historic school building and site of the 1902 Argentine plebiscite.',
+      image: './stitch/historicos-5-escuela1.jpg',
       mapsUrl: 'https://maps.app.goo.gl/escuelariocorintos',
     },
     {
       id: 'cementerio-gales',
-      title: lang === 'es' ? 'Cementerio Galés' : 'Welsh Pioneer Cemetery',
-      category: lang === 'es' ? 'Sitio histórico' : 'Historic Landmark',
+      title: lang === 'es' ? 'Cementerio Galés' : 'Welsh Cemetery',
+      category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Un lugar sagrado cargado de memoria que refleja las raíces, lápidas en idioma galés y tradiciones de la comunidad fundadora.'
-        : 'A sacred historic resting place engraved in Welsh language, reflecting the heritage and traditions of the founding community.',
-      image: './stitch/hero-historicos.png',
+        ? 'Un lugar cargado de historia que refleja las raíces y tradiciones de la comunidad.'
+        : 'A place rich in memory reflecting the pioneer roots and heritage of the community.',
+      image: './stitch/historicos-6-cementerio.jpg',
       mapsUrl: 'https://maps.app.goo.gl/cementeriogales',
     },
     {
       id: 'campo-exposicion',
-      title: lang === 'es' ? 'Campo de Exposición y Tradición' : 'Traditional Heritage Grounds',
-      category: lang === 'es' ? 'Patrimonio Cultural' : 'Cultural Heritage',
+      title: lang === 'es' ? 'Campo de Exposición' : 'Heritage Fairgrounds',
+      category: lang === 'es' ? 'Patrimonio' : 'Heritage',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Espacio histórico y cultural vinculado al desarrollo ganadero de la comarca y sede de las fiestas tradicionales.'
-        : 'Historic cultural fairgrounds tied to regional ranching history and local equestrian folk festivals.',
-      image: './stitch/chatgpt-banner.png',
+        ? 'Espacio histórico y cultural vinculado al desarrollo de la región.'
+        : 'Historic and cultural grounds celebrating regional rural traditions.',
+      image: './stitch/historicos-7-campo.jpg',
       mapsUrl: 'https://maps.app.goo.gl/campotradicion',
     },
     {
       id: 'puente-viejo',
-      title: lang === 'es' ? 'Puente Viejo sobre el Río Percy' : 'Old Percy River Bridge',
-      category: lang === 'es' ? 'Sitio histórico' : 'Historic Bridge',
+      title: lang === 'es' ? 'Puente Viejo' : 'Old Wooden Bridge',
+      category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Antiguo puente de madera y estructura histórica, paso obligado de las primeras carretas y huellas pioneras.'
-        : 'Historic wooden bridge and pioneer wagon passage connecting mountain valleys with the Atlantic coast.',
-      image: './cascadas-nant-y-fall.png',
+        ? 'Antiguo puente de madera, parte del trazado histórico de la zona.'
+        : 'Historic wooden bridge and pioneer crossing over the mountain river.',
+      image: './stitch/historicos-8-puenteviejo.jpg',
       mapsUrl: 'https://maps.app.goo.gl/puenteviejo',
     },
   ];
@@ -108,7 +108,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
           <img
             alt="Capilla histórica de Trevelin con fondo de montañas andinas nevadas"
             className="h-full w-full object-cover object-top filter brightness-[0.92]"
-            src="./stitch/hero-historicos.png"
+            src="./stitch/historicos-hero.jpg"
           />
           <div className="hero-gradient absolute inset-0" />
         </div>
@@ -218,7 +218,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
             </p>
           </div>
 
-          {/* 8 Historical Places Grid */}
+          {/* 8 Historical Places Grid matching Google Stitch */}
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {places.map((place) => (
               <article
@@ -294,6 +294,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
         buttonText={currentT.banner.btnVolver || 'Volver al inicio'}
         onButtonClick={onBack}
         isSubpage={true}
+        image="./stitch/historicos-banner.jpg"
       />
       {/* END: BottomPanoramicBanner */}
 

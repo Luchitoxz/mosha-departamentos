@@ -6,11 +6,11 @@ export default function HeroBanner({ tHero }) {
       className="relative min-h-[580px] lg:min-h-[720px] flex items-center justify-start overflow-hidden" 
       id="inicio"
     >
-      {/* Background Image */}
+      {/* Background Image - Modern illuminated building */}
       <img
         alt="Complejo moderno Mosha Departamentos bajo cielo azul"
         className="absolute inset-0 w-full h-full object-cover object-center transform scale-105 transition-transform duration-700"
-        src="./stitch/hero-home.png"
+        src="./stitch/home-hero.jpg"
         onError={(e) => {
           e.currentTarget.src = "./hero-mosha.jpg";
         }}

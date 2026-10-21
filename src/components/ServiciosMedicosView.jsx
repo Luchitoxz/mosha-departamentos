@@ -18,98 +18,98 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
   const services = [
     {
       id: 'hospital',
-      title: lang === 'es' ? 'Hospital Rural de Trevelin' : 'Trevelin Rural Hospital',
-      category: lang === 'es' ? 'Hospital Público 24h' : '24h Public Hospital',
-      location: 'Av. San Martín 955',
+      title: lang === 'es' ? 'Hospital de Trevelin' : 'Trevelin Hospital',
+      category: lang === 'es' ? 'Hospital' : 'Hospital',
+      location: 'Trevelin',
       phone: '02945 480117',
       desc: lang === 'es'
-        ? 'Centro de salud público de referencia con guardia médica activa las 24 horas, internación de corta estancia y ambulancias.'
-        : 'Primary public medical center offering 24-hour active emergency room, short-stay clinic and ambulance response.',
-      image: './stitch/hero-medicos.png',
+        ? 'Centro de salud público con atención general, guardia y servicios básicos.'
+        : 'Public healthcare center with general outpatient services, active 24/7 emergency room and basic care.',
+      image: './stitch/medicos-1-hospital.jpg',
       mapsUrl: 'https://maps.app.goo.gl/hospitaltrevelin',
     },
     {
       id: 'clinicas',
-      title: lang === 'es' ? 'Clínicas y consultorios privados' : 'Private Clinics & Practices',
-      category: lang === 'es' ? 'Consultorios Médicos' : 'Outpatient Clinics',
-      location: 'Trevelin Centro',
+      title: lang === 'es' ? 'Clínicas y consultorios' : 'Clinics & Practices',
+      category: lang === 'es' ? 'Clínica' : 'Clinic',
+      location: 'Trevelin',
       phone: '02945 480117',
       desc: lang === 'es'
-        ? 'Atención médica ambulatoria en diversas especialidades: medicina familiar, kinesiología y traumatología.'
-        : 'Outpatient clinic care covering family medicine, physical therapy and specialist consultations in Trevelin.',
-      image: './stitch/clinic.png',
+        ? 'Atención médica ambulatoria en distintas especialidades para toda la familia.'
+        : 'Outpatient medical care across multiple specialties for adults and children.',
+      image: './stitch/medicos-2-clinicas.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
       id: 'farmacias',
-      title: lang === 'es' ? 'Farmacias de turno rotativo' : '24/7 On-Duty Pharmacies',
-      category: lang === 'es' ? 'Farmacia de Guardia' : 'On-Call Pharmacy',
-      location: 'Av. San Martín',
+      title: lang === 'es' ? 'Farmacias' : 'Pharmacies',
+      category: lang === 'es' ? 'Farmacia' : 'Pharmacy',
+      location: 'Trevelin',
       phone: '02945 480200',
       desc: lang === 'es'
-        ? 'Farmacia Trevelin y Farmacia del Pueblo. Turnos rotativos nocturnos obligatorios para despacho de urgencia.'
-        : 'Farmacia Trevelin and Farmacia del Pueblo operate a mandatory rotating night shift for emergency medication.',
-      image: './virginia-y-mabel.jpg',
+        ? 'Farmacias con atención permanente y variedad de productos de salud y cuidado personal.'
+        : 'Local pharmacies with rotating night shifts and a wide range of medications and care essentials.',
+      image: './stitch/medicos-3-farmacias.jpg',
       mapsUrl: 'https://maps.app.goo.gl/farmaciastrevelin',
     },
     {
       id: 'guardia',
-      title: lang === 'es' ? 'Guardia y ambulancias (107)' : 'Emergency Room & EMS (107)',
-      category: lang === 'es' ? 'Emergencias 107' : 'Emergency 107',
+      title: lang === 'es' ? 'Guardia y urgencias' : 'Emergency & Urgent Care',
+      category: lang === 'es' ? 'Urgencias' : 'Emergencies',
       location: 'Trevelin',
       phone: '107',
       desc: lang === 'es'
-        ? 'Línea telefónica directa de emergencias médicas y traslados de urgencia en ambulancia para el valle y rutas.'
-        : 'Direct emergency hotline for urgent medical assistance, accident rescue and ambulance dispatch across the valley.',
-      image: './stitch/hero-medicos.png',
+        ? 'Atención médica de urgencias y emergencias las 24 horas.'
+        : '24-hour urgent medical care, accident response and ambulance dispatch.',
+      image: './stitch/medicos-4-urgencias.jpg',
       mapsUrl: 'tel:107',
     },
     {
       id: 'pediatria',
       title: lang === 'es' ? 'Atención pediátrica' : 'Pediatric Care',
       category: lang === 'es' ? 'Pediatría' : 'Pediatrics',
-      location: 'Hospital Trevelin',
+      location: 'Trevelin',
       phone: '02945 480117',
       desc: lang === 'es'
-        ? 'Consultas y atención pediátrica para niños y bebés en el hospital local y centros materno-infantiles de la zona.'
-        : 'Pediatric care and child health consultations available at the local hospital and regional healthcare clinics.',
-      image: './stitch/clinic.png',
+        ? 'Consultas y atención médica para niñas y niños.'
+        : 'Medical consultations and care specifically for infants, children and adolescents.',
+      image: './stitch/medicos-5-pediatria.jpg',
       mapsUrl: 'https://maps.app.goo.gl/hospitaltrevelin',
     },
     {
       id: 'odontologia',
-      title: lang === 'es' ? 'Odontología y urgencias dentales' : 'Dental Care & Tooth Emergencies',
+      title: lang === 'es' ? 'Odontología' : 'Dental Care',
       category: lang === 'es' ? 'Odontología' : 'Dentistry',
       location: 'Trevelin',
       phone: '02945 480117',
       desc: lang === 'es'
-        ? 'Consultorios odontológicos locales equipados para atención de urgencias dentales, dolores agudos y tratamientos.'
-        : 'Local dental offices equipped for dental trauma, acute pain management and standard dental treatments.',
-      image: './stitch/clinic.png',
+        ? 'Consultorios odontológicos con atención general y tratamientos básicos.'
+        : 'Dental offices providing general dentistry, urgent pain relief and basic treatments.',
+      image: './stitch/medicos-6-odontologia.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
       id: 'laboratorios',
-      title: lang === 'es' ? 'Laboratorios de análisis clínicos' : 'Clinical Analysis Laboratories',
+      title: lang === 'es' ? 'Laboratorios' : 'Laboratories',
       category: lang === 'es' ? 'Laboratorio' : 'Laboratory',
       location: 'Trevelin',
       phone: '02945 480117',
       desc: lang === 'es'
-        ? 'Extracciones de sangre, análisis bioquímicos y estudios diagnósticos rápidos con prescripción médica.'
-        : 'Diagnostic blood draws, biochemical testing and fast-track lab results with standard physician orders.',
-      image: './stitch/clinic.png',
+        ? 'Estudios clínicos y análisis con indicación médica.'
+        : 'Clinical diagnostics, laboratory testing and biochemical blood work with physician orders.',
+      image: './stitch/medicos-7-laboratorios.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
       id: 'veterinarias',
-      title: lang === 'es' ? 'Clínicas veterinarias' : 'Veterinary Clinics',
-      category: lang === 'es' ? 'Veterinaria' : 'Pet Care & Vet',
+      title: lang === 'es' ? 'Veterinarias' : 'Veterinary Care',
+      category: lang === 'es' ? 'Veterinaria' : 'Veterinary',
       location: 'Trevelin',
       phone: '02945 480500',
       desc: lang === 'es'
-        ? 'Atención veterinaria y urgencias para mascotas que viajan junto a sus familias en su estadía en Trevelin.'
-        : 'Emergency veterinary care and medications for pets traveling with their owners in the Andean valley.',
-      image: './stitch/banner-panoramico.png',
+        ? 'Atención veterinaria para tus mascotas durante la estadía.'
+        : 'Veterinary care and emergency services for family pets during your stay.',
+      image: './stitch/medicos-8-veterinarias.jpg',
       mapsUrl: 'https://maps.app.goo.gl/veterinariastrevelin',
     },
   ];
@@ -122,7 +122,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         <img
           alt="Servicios médicos en Trevelin"
           className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
-          src="./stitch/hero-medicos.png"
+          src="./stitch/medicos-hero.jpg"
         />
         <div className="absolute inset-0 hero-gradient z-10 pointer-events-none" />
 
@@ -320,7 +320,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
                   </span>
                   <svg className="w-3.5 h-3.5 stroke-white fill-none stroke-[2.2]" viewBox="0 0 24 24">
                     <line x1="5" x2="19" y1="12" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
+                    <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
                 </a>
               </div>
@@ -338,6 +338,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         buttonText={currentT.banner.btnVolver || 'Volver al inicio'}
         onButtonClick={onBack}
         isSubpage={true}
+        image="./stitch/medicos-banner.jpg"
       />
       {/* END: PanoramicBanner */}
 

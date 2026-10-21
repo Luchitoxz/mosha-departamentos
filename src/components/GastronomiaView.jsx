@@ -10,91 +10,91 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
 
   const places = [
     {
-      id: 'nain-maggie',
-      title: lang === 'es' ? 'Casa de Té Galés Nain Maggie' : 'Nain Maggie Welsh Tea House',
-      category: lang === 'es' ? 'Té Galés & Repostería' : 'Welsh Tea & Pastries',
+      id: 'cocina-patagonica',
+      title: lang === 'es' ? 'Cocina patagónica' : 'Patagonian Cuisine',
+      category: lang === 'es' ? 'Restaurante' : 'Restaurant',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'La tradicional y más emblemática casa de té galés de Trevelin. Disfrutá de la auténtica torta negra, scones y tartas caseras.'
-        : 'The most traditional and renowned Welsh tea house in Trevelin. Savor authentic Welsh black cake, scones and homemade artisanal tarts.',
-      image: './nain-maggie.jpg',
+        ? 'Platos regionales con ingredientes locales, sabores auténticos y un ambiente cálido.'
+        : 'Regional delicacies prepared with fresh local ingredients, authentic Andean flavors and cozy mountain ambiance.',
+      image: './stitch/comer-1-patagonica.jpg',
       mapsUrl: 'https://maps.app.goo.gl/3w8S5zX9yL1k4vP27',
     },
     {
-      id: 'la-mutisia',
-      title: lang === 'es' ? 'Cafeterías y casas de té (La Mutisia)' : 'Cafes & Tea Rooms (La Mutisia)',
-      category: lang === 'es' ? 'Cafetería & Pastelería' : 'Specialty Coffee & Bakery',
+      id: 'cafeterias-te',
+      title: lang === 'es' ? 'Cafeterías y casas de té' : 'Cafes & Tea Rooms',
+      category: lang === 'es' ? 'Cafetería' : 'Cafe',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Opciones ideales para disfrutar de un buen café de especialidad, pastelería casera y un ambiente relajado y cálido.'
-        : 'Ideal spaces to enjoy specialty pour-over coffee, homemade pastries and a warm alpine atmosphere.',
-      image: './la-mutisia.jpg',
+        ? 'Opciones ideales para disfrutar de un buen café, pastelería casera y vistas increíbles.'
+        : 'Perfect retreats to savor specialty pour-over coffee, traditional homemade pastries and scenic views.',
+      image: './stitch/comer-2-cafes.jpg',
       mapsUrl: 'https://maps.app.goo.gl/8v3kP2d1zL4w7yS99',
     },
     {
-      id: 'sangre-tinta',
-      title: lang === 'es' ? 'Pizzerías & Restó (Sangre Tinta)' : 'Pizzerias & Wine Resto (Sangre Tinta)',
-      category: lang === 'es' ? 'Pizzería & Vinos' : 'Pizzeria & Wine Bar',
+      id: 'pizzerias',
+      title: lang === 'es' ? 'Pizzerías' : 'Pizzerias',
+      category: lang === 'es' ? 'Pizzería' : 'Pizzeria',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Variedad de pizzas a la pala y artesanales, tapeos regionales y una cuidada carta de vinos patagónicos.'
-        : 'Artisanal thin-crust pizzas, regional charcuterie boards, craft beers and curated Patagonian cold-climate wines.',
-      image: './sangre-tinta.jpg',
+        ? 'Variedad de pizzas artesanales en un ambiente familiar y relajado.'
+        : 'Artisanal stone-baked pizzas crafted in a welcoming and family-friendly environment.',
+      image: './stitch/comer-3-pizzas.jpg',
       mapsUrl: 'https://maps.app.goo.gl/7y2kL1z4w8v3P9S44',
     },
     {
-      id: 'nikanor',
-      title: lang === 'es' ? 'Comida rápida gourmet (Nikanor Restó)' : 'Gourmet Dining (Nikanor Resto)',
-      category: lang === 'es' ? 'Cocina de autor' : 'Modern Patagonian',
+      id: 'comida-rapida-gourmet',
+      title: lang === 'es' ? 'Comida rápida gourmet' : 'Gourmet Fast Food',
+      category: lang === 'es' ? 'Gastronomía' : 'Gastronomy',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Opciones modernas y sabrosas con trucha patagónica, cordero braseado, pastas caseras y hamburguesas artesanales de autor.'
-        : 'Modern and flavorful dishes featuring local Patagonian trout, braised lamb, handmade pastas and gourmet burgers.',
-      image: './nikanor.jpg',
+        ? 'Opciones modernas y sabrosas para una comida rápida y de calidad.'
+        : 'Contemporary artisanal burgers, gourmet bites and quick high-quality mountain dining.',
+      image: './stitch/comer-4-gourmet.jpg',
       mapsUrl: 'https://maps.app.goo.gl/9z1kL4w7y2v8P3S22',
     },
     {
-      id: 'los-troncos',
-      title: lang === 'es' ? 'Parrillas (Los Troncos)' : 'Steakhouse & Grill (Los Troncos)',
-      category: lang === 'es' ? 'Parrilla Tradicional' : 'Traditional Steakhouse',
+      id: 'parrillas',
+      title: lang === 'es' ? 'Parrillas' : 'Steakhouses & Grills',
+      category: lang === 'es' ? 'Parrilla' : 'Steakhouse',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Cortes de carne vacuna de primera selección, cordero patagónico al asador y cocina criolla en un cálido salón de montaña.'
-        : 'Prime Argentinian beef cuts, slow-roasted Patagonian lamb and traditional dishes in an authentic alpine dining room.',
-      image: './los-troncos.jpg',
+        ? 'Cortes de carne y sabores tradicionales de la Patagonia en un entorno único.'
+        : 'Prime Argentinian beef cuts, slow-roasted Patagonian lamb and time-honored gaucho barbecue traditions.',
+      image: './stitch/comer-5-parrillas.jpg',
       mapsUrl: 'https://maps.app.goo.gl/5x9kL2z1w4v8P7S11',
     },
     {
-      id: 'virginia-mabel',
-      title: lang === 'es' ? 'Panaderías y confiterías (Virginia & Mabel)' : 'Bakeries & Confectionery (Virginia & Mabel)',
-      category: lang === 'es' ? 'Panadería & Repostería' : 'Artisanal Bakery',
+      id: 'panaderias',
+      title: lang === 'es' ? 'Panaderías y confiterías' : 'Bakeries & Confectioneries',
+      category: lang === 'es' ? 'Panadería' : 'Bakery',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Productos artesanales recién horneados, medialunas, empanadas caseras, tortas tradicionales y opciones dulces y saladas.'
-        : 'Fresh daily baked breads, croissants, homemade empanadas, traditional cakes and sweet and savory delights.',
-      image: './virginia-y-mabel.jpg',
+        ? 'Productos artesanales, facturas, empanadas y opciones dulces y saladas.'
+        : 'Fresh daily baked sourdough bread, Argentine medialunas, homemade empanadas and regional sweets.',
+      image: './stitch/comer-6-panaderias.jpg',
       mapsUrl: 'https://maps.app.goo.gl/2w4kL7z1y8v3P9S55',
     },
     {
       id: 'cervecerias',
-      title: lang === 'es' ? 'Cervecerías artesanales' : 'Craft Beer Pubs',
-      category: lang === 'es' ? 'Cervecería & Tapeo' : 'Craft Brewery & Tapas',
+      title: lang === 'es' ? 'Cervecerías' : 'Craft Breweries',
+      category: lang === 'es' ? 'Cervecería' : 'Brewery',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Cerveza artesanal tirada con lúpulos locales, tapeo patagónico y propuestas gastronómicas para disfrutar al atardecer.'
-        : 'Locally brewed craft tap beer with regional hops, sharing platters and lively atmosphere to unwind at dusk.',
-      image: './stitch/chatgpt-banner.png',
+        ? 'Cerveza artesanal y propuestas gastronómicas para disfrutar con amigos.'
+        : 'Locally crafted mountain tap beer, regional tapas and welcoming sunset gathering spots.',
+      image: './stitch/comer-7-cervecerias.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
-      id: 'vinas-restaurante',
-      title: lang === 'es' ? 'Cocina de Viñedos & Maridaje' : 'Vineyard Dining & Wine Pairing',
-      category: lang === 'es' ? 'Enoturismo & Cocina' : 'Wine & Vineyard Bistro',
+      id: 'cocina-internacional',
+      title: lang === 'es' ? 'Cocina internacional' : 'International Cuisine',
+      category: lang === 'es' ? 'Restaurante' : 'Restaurant',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Platos elaborados con maridaje de vinos locales y una vista panorámica privilegiada a las hileras de vides y montañas.'
-        : 'Exquisite pairing menus with estate wines and panoramic views overlooking the southern vines and Andean peaks.',
-      image: './vinas-nant-fall.jpg',
+        ? 'Opciones variadas con sabores del mundo, en un ambiente acogedor.'
+        : 'Eclectic menu choices blending international flavors with Patagonian produce in an intimate venue.',
+      image: './stitch/comer-8-internacional.jpg',
       mapsUrl: 'https://maps.app.goo.gl/vinasnantfall',
     },
   ];
@@ -107,7 +107,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         <img
           alt="Gastronomía en Trevelin"
           className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
-          src="./stitch/hero-comer.png"
+          src="./stitch/comer-hero.jpg"
         />
         {/* Hero Dark Overlay Gradients */}
         <div className="absolute inset-0 hero-gradient z-10 pointer-events-none" />
@@ -218,7 +218,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
           </p>
         </div>
 
-        {/* Cards Grid */}
+        {/* Cards Grid matching Google Stitch */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7" data-purpose="cards-grid">
           {places.map((place) => (
             <article
@@ -290,6 +290,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         buttonText={currentT.banner.btnVolver || 'Volver al inicio'}
         onButtonClick={onBack}
         isSubpage={true}
+        image="./stitch/comer-banner.jpg"
       />
       {/* END: PanoramicBanner */}
 

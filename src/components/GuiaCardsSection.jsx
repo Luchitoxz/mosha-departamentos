@@ -13,7 +13,7 @@ export default function GuiaCardsSection({
       title: tGuia.card1Title || 'Lugares para visitar',
       titleSplit: ['Lugares', 'para visitar'],
       desc: tGuia.card1Desc || 'Naturaleza, paisajes y experiencias únicas.',
-      image: './stitch/hero-lugares.png',
+      image: './stitch/home-card-lugares.jpg',
       fallbackImage: './cascadas-nant-y-fall.png',
       onClick: onOpenLugares,
       icon: (
@@ -27,7 +27,7 @@ export default function GuiaCardsSection({
       title: tGuia.card2Title || 'Dónde comer',
       titleSplit: ['Dónde', 'comer'],
       desc: tGuia.card2Desc || 'Restaurantes, cafeterías y sabores locales.',
-      image: './stitch/hero-comer.png',
+      image: './stitch/home-card-comer.jpg',
       fallbackImage: './nain-maggie.jpg',
       onClick: onOpenGastronomia,
       icon: (
@@ -41,7 +41,7 @@ export default function GuiaCardsSection({
       title: tGuia.card3Title || 'Puntos históricos',
       titleSplit: ['Puntos', 'históricos'],
       desc: tGuia.card3Desc || 'Historia, cultura y el legado galés.',
-      image: './stitch/hero-historicos.png',
+      image: './stitch/home-card-historicos.jpg',
       fallbackImage: './molino-nant-fach.jpg',
       onClick: onOpenHistoricos,
       icon: (
@@ -56,8 +56,8 @@ export default function GuiaCardsSection({
       title: tGuia.card4Title || 'Servicios médicos',
       titleSplit: ['Servicios', 'médicos'],
       desc: tGuia.card4Desc || 'Hospitales, clínicas, farmacias y urgencias.',
-      image: './stitch/hero-medicos.png',
-      fallbackImage: './stitch/clinic.png',
+      image: './stitch/home-card-medicos.jpg',
+      fallbackImage: './stitch/medicos-1-hospital.jpg',
       onClick: onOpenMedicos,
       icon: (
         <svg className="w-6 h-6 text-white shrink-0 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

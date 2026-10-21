@@ -7,6 +7,7 @@ export default function PanoramicBanner({
   buttonText = "Conocé más sobre Trevelin",
   onButtonClick,
   isSubpage = false,
+  image = "./stitch/home-banner.jpg",
 }) {
   return (
     <section className="relative min-h-[360px] lg:min-h-[440px] flex items-center justify-start overflow-hidden">
@@ -14,7 +15,7 @@ export default function PanoramicBanner({
       <img
         alt="Cordillera patagónica, valles y lagos de Trevelin, Chubut"
         className="absolute inset-0 w-full h-full object-cover object-center"
-        src="./stitch/banner-panoramico.png"
+        src={image}
       />
 
       {/* Panoramic Gradient Overlay */}

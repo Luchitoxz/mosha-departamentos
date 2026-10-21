@@ -264,7 +264,7 @@ export default function PracticalInfoSection({
                 </div>
               </div>
 
-              {/* Rules list items */}
+              {/* Rules list items matching mockup */}
               <div className="space-y-4 pt-1">
                 {/* Rule 1 */}
                 <div className="flex items-start space-x-3.5">
@@ -355,7 +355,27 @@ export default function PracticalInfoSection({
                   </div>
                 </div>
 
-                {/* Rule 5 */}
+                {/* Rule 5 - No se permiten mascotas */}
+                <div className="flex items-start space-x-3.5">
+                  <div className="mt-0.5 text-slate-700">
+                    <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="11" cy="4" r="2" strokeWidth="2" />
+                      <circle cx="18" cy="8" r="2" strokeWidth="2" />
+                      <circle cx="4" cy="8" r="2" strokeWidth="2" />
+                      <path d="M12 10c-3 0-5 2.5-5 5.5 0 2 1.5 3.5 3.5 3.5 1 0 1.5-.5 1.5-.5s.5.5 1.5.5c2 0 3.5-1.5 3.5-3.5 0-3-2-5.5-5-5.5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-900">
+                      No se permiten mascotas
+                    </h4>
+                    <p className="text-[11px] text-slate-500 leading-snug">
+                      Para mantener el espacio en óptimas condiciones.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Rule 6 - Gestioná correctamente los residuos */}
                 <div className="flex items-start space-x-3.5">
                   <div className="mt-0.5 text-slate-700">
                     <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
