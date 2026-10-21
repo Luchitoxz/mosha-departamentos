@@ -25,7 +25,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Centro de salud público con atención general, guardia y servicios básicos.'
         : 'Public healthcare center with general outpatient services, active 24/7 emergency room and basic care.',
-      image: './banco-chubut.jpg',
+      image: './stitch/medicos-1-hospital.jpg',
       mapsUrl: 'https://maps.app.goo.gl/hospitaltrevelin',
     },
     {
@@ -37,7 +37,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Atención médica ambulatoria en distintas especialidades para toda la familia.'
         : 'Outpatient medical care across multiple specialties for adults and children.',
-      image: './la-anonima.jpg',
+      image: './stitch/medicos-2-clinicas.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
@@ -49,7 +49,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Farmacias con atención permanente y variedad de productos de salud y cuidado personal.'
         : 'Local pharmacies with rotating night shifts and a wide range of medications and care essentials.',
-      image: './virginia-y-mabel.jpg',
+      image: './stitch/medicos-3-farmacias.jpg',
       mapsUrl: 'https://maps.app.goo.gl/farmaciastrevelin',
     },
     {
@@ -61,7 +61,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Atención médica de urgencias y emergencias las 24 horas.'
         : '24-hour urgent medical care, accident response and ambulance dispatch.',
-      image: './banco-chubut.jpg',
+      image: './stitch/medicos-4-urgencias.jpg',
       mapsUrl: 'tel:107',
     },
     {
@@ -73,7 +73,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Consultas y atención médica para niñas y niños.'
         : 'Medical consultations and care specifically for infants, children and adolescents.',
-      image: './la-anonima.jpg',
+      image: './stitch/medicos-5-pediatria.jpg',
       mapsUrl: 'https://maps.app.goo.gl/hospitaltrevelin',
     },
     {
@@ -85,7 +85,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Consultorios odontológicos con atención general y tratamientos básicos.'
         : 'Dental offices providing general dentistry, urgent pain relief and basic treatments.',
-      image: './banco-chubut.jpg',
+      image: './stitch/medicos-6-odontologia.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
@@ -97,7 +97,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Estudios clínicos y análisis con indicación médica.'
         : 'Clinical diagnostics, laboratory testing and biochemical blood work with physician orders.',
-      image: './ypf-trevelin.jpg',
+      image: './stitch/medicos-7-laboratorios.jpg',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
@@ -109,7 +109,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Atención veterinaria para tus mascotas durante la estadía.'
         : 'Veterinary care and emergency services for family pets during your stay.',
-      image: './mirador-cerro-la-cruz.jpg',
+      image: './stitch/medicos-8-veterinarias.jpg',
       mapsUrl: 'https://maps.app.goo.gl/veterinariastrevelin',
     },
   ];
@@ -121,8 +121,8 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         {/* Hero Background Image */}
         <img
           alt="Servicios médicos en Trevelin"
-          className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
-          src="./banco-chubut.jpg"
+          className="absolute inset-0 w-full h-full object-cover object-[center_35%] z-0 scale-105"
+          src="./stitch/medicos-hero.jpg"
         />
         <div className="absolute inset-0 hero-gradient z-10 pointer-events-none" />
 
@@ -261,10 +261,10 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
               className="bg-white rounded-2xl overflow-hidden border border-slate-200/90 card-shadow flex flex-col justify-between hover:shadow-lg transition duration-200 hover:-translate-y-1"
             >
               <div>
-                <div className="w-full h-48 overflow-hidden relative bg-slate-100">
+                <div className="w-full aspect-[16/10] overflow-hidden relative bg-slate-100">
                   <img
                     alt={svc.title}
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                     src={svc.image}
                   />

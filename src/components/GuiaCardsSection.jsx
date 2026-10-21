@@ -56,8 +56,8 @@ export default function GuiaCardsSection({
       title: tGuia.card4Title || 'Servicios médicos',
       titleSplit: ['Servicios', 'médicos'],
       desc: tGuia.card4Desc || 'Hospitales, clínicas, farmacias y urgencias.',
-      image: './banco-chubut.jpg',
-      fallbackImage: './la-anonima.jpg',
+      image: './stitch/medicos-hero.jpg',
+      fallbackImage: './stitch/medicos-1-hospital.jpg',
       onClick: onOpenMedicos,
       icon: (
         <svg className="w-6 h-6 text-white shrink-0 stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

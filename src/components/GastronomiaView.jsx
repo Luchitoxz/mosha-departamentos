@@ -73,6 +73,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         ? 'Productos artesanales, facturas, empanadas y opciones dulces y saladas.'
         : 'Fresh daily baked sourdough bread, Argentine medialunas, homemade empanadas and regional sweets.',
       image: './virginia-y-mabel.jpg',
+      imagePos: 'object-[center_15%]',
       mapsUrl: 'https://maps.app.goo.gl/2w4kL7z1y8v3P9S55',
     },
     {
@@ -83,7 +84,8 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Cerveza artesanal y propuestas gastronómicas para disfrutar con amigos.'
         : 'Locally crafted mountain tap beer, regional tapas and welcoming sunset gathering spots.',
-      image: './sangre-tinta.jpg',
+      image: './stitch/comer-7-cervecerias.jpg',
+      imagePos: 'object-center',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
@@ -226,10 +228,10 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
               className="bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
             >
               <div>
-                <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
                   <img
                     alt={place.title}
-                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                    className={`w-full h-full object-cover ${place.imagePos || 'object-center'} hover:scale-105 transition-transform duration-300`}
                     src={place.image}
                   />
                 </div>

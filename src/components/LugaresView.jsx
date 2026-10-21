@@ -18,6 +18,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         ? 'Un entorno natural increíble con cascadas, bosques nativos y senderos para recorrer.'
         : 'A breathtaking natural environment with cascading waterfalls, native forests and walking trails.',
       image: './cascadas-nant-y-fall.png',
+      imagePos: 'object-[center_20%]',
       mapsUrl: 'https://maps.app.goo.gl/9Zc1j3d3BsmhVnN26',
     },
     {
@@ -29,6 +30,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         ? 'Un paisaje único en primavera con millones de tulipanes florecidos con el fondo de la cordillera nevada.'
         : 'A unique spring wonderland featuring millions of vibrant blooming tulips framed by snow-capped Andean peaks.',
       image: './tulipanes.jpg',
+      imagePos: 'object-[center_55%]',
       mapsUrl: 'https://maps.app.goo.gl/5p7kL7LhY3GZkmZ78',
     },
     {
@@ -40,6 +42,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         ? 'Lagos glaciares de aguas turquesas, bosques milenarios de alerce y vistas impresionantes declaradas Patrimonio Mundial.'
         : 'Turquoise glacial lakes, ancient millennial alerce forests and UNESCO World Heritage mountain landscapes.',
       image: './los-alerces.jpg',
+      imagePos: 'object-[center_40%]',
       mapsUrl: 'https://maps.app.goo.gl/P85cQ3PzXhU1p8M57',
     },
     {
@@ -51,6 +54,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         ? 'Museo histórico del primer molino harinero de la zona impulsado por rueda hidráulica y rodeado de naturaleza.'
         : 'Historic watermill museum recreating the pioneering Welsh agricultural era in an idyllic setting.',
       image: './molino-nant-fach.jpg',
+      imagePos: 'object-[center_35%]',
       mapsUrl: 'https://maps.app.goo.gl/uK5UfM8k6dGkZkM47',
     },
     {
@@ -62,6 +66,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         ? 'Aguas cristalinas y paisajes increíbles, ideal para relajarse y disfrutar la naturaleza en estado puro.'
         : 'Crystal-clear waters and mountain beaches, ideal for relaxation, boat excursions and serene nature contemplation.',
       image: './los-alerces.jpg',
+      imagePos: 'object-center',
       mapsUrl: 'https://maps.app.goo.gl/kG1v9U7hE9GZ1',
     },
     {
@@ -73,6 +78,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         ? 'Una vista panorámica increíble del valle y la cordillera a pocos minutos del centro.'
         : 'A breathtaking 360° panoramic view of the agricultural valley and mountain ranges just minutes from downtown.',
       image: './mirador-cerro-la-cruz.jpg',
+      imagePos: 'object-center',
       mapsUrl: 'https://maps.app.goo.gl/4r3d8sK9nL2m1pQ49',
     },
     {
@@ -84,6 +90,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         ? 'Distintos senderos para disfrutar del bosque, la flora local y la tranquilidad cordillerana.'
         : 'Diverse trails through native Andean woods, local flora and mountain tranquility.',
       image: './vinas-nant-fall.jpg',
+      imagePos: 'object-center',
       mapsUrl: 'https://maps.app.goo.gl/vinasnantfall',
     },
     {
@@ -95,6 +102,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         ? 'Rutas escénicas y paisajes únicos en todas las estaciones del año en el corazón de la Patagonia.'
         : 'Scenic driving routes towards the border pass, meltwater rivers and awe-inspiring alpine scenery in every season.',
       image: './stitch/banner-panoramico.png',
+      imagePos: 'object-center',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
   ];
@@ -106,8 +114,8 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         {/* Hero Background Image with Overlay */}
         <img
           alt="Cascadas turquesas en Trevelin"
-          className="absolute inset-0 w-full h-full object-cover object-center z-0 transform scale-105"
-          src="./cascadas-nant-y-fall.png"
+          className="absolute inset-0 w-full h-full object-cover object-[center_35%] z-0 transform scale-105"
+          src="./stitch/lugares-hero.png"
         />
         <div className="absolute inset-0 hero-gradient z-[1]" />
 
@@ -222,10 +230,10 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
               className="bg-white rounded-2xl overflow-hidden card-shadow border border-slate-100 flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1"
             >
               <div>
-                <div className="h-48 w-full overflow-hidden relative">
+                <div className="aspect-[16/10] w-full overflow-hidden relative bg-slate-100">
                   <img
                     alt={place.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    className={`w-full h-full object-cover ${place.imagePos || 'object-center'} transition-transform duration-300 hover:scale-105`}
                     src={place.image}
                   />
                 </div>
