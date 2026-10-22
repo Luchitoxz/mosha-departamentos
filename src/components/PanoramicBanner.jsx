@@ -10,11 +10,11 @@ export default function PanoramicBanner({
   image = "./stitch/banner-panoramico.webp",
 }) {
   return (
-    <section className="relative min-h-[190px] sm:min-h-[220px] md:min-h-[250px] flex items-center justify-start overflow-hidden">
+    <section className="relative min-h-[220px] sm:min-h-[260px] md:min-h-[280px] flex items-center justify-start overflow-hidden">
       {/* Background Mountain Lake Landscape Image */}
       <img
         alt="Cordillera patagónica, valles y lagos de Trevelin, Chubut"
-        className="absolute inset-0 w-full h-full object-cover object-center"
+        className="absolute inset-0 w-full h-full object-cover object-[center_35%]"
         src={image}
         loading="lazy"
         decoding="async"
@@ -25,21 +25,22 @@ export default function PanoramicBanner({
         }}
       />
 
-      {/* Panoramic Gradient Overlay */}
-      <div className="absolute inset-0 banner-gradient" />
+      {/* Atmospheric Overlays for crisp contrast and landscape depth */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a2d]/95 via-[#0c1a2d]/85 to-[#0c1a2d]/30 sm:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a2d]/60 via-transparent to-black/20" />
 
       {/* Banner Content */}
-      <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-6 sm:py-8 lg:py-10">
+      <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-7 sm:py-9 lg:py-11">
         <div className="max-w-xl text-left">
-          <span className="text-[10px] sm:text-xs font-bold tracking-[0.22em] text-white/90 uppercase block mb-1.5">
+          <span className="text-[10px] sm:text-xs font-bold tracking-[0.22em] text-cyan-200 uppercase block mb-1.5 drop-shadow-sm">
             {eyebrow}
           </span>
 
-          <h2 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight mb-2">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight mb-2 sm:mb-2.5 drop-shadow-md">
             {title}
           </h2>
 
-          <p className="text-xs sm:text-[13px] text-slate-200 leading-relaxed mb-4 max-w-lg">
+          <p className="text-xs sm:text-sm text-slate-100/90 leading-relaxed mb-4 sm:mb-5 max-w-lg drop-shadow-sm">
             {subtitle}
           </p>
 
