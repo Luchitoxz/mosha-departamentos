@@ -41,7 +41,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Lagos glaciares de aguas turquesas, bosques milenarios de alerce y vistas impresionantes declaradas Patrimonio Mundial.'
         : 'Turquoise glacial lakes, ancient millennial alerce forests and UNESCO World Heritage mountain landscapes.',
-      image: './los-alerces.webp',
+      image: './parque-los-alerces.webp',
       imagePos: 'object-[center_40%]',
       mapsUrl: 'https://maps.app.goo.gl/P85cQ3PzXhU1p8M57',
     },
@@ -63,47 +63,11 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       location: 'Parque Nacional Los Alerces',
       category: lang === 'es' ? 'Lago glaciar' : 'Glacial Lake',
       desc: lang === 'es'
-        ? 'Aguas cristalinas y paisajes increíbles, ideal para relajarse y disfrutar la naturaleza en estado puro.'
+        ? 'Aguas cristalinas y playas de montaña, ideal para relajarse y disfrutar la naturaleza en estado puro.'
         : 'Crystal-clear waters and mountain beaches, ideal for relaxation, boat excursions and serene nature contemplation.',
-      image: './los-alerces.webp',
-      imagePos: 'object-center',
+      image: './lago-futalaufquen.webp',
+      imagePos: 'object-[center_55%]',
       mapsUrl: 'https://maps.app.goo.gl/kG1v9U7hE9GZ1',
-    },
-    {
-      id: 'mirador-cerro-cruz',
-      title: lang === 'es' ? 'Mirador del Valle' : 'Valley Viewpoint',
-      location: 'Trevelin',
-      category: lang === 'es' ? 'Mirador panorámico' : 'Panoramic Viewpoint',
-      desc: lang === 'es'
-        ? 'Una vista panorámica increíble del valle y la cordillera a pocos minutos del centro.'
-        : 'A breathtaking 360° panoramic view of the agricultural valley and mountain ranges just minutes from downtown.',
-      image: './mirador-cerro-la-cruz.webp',
-      imagePos: 'object-center',
-      mapsUrl: 'https://maps.app.goo.gl/4r3d8sK9nL2m1pQ49',
-    },
-    {
-      id: 'senderos-trekking',
-      title: lang === 'es' ? 'Senderos y trekking' : 'Trails & Trekking',
-      location: 'Trevelin',
-      category: lang === 'es' ? 'Senderos' : 'Trails',
-      desc: lang === 'es'
-        ? 'Distintos senderos para disfrutar del bosque, la flora local y la tranquilidad cordillerana.'
-        : 'Diverse trails through native Andean woods, local flora and mountain tranquility.',
-      image: './vinas-nant-fall.webp',
-      imagePos: 'object-center',
-      mapsUrl: 'https://maps.app.goo.gl/vinasnantfall',
-    },
-    {
-      id: 'cordillera-alrededores',
-      title: lang === 'es' ? 'Cordillera y alrededores' : 'Andes & Scenic Surroundings',
-      location: 'Trevelin',
-      category: lang === 'es' ? 'Paisajes' : 'Scenic Routes',
-      desc: lang === 'es'
-        ? 'Rutas escénicas y paisajes únicos en todas las estaciones del año en el corazón de la Patagonia.'
-        : 'Scenic driving routes towards the border pass, meltwater rivers and awe-inspiring alpine scenery in every season.',
-      image: './stitch/banner-panoramico.webp',
-      imagePos: 'object-center',
-      mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
     {
       id: 'la-trochita',
@@ -118,76 +82,16 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       mapsUrl: 'https://maps.app.goo.gl/latrochita',
     },
     {
-      id: 'capilla-bethel',
-      title: lang === 'es' ? 'Capilla Bethel' : 'Bethel Chapel',
-      location: 'Trevelin',
-      category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
-      desc: lang === 'es'
-        ? 'Ícono de la arquitectura galesa y testimonio de las tradiciones religiosas y culturales de los colonos.'
-        : 'Welsh architecture landmark and enduring testament to early pioneer traditions and community spirit.',
-      image: './stitch/historicos-1-bethel.webp',
-      imagePos: 'object-center',
-      mapsUrl: 'https://maps.app.goo.gl/capillabethel',
-    },
-    {
       id: 'museo-regional',
       title: lang === 'es' ? 'Museo Regional Trevelin' : 'Trevelin Regional Museum',
       location: 'Trevelin',
       category: lang === 'es' ? 'Museo' : 'Museum',
       desc: lang === 'es'
-        ? 'Ubicado en el antiguo molino, recorre la historia local, la cultura galesa y el poblamiento de la región.'
-        : 'Located in the historic flour mill building, exploring pioneer lore, Welsh heritage and valley settlement.',
-      image: './stitch/historicos-2-museo.webp',
+        ? 'Ubicado en el antiguo molino harinero Andes, recorre la historia local, la cultura galesa y el poblamiento de la región.'
+        : 'Located in the historic Andes flour mill building, exploring pioneer lore, Welsh heritage and valley settlement.',
+      image: './museo-regional-trevelin.webp',
       imagePos: 'object-center',
       mapsUrl: 'https://maps.app.goo.gl/museoregional',
-    },
-    {
-      id: 'escuela-corintos',
-      title: lang === 'es' ? 'Ruinas de la Escuela Nº 1' : 'School No. 1 Ruins',
-      location: 'Río Corintos',
-      category: lang === 'es' ? 'Patrimonio histórico' : 'Historic Heritage',
-      desc: lang === 'es'
-        ? 'Restos del primer edificio escolar de la colonia y sitio histórico del plebiscito de soberanía de 1902.'
-        : 'Ruins of the first colonial schoolhouse and historic site of the 1902 Argentine border plebiscite.',
-      image: './stitch/historicos-5-escuela1.webp',
-      imagePos: 'object-center',
-      mapsUrl: 'https://maps.app.goo.gl/escuelariocorintos',
-    },
-    {
-      id: 'cementerio-gales',
-      title: lang === 'es' ? 'Cementerio Galés' : 'Welsh Cemetery',
-      location: 'Trevelin',
-      category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
-      desc: lang === 'es'
-        ? 'Un lugar cargado de historia y memoria que refleja las raíces, familias y pioneros de la comunidad.'
-        : 'A place rich in memory and pioneer legacy reflecting the roots and founding families of the colony.',
-      image: './stitch/historicos-6-cementerio.webp',
-      imagePos: 'object-center',
-      mapsUrl: 'https://maps.app.goo.gl/cementeriogales',
-    },
-    {
-      id: 'campo-exposicion',
-      title: lang === 'es' ? 'Campo de Exposición' : 'Heritage Fairgrounds',
-      location: 'Trevelin',
-      category: lang === 'es' ? 'Tradición rural' : 'Rural Heritage',
-      desc: lang === 'es'
-        ? 'Espacio tradicional donde se celebran festividades, encuentros criollos y la historia ganadera del valle.'
-        : 'Traditional fairgrounds hosting cultural festivities, rural gatherings and regional valley livestock history.',
-      image: './stitch/historicos-7-campo.webp',
-      imagePos: 'object-center',
-      mapsUrl: 'https://maps.app.goo.gl/campotradicion',
-    },
-    {
-      id: 'puente-viejo',
-      title: lang === 'es' ? 'Puente Viejo' : 'Old Wooden Bridge',
-      location: 'Trevelin',
-      category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
-      desc: lang === 'es'
-        ? 'Antiguo puente de madera sobre el río, testigo de los primeros caminos y conexiones de la comarca.'
-        : 'Historic wooden bridge over the river, witness to early pioneer crossings and routes across the valley.',
-      image: './stitch/historicos-8-puenteviejo.webp',
-      imagePos: 'object-center',
-      mapsUrl: 'https://maps.app.goo.gl/puenteviejo',
     },
   ];
 
