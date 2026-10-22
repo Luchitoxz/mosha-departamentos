@@ -45,15 +45,15 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Pizzeria+El+Refugio+Trevelin',
     },
     {
-      id: 'comida-rapida-gourmet',
-      title: lang === 'es' ? 'Comida rápida gourmet' : 'Gourmet Fast Food',
-      category: lang === 'es' ? 'Gastronomía' : 'Gastronomy',
+      id: 'bodegon-nikanor',
+      title: 'Bodegón Nikanor',
+      category: lang === 'es' ? 'Bodegón' : 'Traditional Bodegón',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Opciones modernas y sabrosas para una comida rápida y de calidad.'
-        : 'Contemporary artisanal burgers, gourmet bites and quick high-quality mountain dining.',
+        ? 'Platos abundantes, minutas, opciones gourmet y sabores tradicionales en un ambiente cálido y familiar.'
+        : 'Generous traditional dishes, gourmet bites, homemade comfort food and welcoming family atmosphere.',
       image: './nikanor.webp',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Nikanor+Trevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Bodegon+Nikanor+Trevelin',
     },
     {
       id: 'parrillas',
