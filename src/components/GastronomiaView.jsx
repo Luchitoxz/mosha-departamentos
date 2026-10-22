@@ -74,8 +74,8 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Productos artesanales, facturas, empanadas y opciones dulces y saladas.'
         : 'Fresh daily baked sourdough bread, Argentine medialunas, homemade empanadas and regional sweets.',
-      image: './virginia-y-mabel.webp',
-      imagePos: 'object-[center_15%]',
+      image: './panaderias-confiterias.webp',
+      imagePos: 'object-center',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Panaderia+Virginia+y+Mabel+Trevelin',
     },
     {
@@ -86,20 +86,9 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Cerveza artesanal y propuestas gastronómicas para disfrutar con amigos.'
         : 'Locally crafted mountain tap beer, regional tapas and welcoming sunset gathering spots.',
-      image: './stitch/comer-7-cervecerias.webp',
-      imagePos: 'object-center',
+      image: './cervecerias-artesanales.webp',
+      imagePos: 'object-[center_35%]',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Cervecerias+Trevelin',
-    },
-    {
-      id: 'cocina-internacional',
-      title: lang === 'es' ? 'Cocina internacional' : 'International Cuisine',
-      category: lang === 'es' ? 'Restaurante' : 'Restaurant',
-      location: 'Trevelin',
-      desc: lang === 'es'
-        ? 'Opciones variadas con sabores del mundo, en un ambiente acogedor.'
-        : 'Eclectic menu choices blending international flavors with Patagonian produce in an intimate venue.',
-      image: './vinas-nant-fall.webp',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Vinas+del+Nant+y+Fall+Trevelin',
     },
   ];
 

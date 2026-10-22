@@ -64,6 +64,8 @@ export default function App() {
       './gastronomia-banner.webp',
       './la-mutisia.webp?v=2',
       './el-refugio-pizzeria.webp',
+      './panaderias-confiterias.webp',
+      './cervecerias-artesanales.webp',
       './banco-chubut.webp',
       './stitch/medicos-hero.webp',
       './stitch/banner-panoramico.webp',
