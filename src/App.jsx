@@ -108,12 +108,10 @@ export default function App() {
       }
 
       // Determine target view from history state or URL hash
-      const targetView = eventState?.view || getViewFromHash(window.location.hash);
+      const targetView = eventState?.view || getViewFromHash(window.location.hash) || 'home';
 
-      if (targetView && targetView !== currentViewRef.current) {
-        setCurrentView(targetView);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+      setCurrentView(targetView);
+      window.scrollTo(0, 0);
     };
 
     const handlePopState = (event) => syncRouteFromHistory(event.state);
