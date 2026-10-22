@@ -5,6 +5,7 @@ export default function GuiaCardsSection({
   tGuia,
   onOpenLugares,
   onOpenGastronomia,
+  onOpenBancos,
   onOpenHistoricos,
   onOpenMedicos,
 }) {
@@ -41,14 +42,14 @@ export default function GuiaCardsSection({
       ),
     },
     {
-      id: 'historicos',
-      title: tGuia.card3Title || 'Puntos históricos',
-      titleLine1: lang === 'en' ? 'Historic' : 'Puntos',
-      titleLine2: lang === 'en' ? 'Sites' : 'históricos',
-      desc: tGuia.card3Desc || 'Historia, cultura y el legado galés.',
-      image: './la-trochita.webp',
-      fallbackImage: './la-trochita.jpg',
-      onClick: onOpenHistoricos,
+      id: 'bancos',
+      title: tGuia.card3Title || 'Bancos y cajeros',
+      titleLine1: lang === 'en' ? 'Banks' : 'Bancos',
+      titleLine2: lang === 'en' ? '& ATMs' : 'y cajeros',
+      desc: tGuia.card3Desc || 'Sucursales, cajeros automáticos y retiro de efectivo.',
+      image: './banco-chubut.webp',
+      fallbackImage: './banco-chubut.jpg',
+      onClick: onOpenBancos || onOpenHistoricos,
       icon: (
         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.5m-15 10.5V10.5" strokeLinecap="round" strokeLinejoin="round" />

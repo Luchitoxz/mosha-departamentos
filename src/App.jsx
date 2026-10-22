@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 
 import LugaresView from './components/LugaresView';
 import GastronomiaView from './components/GastronomiaView';
-import PuntosHistoricosView from './components/PuntosHistoricosView';
+import BancosView from './components/BancosView';
 import ServiciosMedicosView from './components/ServiciosMedicosView';
 
 import Toast from './components/Toast';
@@ -33,7 +33,7 @@ export default function App() {
     const subpageAssets = [
       './stitch/lugares-hero.webp',
       './sangre-tinta.webp',
-      './la-trochita.webp',
+      './banco-chubut.webp',
       './stitch/medicos-hero.webp',
       './stitch/banner-panoramico.webp',
     ];
@@ -62,10 +62,12 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleOpenHistoricos = () => {
-    setCurrentView('historicos');
+  const handleOpenBancos = () => {
+    setCurrentView('bancos');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const handleOpenHistoricos = handleOpenBancos;
 
   const handleOpenMedicos = () => {
     setCurrentView('medicos');
@@ -142,9 +144,9 @@ export default function App() {
         />
       )}
 
-      {/* SCREEN 4: PUNTOS HISTÓRICOS */}
-      {currentView === 'historicos' && (
-        <PuntosHistoricosView
+      {/* SCREEN 4: BANCOS Y CAJEROS */}
+      {(currentView === 'bancos' || currentView === 'historicos') && (
+        <BancosView
           lang={lang}
           setLang={setLang}
           onBack={handleBackToHome}
@@ -183,6 +185,7 @@ export default function App() {
               tGuia={currentT.guia}
               onOpenLugares={handleOpenLugares}
               onOpenGastronomia={handleOpenGastronomia}
+              onOpenBancos={handleOpenBancos}
               onOpenHistoricos={handleOpenHistoricos}
               onOpenMedicos={handleOpenMedicos}
             />

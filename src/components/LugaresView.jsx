@@ -105,6 +105,90 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       imagePos: 'object-center',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
+    {
+      id: 'la-trochita',
+      title: lang === 'es' ? 'La Trochita' : 'La Trochita Steam Train',
+      location: 'Esquel / Trevelin',
+      category: lang === 'es' ? 'Tren histórico' : 'Historic Train',
+      desc: lang === 'es'
+        ? 'El histórico tren a vapor patagónico de trocha angosta que conecta paisajes, historia y tradición.'
+        : 'The historic narrow-gauge steam train connecting breathtaking Patagonian landscapes and folklore.',
+      image: './la-trochita.webp',
+      imagePos: 'object-[center_35%]',
+      mapsUrl: 'https://maps.app.goo.gl/latrochita',
+    },
+    {
+      id: 'capilla-bethel',
+      title: lang === 'es' ? 'Capilla Bethel' : 'Bethel Chapel',
+      location: 'Trevelin',
+      category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
+      desc: lang === 'es'
+        ? 'Ícono de la arquitectura galesa y testimonio de las tradiciones religiosas y culturales de los colonos.'
+        : 'Welsh architecture landmark and enduring testament to early pioneer traditions and community spirit.',
+      image: './stitch/historicos-1-bethel.webp',
+      imagePos: 'object-center',
+      mapsUrl: 'https://maps.app.goo.gl/capillabethel',
+    },
+    {
+      id: 'museo-regional',
+      title: lang === 'es' ? 'Museo Regional Trevelin' : 'Trevelin Regional Museum',
+      location: 'Trevelin',
+      category: lang === 'es' ? 'Museo' : 'Museum',
+      desc: lang === 'es'
+        ? 'Ubicado en el antiguo molino, recorre la historia local, la cultura galesa y el poblamiento de la región.'
+        : 'Located in the historic flour mill building, exploring pioneer lore, Welsh heritage and valley settlement.',
+      image: './stitch/historicos-2-museo.webp',
+      imagePos: 'object-center',
+      mapsUrl: 'https://maps.app.goo.gl/museoregional',
+    },
+    {
+      id: 'escuela-corintos',
+      title: lang === 'es' ? 'Ruinas de la Escuela Nº 1' : 'School No. 1 Ruins',
+      location: 'Río Corintos',
+      category: lang === 'es' ? 'Patrimonio histórico' : 'Historic Heritage',
+      desc: lang === 'es'
+        ? 'Restos del primer edificio escolar de la colonia y sitio histórico del plebiscito de soberanía de 1902.'
+        : 'Ruins of the first colonial schoolhouse and historic site of the 1902 Argentine border plebiscite.',
+      image: './stitch/historicos-5-escuela1.webp',
+      imagePos: 'object-center',
+      mapsUrl: 'https://maps.app.goo.gl/escuelariocorintos',
+    },
+    {
+      id: 'cementerio-gales',
+      title: lang === 'es' ? 'Cementerio Galés' : 'Welsh Cemetery',
+      location: 'Trevelin',
+      category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
+      desc: lang === 'es'
+        ? 'Un lugar cargado de historia y memoria que refleja las raíces, familias y pioneros de la comunidad.'
+        : 'A place rich in memory and pioneer legacy reflecting the roots and founding families of the colony.',
+      image: './stitch/historicos-6-cementerio.webp',
+      imagePos: 'object-center',
+      mapsUrl: 'https://maps.app.goo.gl/cementeriogales',
+    },
+    {
+      id: 'campo-exposicion',
+      title: lang === 'es' ? 'Campo de Exposición' : 'Heritage Fairgrounds',
+      location: 'Trevelin',
+      category: lang === 'es' ? 'Tradición rural' : 'Rural Heritage',
+      desc: lang === 'es'
+        ? 'Espacio tradicional donde se celebran festividades, encuentros criollos y la historia ganadera del valle.'
+        : 'Traditional fairgrounds hosting cultural festivities, rural gatherings and regional valley livestock history.',
+      image: './stitch/historicos-7-campo.webp',
+      imagePos: 'object-center',
+      mapsUrl: 'https://maps.app.goo.gl/campotradicion',
+    },
+    {
+      id: 'puente-viejo',
+      title: lang === 'es' ? 'Puente Viejo' : 'Old Wooden Bridge',
+      location: 'Trevelin',
+      category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
+      desc: lang === 'es'
+        ? 'Antiguo puente de madera sobre el río, testigo de los primeros caminos y conexiones de la comarca.'
+        : 'Historic wooden bridge over the river, witness to early pioneer crossings and routes across the valley.',
+      image: './stitch/historicos-8-puenteviejo.webp',
+      imagePos: 'object-center',
+      mapsUrl: 'https://maps.app.goo.gl/puenteviejo',
+    },
   ];
 
   return (
