@@ -6,32 +6,19 @@ export default function HeroBanner({ tHero }) {
       className="relative w-full overflow-hidden bg-[#0c1a2d] min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] flex items-center justify-start select-none" 
       id="inicio"
     >
-      {/* Layer 1: Ambient background matching sunset & sky for seamless full-bleed expansion */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <img
-          alt=""
-          aria-hidden="true"
-          className="w-full h-full object-cover blur-2xl opacity-40 scale-110 filter brightness-[0.88]"
-          src="./hero-mosha-banner-2x.webp?v=6"
-        />
-        <div className="absolute inset-0 bg-[#0c1a2d]/45" />
-      </div>
-
-      {/* Layer 2: The Full-Bleed Panoramic Image in High Resolution (2048x682 HD, 100% complete) */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
-        <img
-          alt="Complejo moderno Mosha Departamentos Trevelin al atardecer"
-          className="w-full h-full object-contain md:object-cover md:object-[center_35%] filter brightness-[0.96]"
-          src="./hero-mosha-banner-2x.webp?v=6"
-          srcSet="./hero-mosha-banner.webp?v=6 1024w, ./hero-mosha-banner-2x.webp?v=6 2048w"
-          sizes="100vw"
-          fetchpriority="high"
-          decoding="async"
-          onError={(e) => {
-            e.currentTarget.src = "./hero-mosha-banner-2x.png";
-          }}
-        />
-      </div>
+      {/* Full-Bleed High-Resolution Hero Background Image */}
+      <img
+        alt="Complejo moderno Mosha Departamentos Trevelin al atardecer"
+        className="absolute inset-0 w-full h-full object-cover object-[center_35%] z-0 transform scale-105 filter brightness-[0.96]"
+        src="./hero-mosha-banner-2x.webp?v=8"
+        srcSet="./hero-mosha-banner.webp?v=8 1024w, ./hero-mosha-banner-2x.webp?v=8 2048w"
+        sizes="100vw"
+        fetchpriority="high"
+        decoding="async"
+        onError={(e) => {
+          e.currentTarget.src = "./hero-mosha-banner-2x.png";
+        }}
+      />
 
       {/* Dramatic Atmospheric Overlays for crisp contrast and vibrant sunset tones */}
       <div className="absolute inset-0 z-1 bg-gradient-to-r from-[#0c1a2d]/85 via-[#0c1a2d]/45 to-transparent pointer-events-none" />
