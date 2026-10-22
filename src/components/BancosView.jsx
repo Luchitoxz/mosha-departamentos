@@ -12,32 +12,17 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
     {
       id: 'banco-chubut',
       title: lang === 'es' ? 'Banco del Chubut (Trevelin)' : 'Banco del Chubut (Trevelin)',
-      badge: lang === 'es' ? 'Red Link · Sucursal Oficial' : 'Link Network · Main Branch',
+      badge: lang === 'es' ? 'Red Link · Sucursal Oficial y Cajeros 24 hs' : 'Link Network · Main Branch & 24h ATMs',
       location: 'Av. San Martín 450, Trevelin',
       distance: 'Trevelin · Centro',
-      hours: lang === 'es' ? 'Lun a Vie 08:00 - 13:00 (Cajero 24 hs)' : 'Mon-Fri 8:00 AM - 1:00 PM (24h ATM)',
+      hours: lang === 'es' ? 'Lun a Vie 08:00 - 13:00 (Cajeros 24 hs)' : 'Mon-Fri 8:00 AM - 1:00 PM (24h ATMs)',
       desc: lang === 'es'
-        ? 'Única sucursal bancaria oficial en Trevelin. Cuenta con atención comercial, cajas de atención personalizada y cajeros automáticos Red Link habilitados las 24 hs.'
-        : 'Official bank branch in Trevelin with teller services, customer support, and 24/7 Red Link ATMs for withdrawals and transactions.',
+        ? 'Única sucursal bancaria oficial en Trevelin. Cuenta con atención personalizada, cajas de atención comercial y cajeros automáticos Red Link habilitados las 24 hs los 365 días del año.'
+        : 'Official bank branch in Trevelin with teller services, customer support, and 24/7 Red Link ATMs for withdrawals and transactions year-round.',
       image: './banco-chubut.webp',
       fallbackImage: './banco-chubut.jpg',
       imagePos: 'object-[center_40%]',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Banco+del+Chubut+Trevelin',
-    },
-    {
-      id: 'cajero-link-trevelin',
-      title: lang === 'es' ? 'Cajeros Automáticos Red Link 24 hs' : 'Red Link 24/7 ATMs (Trevelin)',
-      badge: lang === 'es' ? 'Red Link · 24 Horas' : 'Link Network · 24/7 ATM',
-      location: 'Av. San Martín 450, Trevelin',
-      distance: 'Trevelin · Centro',
-      hours: lang === 'es' ? 'Abierto las 24 hs los 365 días' : 'Available 24/7 all year round',
-      desc: lang === 'es'
-        ? 'Terminales de extracción de dinero en efectivo disponibles las 24 horas. Aptos para tarjetas de débito y crédito nacionales e internacionales vinculadas a Red Link.'
-        : '24/7 automated teller machines for cash withdrawal, balance inquiries and transactions for Link and international debit cards.',
-      image: './banco-chubut.webp',
-      fallbackImage: './banco-chubut.jpg',
-      imagePos: 'object-center',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Banco+del+Chubut+Trevelin+cajeros',
     },
     {
       id: 'extra-cash-anonima',
@@ -68,66 +53,6 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
       fallbackImage: './ypf-trevelin.jpg',
       imagePos: 'object-[center_35%]',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=YPF+Trevelin',
-    },
-    {
-      id: 'banco-nacion',
-      title: lang === 'es' ? 'Banco de la Nación Argentina (Esquel)' : 'Banco de la Nación Argentina (Esquel)',
-      badge: lang === 'es' ? 'Red Link · Sucursal Regional' : 'Link Network · Regional Branch',
-      location: 'Av. Alvear y 9 de Julio, Esquel',
-      distance: 'Esquel · A 22 km de Trevelin',
-      hours: lang === 'es' ? 'Lun a Vie 08:00 - 13:00 (Cajeros 24 hs)' : 'Mon-Fri 8:00 AM - 1:00 PM (24h ATMs)',
-      desc: lang === 'es'
-        ? 'Sucursal bancaria con múltiples cajeros automáticos Red Link y atención al público. Ideal para gestiones bancarias de mayor envergadura o trámites oficiales a 20 minutos de Trevelin.'
-        : 'Full-service bank branch in nearby Esquel with multiple Link ATMs and counter banking services just 20 minutes from Trevelin.',
-      image: './banco-chubut.webp',
-      fallbackImage: './banco-chubut.jpg',
-      imagePos: 'object-center',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Banco+Nacion+Esquel',
-    },
-    {
-      id: 'banco-santander',
-      title: lang === 'es' ? 'Banco Santander (Esquel - Red Banelco)' : 'Banco Santander (Esquel - Banelco)',
-      badge: lang === 'es' ? 'Red Banelco · 24 Horas' : 'Banelco Network · 24/7 ATM',
-      location: '25 de Mayo y Av. Alvear, Esquel',
-      distance: 'Esquel · A 22 km de Trevelin',
-      hours: lang === 'es' ? 'Lun a Vie 08:00 - 13:00 (Cajeros 24 hs)' : 'Mon-Fri 8:00 AM - 1:00 PM (24h ATMs)',
-      desc: lang === 'es'
-        ? 'Terminales de cajeros automáticos Red Banelco para clientes Santander, tarjetas de bancos privados, Visa internacional, Mastercard y Plus/Cirrus.'
-        : 'Red Banelco ATM hub for Santander clients and international credit/debit cards (Visa, Mastercard, Plus, Cirrus) in downtown Esquel.',
-      image: './banco-chubut.webp',
-      fallbackImage: './banco-chubut.jpg',
-      imagePos: 'object-center',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Banco+Santander+Esquel',
-    },
-    {
-      id: 'banco-galicia',
-      title: lang === 'es' ? 'Banco Galicia (Esquel - Red Banelco)' : 'Banco Galicia (Esquel - Banelco)',
-      badge: lang === 'es' ? 'Red Banelco · 24 Horas' : 'Banelco Network · 24/7 ATM',
-      location: 'Rivadavia 650, Esquel',
-      distance: 'Esquel · A 22 km de Trevelin',
-      hours: lang === 'es' ? 'Lun a Vie 08:00 - 13:00 (Cajeros 24 hs)' : 'Mon-Fri 8:00 AM - 1:00 PM (24h ATMs)',
-      desc: lang === 'es'
-        ? 'Sucursal comercial y lobby de cajeros automáticos Banelco 24 hs. Extracciones, consultas de saldo, depósitos y transferencias inmediatas.'
-        : 'Commercial branch and 24/7 Banelco lobby for cash withdrawals, deposits and transfers in Esquel.',
-      image: './banco-chubut.webp',
-      fallbackImage: './banco-chubut.jpg',
-      imagePos: 'object-center',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Banco+Galicia+Esquel',
-    },
-    {
-      id: 'banco-bbva',
-      title: lang === 'es' ? 'Banco BBVA (Esquel - Red Banelco)' : 'Banco BBVA (Esquel - Banelco)',
-      badge: lang === 'es' ? 'Red Banelco · 24 Horas' : 'Banelco Network · 24/7 ATM',
-      location: 'Av. Alvear 980, Esquel',
-      distance: 'Esquel · A 22 km de Trevelin',
-      hours: lang === 'es' ? 'Lun a Vie 08:00 - 13:00 (Cajeros 24 hs)' : 'Mon-Fri 8:00 AM - 1:00 PM (24h ATMs)',
-      desc: lang === 'es'
-        ? 'Sucursal BBVA y cajeros automáticos Banelco disponibles las 24 horas para extracción de fondos nacionales e internacionales.'
-        : 'BBVA branch and 24/7 Banelco ATMs for domestic and international debit and credit cash withdrawals.',
-      image: './banco-chubut.webp',
-      fallbackImage: './banco-chubut.jpg',
-      imagePos: 'object-center',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Banco+BBVA+Esquel',
     },
   ];
 
@@ -230,7 +155,7 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
           {/* Location Badge */}
           <div className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700">
             <MapPin className="w-3.5 h-3.5 text-slate-500" />
-            <span>Trevelin & Esquel, Chubut</span>
+            <span>Trevelin, Chubut</span>
           </div>
         </div>
       </section>
@@ -249,8 +174,8 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
                 {lang === 'es'
-                  ? 'En Trevelin opera el Banco del Chubut (Red Link). Si tenés tarjeta Banelco, podés retirar dinero en los cajeros de Esquel (a solo 20 minutos) o usar Extra Cash al abonar en La Anónima e YPF.'
-                  : 'Trevelin hosts Banco del Chubut (Link Network). If your card is Banelco, you can use ATMs in Esquel (20 mins away) or request Extra Cash when paying with debit at La Anónima and YPF.'}
+                  ? 'En Trevelin contás con la sucursal del Banco del Chubut (con cajeros Red Link 24 hs) y comercios adheridos al servicio Extra Cash (Supermercado La Anónima y Estación YPF) para retirar efectivo en el acto con tu tarjeta de débito.'
+                  : 'Trevelin hosts Banco del Chubut (with 24/7 Link Network ATMs) and local Extra Cash partners (La Anónima Supermarket and YPF Gas Station) to withdraw cash instantly with debit purchases.'}
               </p>
             </div>
           </div>
@@ -277,12 +202,12 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
             {tPage.sectionTitle || 'Sucursales, cajeros y puntos Extra Cash'}
           </h2>
           <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
-            {tPage.sectionDesc || 'En Trevelin contás con el Banco del Chubut (Red Link) y comercios adheridos a Extra Cash para retirar efectivo con tarjeta de débito en tu compra. Para cajeros Banelco y otras entidades bancarias, la ciudad de Esquel se encuentra a solo 20 minutos.'}
+            {tPage.sectionDesc || 'En Trevelin contás con la sucursal del Banco del Chubut (con cajeros automáticos Red Link habilitados las 24 hs) y puntos de retiro Extra Cash para obtener efectivo al instante abonando con tarjeta de débito.'}
           </p>
         </div>
 
-        {/* Places Grid: 8 items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-7">
+        {/* Places Grid: 3 items */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {places.map((place, idx) => (
             <article
               key={place.id}

@@ -67,6 +67,8 @@ export default function App() {
       './panaderias-confiterias.webp',
       './cervecerias-artesanales.webp',
       './banco-chubut.webp',
+      './la-anonima.webp',
+      './ypf-trevelin.webp',
       './stitch/medicos-hero.webp',
       './stitch/banner-panoramico.webp',
     ];
