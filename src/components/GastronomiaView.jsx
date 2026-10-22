@@ -109,12 +109,12 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         {/* Background Hero Image */}
         <img
           alt="Gastronomía en Trevelin"
-          className="absolute inset-0 w-full h-full object-cover object-[center_40%] z-0 scale-105"
-          src="./el-refugio-pizzeria.webp"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
+          src="./gastronomia-banner.webp"
           fetchpriority="high"
           decoding="async"
           onError={(e) => {
-            e.currentTarget.src = "./el-refugio-pizzeria.jpg";
+            e.currentTarget.src = "./gastronomia-banner.jpg";
           }}
         />
         {/* Hero Dark Overlay Gradients */}
