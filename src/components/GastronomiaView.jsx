@@ -104,7 +104,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
   return (
     <div className="bg-[#f6f8fa] text-slate-800 antialiased selection:bg-slate-800 selection:text-white min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeaderAndHero */}
-      <header className="relative w-full overflow-hidden min-h-[380px] sm:min-h-[440px] md:min-h-[500px] flex flex-col justify-between" data-purpose="hero-header-section">
+      <header className="relative w-full overflow-hidden min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] flex flex-col justify-between" data-purpose="hero-header-section">
         {/* Background Hero Image */}
         <img
           alt="Gastronomía en Trevelin"

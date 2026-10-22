@@ -134,7 +134,7 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
   return (
     <div className="bg-[#fcfdfe] text-slate-800 antialiased min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeader */}
-      <header className="relative w-full overflow-hidden bg-slate-900 min-h-[380px] sm:min-h-[440px] md:min-h-[500px] flex flex-col justify-between" data-purpose="hero-header">
+      <header className="relative w-full overflow-hidden bg-slate-900 min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] flex flex-col justify-between" data-purpose="hero-header">
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
           <img

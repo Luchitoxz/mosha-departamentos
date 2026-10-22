@@ -10,7 +10,7 @@ export default function PanoramicBanner({
   image = "./stitch/banner-tulipanes-hd-2x.webp?v=4",
 }) {
   return (
-    <section className="relative w-full overflow-hidden bg-[#0c1a2d] min-h-[300px] sm:min-h-[380px] md:min-h-[460px] lg:min-h-[520px] xl:min-h-[560px] flex items-center justify-start select-none">
+    <section className="relative w-full overflow-hidden bg-[#0c1a2d] min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] flex items-center justify-start select-none">
       {/* Layer 1: Ambient background matching the blue sky, snowy peaks & vibrant tulips */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <img

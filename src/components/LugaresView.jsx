@@ -194,7 +194,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
   return (
     <div className="bg-[#f8fafc] text-slate-800 antialiased min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeaderAndHero */}
-      <header className="relative w-full h-[400px] sm:h-[460px] md:h-[520px] overflow-hidden text-white flex flex-col justify-between select-none">
+      <header className="relative w-full min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] overflow-hidden text-white flex flex-col justify-between select-none">
         {/* Hero Background Image with Overlay */}
         <img
           alt="Cascadas turquesas en Trevelin"

@@ -117,7 +117,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
   return (
     <div className="bg-[#f8fafc] text-slate-800 antialiased selection:bg-cyan-500 selection:text-white min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeader */}
-      <header className="relative w-full min-h-[380px] sm:min-h-[440px] md:min-h-[500px] flex flex-col justify-between text-white border-b border-white/10" data-purpose="hero-section">
+      <header className="relative w-full min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] flex flex-col justify-between text-white border-b border-white/10" data-purpose="hero-section">
         {/* Hero Background Image */}
         <img
           alt="Servicios médicos en Trevelin"
