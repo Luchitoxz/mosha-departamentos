@@ -12,8 +12,8 @@ export default function GuiaCardsSection({
       id: 'lugares',
       title: tGuia.card1Title || 'Lugares para visitar',
       desc: tGuia.card1Desc || 'Naturaleza, paisajes y experiencias únicas.',
-      image: './cascadas-nant-y-fall.png',
-      fallbackImage: './tulipanes.jpg',
+      image: './cascadas-nant-y-fall.webp',
+      fallbackImage: './cascadas-nant-y-fall.png',
       onClick: onOpenLugares,
       icon: (
         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -26,8 +26,8 @@ export default function GuiaCardsSection({
       id: 'gastronomia',
       title: tGuia.card2Title || 'Dónde comer',
       desc: tGuia.card2Desc || 'Restaurantes, cafeterías y sabores locales.',
-      image: './los-troncos.jpg',
-      fallbackImage: './nain-maggie.jpg',
+      image: './los-troncos.webp',
+      fallbackImage: './los-troncos.jpg',
       onClick: onOpenGastronomia,
       icon: (
         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,8 +39,8 @@ export default function GuiaCardsSection({
       id: 'historicos',
       title: tGuia.card3Title || 'Puntos históricos',
       desc: tGuia.card3Desc || 'Historia, cultura y el legado galés.',
-      image: './la-trochita.jpg',
-      fallbackImage: './molino-nant-fach.jpg',
+      image: './la-trochita.webp',
+      fallbackImage: './la-trochita.jpg',
       onClick: onOpenHistoricos,
       icon: (
         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,8 +52,8 @@ export default function GuiaCardsSection({
       id: 'medicos',
       title: tGuia.card4Title || 'Servicios médicos',
       desc: tGuia.card4Desc || 'Hospitales, clínicas, farmacias y urgencias.',
-      image: './stitch/medicos-hero.jpg',
-      fallbackImage: './stitch/medicos-1-hospital.jpg',
+      image: './stitch/medicos-hero.webp',
+      fallbackImage: './stitch/medicos-hero.jpg',
       onClick: onOpenMedicos,
       icon: (
         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,6 +92,8 @@ export default function GuiaCardsSection({
                 alt={card.title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 src={card.image}
+                loading="lazy"
+                decoding="async"
                 onError={(e) => {
                   e.currentTarget.src = card.fallbackImage;
                 }}

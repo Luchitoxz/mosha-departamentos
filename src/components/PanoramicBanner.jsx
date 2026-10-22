@@ -7,7 +7,7 @@ export default function PanoramicBanner({
   buttonText = "Conocé más sobre Trevelin",
   onButtonClick,
   isSubpage = false,
-  image = "./stitch/banner-panoramico.png",
+  image = "./stitch/banner-panoramico.webp",
 }) {
   return (
     <section className="relative min-h-[360px] lg:min-h-[440px] flex items-center justify-start overflow-hidden">
@@ -16,6 +16,13 @@ export default function PanoramicBanner({
         alt="Cordillera patagónica, valles y lagos de Trevelin, Chubut"
         className="absolute inset-0 w-full h-full object-cover object-center"
         src={image}
+        loading="lazy"
+        decoding="async"
+        onError={(e) => {
+          if (e.currentTarget.src.includes('.webp')) {
+            e.currentTarget.src = image.replace('.webp', '.png');
+          }
+        }}
       />
 
       {/* Panoramic Gradient Overlay */}

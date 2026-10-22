@@ -17,7 +17,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Platos regionales con ingredientes locales, sabores auténticos y un ambiente cálido.'
         : 'Regional delicacies prepared with fresh local ingredients, authentic Andean flavors and cozy mountain ambiance.',
-      image: './nain-maggie.jpg',
+      image: './nain-maggie.webp',
       mapsUrl: 'https://maps.app.goo.gl/3w8S5zX9yL1k4vP27',
     },
     {
@@ -28,7 +28,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Opciones ideales para disfrutar de un buen café, pastelería casera y vistas increíbles.'
         : 'Perfect retreats to savor specialty pour-over coffee, traditional homemade pastries and scenic views.',
-      image: './la-mutisia.jpg',
+      image: './la-mutisia.webp',
       mapsUrl: 'https://maps.app.goo.gl/8v3kP2d1zL4w7yS99',
     },
     {
@@ -39,7 +39,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Variedad de pizzas artesanales en un ambiente familiar y relajado.'
         : 'Artisanal stone-baked pizzas crafted in a welcoming and family-friendly environment.',
-      image: './sangre-tinta.jpg',
+      image: './sangre-tinta.webp',
       mapsUrl: 'https://maps.app.goo.gl/7y2kL1z4w8v3P9S44',
     },
     {
@@ -50,7 +50,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Opciones modernas y sabrosas para una comida rápida y de calidad.'
         : 'Contemporary artisanal burgers, gourmet bites and quick high-quality mountain dining.',
-      image: './nikanor.jpg',
+      image: './nikanor.webp',
       mapsUrl: 'https://maps.app.goo.gl/9z1kL4w7y2v8P3S22',
     },
     {
@@ -61,7 +61,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Cortes de carne y sabores tradicionales de la Patagonia en un entorno único.'
         : 'Prime Argentinian beef cuts, slow-roasted Patagonian lamb and time-honored gaucho barbecue traditions.',
-      image: './los-troncos.jpg',
+      image: './los-troncos.webp',
       mapsUrl: 'https://maps.app.goo.gl/5x9kL2z1w4v8P7S11',
     },
     {
@@ -72,7 +72,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Productos artesanales, facturas, empanadas y opciones dulces y saladas.'
         : 'Fresh daily baked sourdough bread, Argentine medialunas, homemade empanadas and regional sweets.',
-      image: './virginia-y-mabel.jpg',
+      image: './virginia-y-mabel.webp',
       imagePos: 'object-[center_15%]',
       mapsUrl: 'https://maps.app.goo.gl/2w4kL7z1y8v3P9S55',
     },
@@ -84,7 +84,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Cerveza artesanal y propuestas gastronómicas para disfrutar con amigos.'
         : 'Locally crafted mountain tap beer, regional tapas and welcoming sunset gathering spots.',
-      image: './stitch/comer-7-cervecerias.jpg',
+      image: './stitch/comer-7-cervecerias.webp',
       imagePos: 'object-center',
       mapsUrl: 'https://maps.app.goo.gl/trevelin',
     },
@@ -96,7 +96,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Opciones variadas con sabores del mundo, en un ambiente acogedor.'
         : 'Eclectic menu choices blending international flavors with Patagonian produce in an intimate venue.',
-      image: './vinas-nant-fall.jpg',
+      image: './vinas-nant-fall.webp',
       mapsUrl: 'https://maps.app.goo.gl/vinasnantfall',
     },
   ];
@@ -109,7 +109,12 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         <img
           alt="Gastronomía en Trevelin"
           className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
-          src="./sangre-tinta.jpg"
+          src="./sangre-tinta.webp"
+          fetchpriority="high"
+          decoding="async"
+          onError={(e) => {
+            e.currentTarget.src = "./sangre-tinta.jpg";
+          }}
         />
         {/* Hero Dark Overlay Gradients */}
         <div className="absolute inset-0 hero-gradient z-10 pointer-events-none" />
@@ -234,6 +239,8 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
                     alt={place.title}
                     className={`w-full h-full object-cover ${place.imagePos || 'object-center'} hover:scale-105 transition-transform duration-300`}
                     src={place.image}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="p-5">
@@ -293,7 +300,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         buttonText={currentT.banner.btnVolver || 'Volver al inicio'}
         onButtonClick={onBack}
         isSubpage={true}
-        image="./stitch/banner-panoramico.png"
+        image="./stitch/banner-panoramico.webp"
       />
       {/* END: PanoramicBanner */}
 
