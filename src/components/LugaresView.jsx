@@ -230,7 +230,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
 
         {/* Places 8-Card Grid matching Google Stitch */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-7 xl:gap-8" data-purpose="recommendations-grid">
-          {places.map((place) => (
+          {places.map((place, idx) => (
             <article
               key={place.id}
               className="bg-white rounded-2xl overflow-hidden card-shadow border border-slate-100 flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1"
@@ -241,7 +241,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
                     alt={place.title}
                     className={`w-full h-full object-cover ${place.imagePos || 'object-center'} transition-transform duration-300 hover:scale-105`}
                     src={place.image}
-                    loading="lazy"
+                    loading={idx < 4 ? "eager" : "lazy"}
                     decoding="async"
                   />
                 </div>

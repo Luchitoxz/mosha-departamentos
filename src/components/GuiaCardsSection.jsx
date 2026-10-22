@@ -92,7 +92,7 @@ export default function GuiaCardsSection({
                 alt={card.title}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 src={card.image}
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 onError={(e) => {
                   e.currentTarget.src = card.fallbackImage;

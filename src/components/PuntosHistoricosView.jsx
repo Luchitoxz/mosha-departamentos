@@ -234,7 +234,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
 
           {/* 8 Historical Places Grid matching Google Stitch */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-7 xl:gap-8">
-            {places.map((place) => (
+            {places.map((place, idx) => (
               <article
                 key={place.id}
                 className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white travel-card-shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
@@ -244,7 +244,7 @@ export default function PuntosHistoricosView({ lang, setLang, onBack, onOpenPriv
                     alt={place.title}
                     className={`h-full w-full object-cover ${place.imagePos || 'object-center'} transition-transform duration-500 group-hover:scale-105`}
                     src={place.image}
-                    loading="lazy"
+                    loading={idx < 4 ? "eager" : "lazy"}
                     decoding="async"
                   />
                 </div>

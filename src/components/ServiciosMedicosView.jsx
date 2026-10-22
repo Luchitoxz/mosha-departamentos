@@ -261,7 +261,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
 
         {/* Cards Grid (2 rows x 4 columns) matching Google Stitch */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-7 xl:gap-8" data-purpose="directory-grid">
-          {services.map((svc) => (
+          {services.map((svc, idx) => (
             <article
               key={svc.id}
               className="bg-white rounded-2xl overflow-hidden border border-slate-200/90 card-shadow flex flex-col justify-between hover:shadow-lg transition duration-200 hover:-translate-y-1"
@@ -271,7 +271,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
                   <img
                     alt={svc.title}
                     className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
+                    loading={idx < 4 ? "eager" : "lazy"}
                     decoding="async"
                     src={svc.image}
                   />

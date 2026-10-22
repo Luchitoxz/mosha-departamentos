@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroBanner from './components/HeroBanner';
 import GuiaCardsSection from './components/GuiaCardsSection';
@@ -27,6 +27,29 @@ export default function App() {
   const wifiSSID = "Mosha_Departamentos_Fibra";
   const wifiPassword = "Trevelin2026!";
   const hostPhone = "02945 64-5700";
+
+  // Idle background prefetch for instant subpage transitions
+  useEffect(() => {
+    const subpageAssets = [
+      './stitch/lugares-hero.webp',
+      './sangre-tinta.webp',
+      './la-trochita.webp',
+      './stitch/medicos-hero.webp',
+      './stitch/banner-panoramico.webp',
+    ];
+    const prefetchAssets = () => {
+      subpageAssets.forEach((url) => {
+        const img = new Image();
+        img.src = url;
+      });
+    };
+
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(prefetchAssets);
+    } else {
+      setTimeout(prefetchAssets, 1000);
+    }
+  }, []);
 
   // Navigation handlers
   const handleOpenLugares = () => {
