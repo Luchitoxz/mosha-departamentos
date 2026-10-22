@@ -37,10 +37,11 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       category: lang === 'es' ? 'Pizzería' : 'Pizzeria',
       location: 'Trevelin',
       desc: lang === 'es'
-        ? 'Variedad de pizzas artesanales en un ambiente familiar y relajado.'
-        : 'Artisanal stone-baked pizzas crafted in a welcoming and family-friendly environment.',
-      image: './sangre-tinta.webp',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Pizzeria+Sangre+y+Tinta+Trevelin',
+        ? 'Variedad de pizzas artesanales al horno, empanadas caseras y cerveza artesanal patagónica.'
+        : 'Artisanal stone-baked pizzas, homemade empanadas and regional Patagonian craft beer.',
+      image: './el-refugio-pizzeria.webp',
+      imagePos: 'object-[center_40%]',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Pizzeria+El+Refugio+Trevelin',
     },
     {
       id: 'comida-rapida-gourmet',
@@ -108,12 +109,12 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         {/* Background Hero Image */}
         <img
           alt="Gastronomía en Trevelin"
-          className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
-          src="./sangre-tinta.webp"
+          className="absolute inset-0 w-full h-full object-cover object-[center_40%] z-0 scale-105"
+          src="./el-refugio-pizzeria.webp"
           fetchpriority="high"
           decoding="async"
           onError={(e) => {
-            e.currentTarget.src = "./sangre-tinta.jpg";
+            e.currentTarget.src = "./el-refugio-pizzeria.jpg";
           }}
         />
         {/* Hero Dark Overlay Gradients */}

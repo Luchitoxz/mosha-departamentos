@@ -61,7 +61,7 @@ export default function App() {
   useEffect(() => {
     const subpageAssets = [
       './stitch/lugares-hero.webp',
-      './sangre-tinta.webp',
+      './el-refugio-pizzeria.webp',
       './banco-chubut.webp',
       './stitch/medicos-hero.webp',
       './stitch/banner-panoramico.webp',
