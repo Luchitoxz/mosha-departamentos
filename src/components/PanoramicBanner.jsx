@@ -7,30 +7,43 @@ export default function PanoramicBanner({
   buttonText = "Conocé más sobre Trevelin",
   onButtonClick,
   isSubpage = false,
-  image = "./stitch/banner-panoramico-tulipanes-2x.webp?v=2",
+  image = "./stitch/banner-tulipanes-hd-2x.webp?v=4",
 }) {
   return (
-    <section className="relative min-h-[360px] sm:min-h-[440px] md:min-h-[500px] lg:min-h-[560px] flex items-center justify-start overflow-hidden select-none">
-      {/* Background Tulip Fields & Andean Mountain Peaks Image */}
-      <img
-        alt="Campo de tulipanes florecidos con fondo cordillerano en Trevelin, Patagonia"
-        className="absolute inset-0 w-full h-full object-cover object-[center_45%] filter brightness-[0.95]"
-        src={image}
-        srcSet="./stitch/banner-panoramico-tulipanes.webp?v=2 1024w, ./stitch/banner-panoramico-tulipanes-2x.webp?v=2 2048w"
-        sizes="100vw"
-        loading="lazy"
-        decoding="async"
-        onError={(e) => {
-          e.currentTarget.src = "./stitch/banner-panoramico-tulipanes.jpg";
-        }}
-      />
+    <section className="relative w-full overflow-hidden bg-[#0c1a2d] min-h-[300px] sm:min-h-[380px] md:min-h-[460px] lg:min-h-[520px] xl:min-h-[560px] flex items-center justify-start select-none">
+      {/* Layer 1: Ambient background matching the blue sky, snowy peaks & vibrant tulips */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <img
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover blur-2xl opacity-45 scale-110 filter brightness-[0.88]"
+          src="./stitch/banner-tulipanes-hd-2x.webp?v=4"
+        />
+        <div className="absolute inset-0 bg-[#0c1a2d]/45" />
+      </div>
 
-      {/* Atmospheric Overlays for crisp contrast and landscape depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a2d]/92 via-[#0c1a2d]/60 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a2d]/75 via-transparent to-black/25" />
+      {/* Layer 2: Complete High-Resolution Image (100% visible, guaranteed uncropped on mobile and desktop) */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+        <img
+          alt="Campo de tulipanes florecidos con fondo cordillerano en Trevelin, Patagonia"
+          className="w-full h-full object-contain md:object-cover md:object-[center_40%] filter brightness-[0.96]"
+          src="./stitch/banner-tulipanes-hd-2x.webp?v=4"
+          srcSet="./stitch/banner-tulipanes-hd.webp?v=4 1024w, ./stitch/banner-tulipanes-hd-2x.webp?v=4 2048w"
+          sizes="100vw"
+          loading="lazy"
+          decoding="async"
+          onError={(e) => {
+            e.currentTarget.src = "./stitch/banner-tulipanes-hd-2x.jpg";
+          }}
+        />
+      </div>
 
-      {/* Banner Content */}
-      <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-12 sm:py-16 md:py-20 lg:py-24">
+      {/* Atmospheric Overlays for crisp contrast and vibrant landscape colors */}
+      <div className="absolute inset-0 z-1 bg-gradient-to-r from-[#0c1a2d]/88 via-[#0c1a2d]/50 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 z-1 bg-gradient-to-t from-[#0c1a2d]/70 via-transparent to-black/25 pointer-events-none" />
+
+      {/* Banner Content Overlaid directly on the Banner */}
+      <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-10 sm:py-14 md:py-18 lg:py-20">
         <div className="max-w-2xl text-left">
           <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-cyan-200 uppercase block mb-2 drop-shadow-sm">
             {eyebrow}
@@ -40,7 +53,7 @@ export default function PanoramicBanner({
             {title}
           </h2>
 
-          <p className="text-xs sm:text-sm md:text-base text-slate-100/95 leading-relaxed mb-6 sm:mb-7 max-w-xl drop-shadow-sm">
+          <p className="text-xs sm:text-sm md:text-base text-slate-100/95 leading-relaxed mb-5 sm:mb-7 max-w-xl drop-shadow-sm">
             {subtitle}
           </p>
 
