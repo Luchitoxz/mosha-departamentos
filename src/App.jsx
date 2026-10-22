@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from './components/Navbar';
 import HeroBanner from './components/HeroBanner';
 import GuiaCardsSection from './components/GuiaCardsSection';
@@ -15,11 +15,40 @@ import Toast from './components/Toast';
 import PoliticaModal from './components/PoliticaModal';
 import { t } from './data/translations';
 
+// Route hash to view mapper
+const getViewFromHash = (hash) => {
+  const clean = (hash || '').toLowerCase().replace(/^#/, '');
+  if (clean === 'lugares') return 'lugares';
+  if (clean === 'gastronomia') return 'gastronomia';
+  if (clean === 'bancos' || clean === 'historicos') return 'bancos';
+  if (clean === 'medicos') return 'medicos';
+  return 'home';
+};
+
+const getHashFromView = (view) => {
+  if (view === 'lugares') return '#lugares';
+  if (view === 'gastronomia') return '#gastronomia';
+  if (view === 'bancos' || view === 'historicos') return '#bancos';
+  if (view === 'medicos') return '#medicos';
+  return '#inicio';
+};
+
 export default function App() {
   const [lang, setLang] = useState('es'); // 'es' or 'en'
-  const [currentView, setCurrentView] = useState('home'); // 'home', 'lugares', 'gastronomia', 'historicos', 'medicos'
+  const [currentView, setCurrentView] = useState(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      return getViewFromHash(window.location.hash);
+    }
+    return 'home';
+  });
   const [toastMessage, setToastMessage] = useState('');
   const [privacyOpen, setPrivacyOpen] = useState(false);
+
+  const privacyOpenRef = useRef(privacyOpen);
+  privacyOpenRef.current = privacyOpen;
+
+  const currentViewRef = useRef(currentView);
+  currentViewRef.current = currentView;
 
   const currentT = t[lang] || t.es;
 
@@ -51,32 +80,87 @@ export default function App() {
     }
   }, []);
 
-  // Navigation handlers
-  const handleOpenLugares = () => {
-    setCurrentView('lugares');
+  // History & Mobile Back Button Synchronization
+  useEffect(() => {
+    // 1. Ensure initial history entry has consistent state
+    const currentHash = window.location.hash;
+    const initialView = getViewFromHash(currentHash);
+    const normalizedHash = initialView === 'home' ? (currentHash || '#inicio') : getHashFromView(initialView);
+
+    if (!window.history.state || !window.history.state.view) {
+      window.history.replaceState({ view: initialView }, '', normalizedHash);
+    }
+
+    // 2. Listen to popstate (mobile physical/gesture back button, browser back/forward)
+    const handlePopState = (event) => {
+      // If privacy modal was open, close it
+      if (privacyOpenRef.current) {
+        setPrivacyOpen(false);
+      }
+
+      // If Wi-Fi QR modal is popping, let PracticalInfoSection handle it
+      if (window.location.hash === '#wifi-qr') {
+        return;
+      }
+
+      // Determine target view from history state or URL hash
+      const targetView = event.state?.view || getViewFromHash(window.location.hash);
+
+      if (targetView && targetView !== currentViewRef.current) {
+        setCurrentView(targetView);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Navigation handlers with History pushState
+  const navigateToView = (viewName) => {
+    if (currentView === viewName) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    const hash = getHashFromView(viewName);
+    window.history.pushState({ view: viewName, internal: true }, '', hash);
+    setCurrentView(viewName);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleOpenGastronomia = () => {
-    setCurrentView('gastronomia');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleOpenBancos = () => {
-    setCurrentView('bancos');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+  const handleOpenLugares = () => navigateToView('lugares');
+  const handleOpenGastronomia = () => navigateToView('gastronomia');
+  const handleOpenBancos = () => navigateToView('bancos');
   const handleOpenHistoricos = handleOpenBancos;
-
-  const handleOpenMedicos = () => {
-    setCurrentView('medicos');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const handleOpenMedicos = () => navigateToView('medicos');
 
   const handleBackToHome = () => {
-    setCurrentView('home');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (window.history.state?.internal) {
+      window.history.back();
+    } else {
+      window.history.pushState({ view: 'home' }, '', '#inicio');
+      setCurrentView('home');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  // Privacy modal handlers with History pushState
+  const handleOpenPrivacy = () => {
+    setPrivacyOpen(true);
+    window.history.pushState(
+      { modal: 'privacy', view: currentView },
+      '',
+      '#privacidad'
+    );
+  };
+
+  const handleClosePrivacy = () => {
+    if (window.location.hash === '#privacidad') {
+      window.history.back();
+    } else {
+      setPrivacyOpen(false);
+    }
   };
 
   const triggerToast = (msg) => {
@@ -94,10 +178,10 @@ export default function App() {
     }
 
     if (currentView !== 'home') {
-      setCurrentView('home');
+      handleBackToHome();
       setTimeout(() => {
         scrollToSection(id);
-      }, 120);
+      }, 150);
     } else {
       scrollToSection(id);
     }
@@ -130,7 +214,7 @@ export default function App() {
           lang={lang}
           setLang={setLang}
           onBack={handleBackToHome}
-          onOpenPrivacy={() => setPrivacyOpen(true)}
+          onOpenPrivacy={handleOpenPrivacy}
         />
       )}
 
@@ -140,7 +224,7 @@ export default function App() {
           lang={lang}
           setLang={setLang}
           onBack={handleBackToHome}
-          onOpenPrivacy={() => setPrivacyOpen(true)}
+          onOpenPrivacy={handleOpenPrivacy}
         />
       )}
 
@@ -150,7 +234,7 @@ export default function App() {
           lang={lang}
           setLang={setLang}
           onBack={handleBackToHome}
-          onOpenPrivacy={() => setPrivacyOpen(true)}
+          onOpenPrivacy={handleOpenPrivacy}
         />
       )}
 
@@ -160,7 +244,7 @@ export default function App() {
           lang={lang}
           setLang={setLang}
           onBack={handleBackToHome}
-          onOpenPrivacy={() => setPrivacyOpen(true)}
+          onOpenPrivacy={handleOpenPrivacy}
         />
       )}
 
@@ -213,7 +297,7 @@ export default function App() {
           {/* Institutional Alpine Footer */}
           <Footer
             tFooter={currentT.footer}
-            onOpenPrivacy={() => setPrivacyOpen(true)}
+            onOpenPrivacy={handleOpenPrivacy}
           />
         </>
       )}
@@ -221,7 +305,7 @@ export default function App() {
       {/* Privacy Policy & Terms Modal */}
       <PoliticaModal
         isOpen={privacyOpen}
-        onClose={() => setPrivacyOpen(false)}
+        onClose={handleClosePrivacy}
         lang={lang}
       />
 

@@ -34,15 +34,41 @@ export default function PracticalInfoSection({
     });
   };
 
-  // Close QR modal on Escape key
+  // Open & Close QR modal with browser history support for mobile back button
+  const handleOpenQrModal = () => {
+    setShowQrModal(true);
+    window.history.pushState({ modal: 'wifi-qr' }, '', '#wifi-qr');
+  };
+
+  const handleCloseQrModal = () => {
+    if (window.location.hash === '#wifi-qr') {
+      window.history.back();
+    } else {
+      setShowQrModal(false);
+    }
+  };
+
+  // Close QR modal on Escape key or mobile Back button (popstate)
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') setShowQrModal(false);
+      if (e.key === 'Escape') handleCloseQrModal();
     };
+
+    const handlePopState = () => {
+      if (showQrModal) {
+        setShowQrModal(false);
+      }
+    };
+
     if (showQrModal) {
       window.addEventListener('keydown', handleKeyDown);
     }
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('popstate', handlePopState);
+    };
   }, [showQrModal]);
 
   const cleanPhone = hostPhone.replace(/[^0-9]/g, '');
@@ -198,7 +224,7 @@ export default function PracticalInfoSection({
               <div className="mt-3">
                 <button
                   type="button"
-                  onClick={() => setShowQrModal(true)}
+                  onClick={handleOpenQrModal}
                   className="w-full py-2.5 px-3.5 rounded-xl border border-slate-200 hover:border-slate-300 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 flex items-center justify-center gap-2 transition cursor-pointer shadow-xs group"
                 >
                   <svg className="w-4 h-4 text-slate-700 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -594,7 +620,7 @@ export default function PracticalInfoSection({
       {showQrModal && (
         <div 
           className="fixed inset-0 z-50 bg-black/65 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-200"
-          onClick={() => setShowQrModal(false)}
+          onClick={handleCloseQrModal}
         >
           <div 
             className="bg-white rounded-3xl max-w-sm w-full p-6 sm:p-7 shadow-2xl border border-slate-100 flex flex-col items-center text-center relative animate-in zoom-in-95 duration-200"
@@ -602,7 +628,7 @@ export default function PracticalInfoSection({
           >
             {/* Close Button Top-Right */}
             <button
-              onClick={() => setShowQrModal(false)}
+              onClick={handleCloseQrModal}
               className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition cursor-pointer"
               title="Cerrar"
               type="button"
@@ -650,7 +676,7 @@ export default function PracticalInfoSection({
 
             {/* Close Button Bottom */}
             <button
-              onClick={() => setShowQrModal(false)}
+              onClick={handleCloseQrModal}
               className="w-full py-2.5 px-4 bg-[#0c1a2d] hover:bg-slate-900 text-white text-xs font-bold rounded-xl transition cursor-pointer"
               type="button"
             >

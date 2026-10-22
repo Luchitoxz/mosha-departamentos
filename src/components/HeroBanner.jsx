@@ -61,6 +61,15 @@ export default function HeroBanner({ tHero }) {
           <div className="flex flex-row flex-wrap items-center gap-2.5 sm:gap-3.5">
             <a
               href="#guia"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('guia');
+                if (el) {
+                  const navOffset = 70;
+                  const elTop = el.getBoundingClientRect().top + window.pageYOffset - navOffset;
+                  window.scrollTo({ top: Math.max(0, elTop), behavior: 'smooth' });
+                }
+              }}
               className="inline-flex items-center justify-center space-x-2 bg-white text-[#0c1a2d] hover:bg-slate-100 font-bold px-4 py-2 sm:px-6 sm:py-2.5 rounded-full shadow-lg transition-transform hover:scale-105 duration-200 text-xs sm:text-sm cursor-pointer"
             >
               <span>Explorar Guía</span>
@@ -70,6 +79,15 @@ export default function HeroBanner({ tHero }) {
             </a>
             <a
               href="#servicios"
+              onClick={(e) => {
+                e.preventDefault();
+                const el = document.getElementById('servicios');
+                if (el) {
+                  const navOffset = 70;
+                  const elTop = el.getBoundingClientRect().top + window.pageYOffset - navOffset;
+                  window.scrollTo({ top: Math.max(0, elTop), behavior: 'smooth' });
+                }
+              }}
               className="inline-flex items-center justify-center space-x-2 bg-white/15 hover:bg-white/25 text-white border border-white/30 backdrop-blur-xs font-semibold px-4 py-2 sm:px-5 sm:py-2.5 rounded-full transition duration-200 text-xs sm:text-sm cursor-pointer"
             >
               <span>WiFi & Servicios</span>
