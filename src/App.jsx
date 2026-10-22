@@ -82,6 +82,10 @@ export default function App() {
 
   // History & Mobile Back Button Synchronization
   useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
     // 1. Ensure initial history entry has consistent state
     const currentHash = window.location.hash;
     const initialView = getViewFromHash(currentHash);
@@ -91,8 +95,8 @@ export default function App() {
       window.history.replaceState({ view: initialView }, '', normalizedHash);
     }
 
-    // 2. Listen to popstate (mobile physical/gesture back button, browser back/forward)
-    const handlePopState = (event) => {
+    // 2. Synchronize view on popstate (physical/gesture Back button) and hashchange
+    const syncRouteFromHistory = (eventState) => {
       // If privacy modal was open, close it
       if (privacyOpenRef.current) {
         setPrivacyOpen(false);
@@ -104,7 +108,7 @@ export default function App() {
       }
 
       // Determine target view from history state or URL hash
-      const targetView = event.state?.view || getViewFromHash(window.location.hash);
+      const targetView = eventState?.view || getViewFromHash(window.location.hash);
 
       if (targetView && targetView !== currentViewRef.current) {
         setCurrentView(targetView);
@@ -112,8 +116,16 @@ export default function App() {
       }
     };
 
+    const handlePopState = (event) => syncRouteFromHistory(event.state);
+    const handleHashChange = () => syncRouteFromHistory(window.history.state);
+
     window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   // Navigation handlers with History pushState
