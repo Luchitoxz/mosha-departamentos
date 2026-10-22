@@ -19,7 +19,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         : 'A breathtaking natural environment with cascading waterfalls, native forests and walking trails.',
       image: './cascadas-nant-y-fall.webp',
       imagePos: 'object-[center_20%]',
-      mapsUrl: 'https://maps.app.goo.gl/9Zc1j3d3BsmhVnN26',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Cascadas+Nant+y+Fall+Trevelin',
     },
     {
       id: 'tulipanes',
@@ -31,7 +31,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         : 'A unique spring wonderland featuring millions of vibrant blooming tulips framed by snow-capped Andean peaks.',
       image: './tulipanes.webp',
       imagePos: 'object-[center_55%]',
-      mapsUrl: 'https://maps.app.goo.gl/5p7kL7LhY3GZkmZ78',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Campo+de+Tulipanes+Trevelin',
     },
     {
       id: 'los-alerces',
@@ -43,7 +43,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         : 'Turquoise glacial lakes, ancient millennial alerce forests and UNESCO World Heritage mountain landscapes.',
       image: './parque-los-alerces.webp',
       imagePos: 'object-[center_40%]',
-      mapsUrl: 'https://maps.app.goo.gl/P85cQ3PzXhU1p8M57',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Parque+Nacional+Los+Alerces',
     },
     {
       id: 'molino-nant-fach',
@@ -55,7 +55,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         : 'Historic watermill museum recreating the pioneering Welsh agricultural era in an idyllic setting.',
       image: './molino-nant-fach.webp',
       imagePos: 'object-[center_35%]',
-      mapsUrl: 'https://maps.app.goo.gl/uK5UfM8k6dGkZkM47',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Molino+Museo+Nant+Fach+Trevelin',
     },
     {
       id: 'lago-futalaufquen',
@@ -67,7 +67,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         : 'Crystal-clear waters and mountain beaches, ideal for relaxation, boat excursions and serene nature contemplation.',
       image: './lago-futalaufquen.webp',
       imagePos: 'object-[center_55%]',
-      mapsUrl: 'https://maps.app.goo.gl/kG1v9U7hE9GZ1',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Lago+Futalaufquen+Trevelin',
     },
     {
       id: 'la-trochita',
@@ -79,7 +79,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         : 'The historic narrow-gauge steam train connecting breathtaking Patagonian landscapes and folklore.',
       image: './la-trochita.webp',
       imagePos: 'object-[center_35%]',
-      mapsUrl: 'https://maps.app.goo.gl/latrochita',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Estacion+La+Trochita+Esquel',
     },
     {
       id: 'museo-regional',
@@ -91,7 +91,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         : 'Located in the historic Andes flour mill building, exploring pioneer lore, Welsh heritage and valley settlement.',
       image: './museo-regional-trevelin.webp',
       imagePos: 'object-center',
-      mapsUrl: 'https://maps.app.goo.gl/museoregional',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Museo+Regional+Trevelin+Molino+Andes',
     },
   ];
 

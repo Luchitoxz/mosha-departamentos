@@ -18,7 +18,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         ? 'Platos regionales con ingredientes locales, sabores auténticos y un ambiente cálido.'
         : 'Regional delicacies prepared with fresh local ingredients, authentic Andean flavors and cozy mountain ambiance.',
       image: './nain-maggie.webp',
-      mapsUrl: 'https://maps.app.goo.gl/3w8S5zX9yL1k4vP27',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Casa+de+Te+Nain+Maggie+Trevelin',
     },
     {
       id: 'cafeterias-te',
@@ -29,7 +29,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         ? 'Opciones ideales para disfrutar de un buen café, pastelería casera y vistas increíbles.'
         : 'Perfect retreats to savor specialty pour-over coffee, traditional homemade pastries and scenic views.',
       image: './la-mutisia.webp',
-      mapsUrl: 'https://maps.app.goo.gl/8v3kP2d1zL4w7yS99',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Casa+de+Te+La+Mutisia+Trevelin',
     },
     {
       id: 'pizzerias',
@@ -40,7 +40,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         ? 'Variedad de pizzas artesanales en un ambiente familiar y relajado.'
         : 'Artisanal stone-baked pizzas crafted in a welcoming and family-friendly environment.',
       image: './sangre-tinta.webp',
-      mapsUrl: 'https://maps.app.goo.gl/7y2kL1z4w8v3P9S44',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Pizzeria+Sangre+y+Tinta+Trevelin',
     },
     {
       id: 'comida-rapida-gourmet',
@@ -51,7 +51,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         ? 'Opciones modernas y sabrosas para una comida rápida y de calidad.'
         : 'Contemporary artisanal burgers, gourmet bites and quick high-quality mountain dining.',
       image: './nikanor.webp',
-      mapsUrl: 'https://maps.app.goo.gl/9z1kL4w7y2v8P3S22',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Nikanor+Trevelin',
     },
     {
       id: 'parrillas',
@@ -62,7 +62,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         ? 'Cortes de carne y sabores tradicionales de la Patagonia en un entorno único.'
         : 'Prime Argentinian beef cuts, slow-roasted Patagonian lamb and time-honored gaucho barbecue traditions.',
       image: './los-troncos.webp',
-      mapsUrl: 'https://maps.app.goo.gl/5x9kL2z1w4v8P7S11',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Parrilla+Los+Troncos+Trevelin',
     },
     {
       id: 'panaderias',
@@ -74,7 +74,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         : 'Fresh daily baked sourdough bread, Argentine medialunas, homemade empanadas and regional sweets.',
       image: './virginia-y-mabel.webp',
       imagePos: 'object-[center_15%]',
-      mapsUrl: 'https://maps.app.goo.gl/2w4kL7z1y8v3P9S55',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Panaderia+Virginia+y+Mabel+Trevelin',
     },
     {
       id: 'cervecerias',
@@ -86,7 +86,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         : 'Locally crafted mountain tap beer, regional tapas and welcoming sunset gathering spots.',
       image: './stitch/comer-7-cervecerias.webp',
       imagePos: 'object-center',
-      mapsUrl: 'https://maps.app.goo.gl/trevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Cervecerias+Trevelin',
     },
     {
       id: 'cocina-internacional',
@@ -97,7 +97,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
         ? 'Opciones variadas con sabores del mundo, en un ambiente acogedor.'
         : 'Eclectic menu choices blending international flavors with Patagonian produce in an intimate venue.',
       image: './vinas-nant-fall.webp',
-      mapsUrl: 'https://maps.app.goo.gl/vinasnantfall',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Vinas+del+Nant+y+Fall+Trevelin',
     },
   ];
 

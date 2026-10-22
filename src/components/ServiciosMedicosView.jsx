@@ -26,7 +26,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         ? 'Centro de salud público con atención general, guardia y servicios básicos.'
         : 'Public healthcare center with general outpatient services, active 24/7 emergency room and basic care.',
       image: './stitch/medicos-1-hospital.webp',
-      mapsUrl: 'https://maps.app.goo.gl/hospitaltrevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hospital+Rural+Trevelin',
     },
     {
       id: 'clinicas',
@@ -38,7 +38,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         ? 'Atención médica ambulatoria en distintas especialidades para toda la familia.'
         : 'Outpatient medical care across multiple specialties for adults and children.',
       image: './stitch/medicos-2-clinicas.webp',
-      mapsUrl: 'https://maps.app.goo.gl/trevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Centros+de+Salud+Trevelin',
     },
     {
       id: 'farmacias',
@@ -50,7 +50,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         ? 'Farmacias con atención permanente y variedad de productos de salud y cuidado personal.'
         : 'Local pharmacies with rotating night shifts and a wide range of medications and care essentials.',
       image: './stitch/medicos-3-farmacias.webp',
-      mapsUrl: 'https://maps.app.goo.gl/farmaciastrevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Farmacias+en+Trevelin',
     },
     {
       id: 'guardia',
@@ -62,7 +62,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         ? 'Atención médica de urgencias y emergencias las 24 horas.'
         : '24-hour urgent medical care, accident response and ambulance dispatch.',
       image: './stitch/medicos-4-urgencias.webp',
-      mapsUrl: 'tel:107',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Guardia+Hospital+Trevelin',
     },
     {
       id: 'pediatria',
@@ -74,7 +74,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         ? 'Consultas y atención médica para niñas y niños.'
         : 'Medical consultations and care specifically for infants, children and adolescents.',
       image: './stitch/medicos-5-pediatria.webp',
-      mapsUrl: 'https://maps.app.goo.gl/hospitaltrevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Pediatria+Hospital+Trevelin',
     },
     {
       id: 'odontologia',
@@ -86,7 +86,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         ? 'Consultorios odontológicos con atención general y tratamientos básicos.'
         : 'Dental offices providing general dentistry, urgent pain relief and basic treatments.',
       image: './stitch/medicos-6-odontologia.webp',
-      mapsUrl: 'https://maps.app.goo.gl/trevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Odontologia+Trevelin',
     },
     {
       id: 'laboratorios',
@@ -98,7 +98,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         ? 'Estudios clínicos y análisis con indicación médica.'
         : 'Clinical diagnostics, laboratory testing and biochemical blood work with physician orders.',
       image: './stitch/medicos-7-laboratorios.webp',
-      mapsUrl: 'https://maps.app.goo.gl/trevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Laboratorio+analisis+clinicos+Trevelin',
     },
     {
       id: 'veterinarias',
@@ -110,7 +110,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         ? 'Atención veterinaria para tus mascotas durante la estadía.'
         : 'Veterinary care and emergency services for family pets during your stay.',
       image: './stitch/medicos-8-veterinarias.webp',
-      mapsUrl: 'https://maps.app.goo.gl/veterinariastrevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Veterinarias+en+Trevelin',
     },
   ];
 
