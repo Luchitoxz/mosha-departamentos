@@ -18,97 +18,37 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
   const services = [
     {
       id: 'hospital',
-      title: lang === 'es' ? 'Hospital de Trevelin' : 'Trevelin Hospital',
-      category: lang === 'es' ? 'Hospital' : 'Hospital',
-      location: 'Trevelin',
+      title: lang === 'es' ? 'Hospital Rural Trevelin (Guardia 24 hs)' : 'Trevelin Rural Hospital (24/7 ER)',
+      category: lang === 'es' ? 'Hospital y Urgencias' : 'Hospital & Emergency',
+      location: 'Av. San Martín 955, Trevelin',
       phone: '02945 480117',
       desc: lang === 'es'
-        ? 'Centro de salud público con atención general, guardia y servicios básicos.'
-        : 'Public healthcare center with general outpatient services, active 24/7 emergency room and basic care.',
+        ? 'Centro de salud público con atención clínica general, guardia médica de urgencias las 24 horas, pediatría y ambulancias (SAME 107).'
+        : 'Main public healthcare center in Trevelin with general clinical care, 24/7 emergency room, pediatric service and ambulance dispatch (SAME 107).',
       image: './stitch/medicos-1-hospital.webp',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hospital+Rural+Trevelin',
     },
     {
-      id: 'clinicas',
-      title: lang === 'es' ? 'Clínicas y consultorios' : 'Clinics & Practices',
-      category: lang === 'es' ? 'Clínica' : 'Clinic',
-      location: 'Trevelin',
-      phone: '02945 480117',
-      desc: lang === 'es'
-        ? 'Atención médica ambulatoria en distintas especialidades para toda la familia.'
-        : 'Outpatient medical care across multiple specialties for adults and children.',
-      image: './stitch/medicos-2-clinicas.webp',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Centros+de+Salud+Trevelin',
-    },
-    {
       id: 'farmacias',
-      title: lang === 'es' ? 'Farmacias' : 'Pharmacies',
+      title: lang === 'es' ? 'Farmacias de Trevelin (Turnos de Guardia)' : 'Trevelin Pharmacies (Rotating Night Shifts)',
       category: lang === 'es' ? 'Farmacia' : 'Pharmacy',
-      location: 'Trevelin',
-      phone: '02945 480200',
+      location: 'Av. San Martín, Trevelin',
+      phone: '02945 480409',
       desc: lang === 'es'
-        ? 'Farmacias con atención permanente y variedad de productos de salud y cuidado personal.'
-        : 'Local pharmacies with rotating night shifts and a wide range of medications and care essentials.',
+        ? 'Farmacias locales con sistema rotativo de turnos de guardia obligatorios de 24 horas para emergencias nocturnas, recetas y medicamentos.'
+        : 'Local pharmacies with mandatory 24-hour rotating night-shift schedules for prescription medicine, urgent health supplies and first aid.',
       image: './stitch/medicos-3-farmacias.webp',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Farmacias+en+Trevelin',
     },
     {
-      id: 'guardia',
-      title: lang === 'es' ? 'Guardia y urgencias' : 'Emergency & Urgent Care',
-      category: lang === 'es' ? 'Urgencias' : 'Emergencies',
-      location: 'Trevelin',
-      phone: '107',
-      desc: lang === 'es'
-        ? 'Atención médica de urgencias y emergencias las 24 horas.'
-        : '24-hour urgent medical care, accident response and ambulance dispatch.',
-      image: './stitch/medicos-4-urgencias.webp',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Guardia+Hospital+Trevelin',
-    },
-    {
-      id: 'pediatria',
-      title: lang === 'es' ? 'Atención pediátrica' : 'Pediatric Care',
-      category: lang === 'es' ? 'Pediatría' : 'Pediatrics',
-      location: 'Trevelin',
-      phone: '02945 480117',
-      desc: lang === 'es'
-        ? 'Consultas y atención médica para niñas y niños.'
-        : 'Medical consultations and care specifically for infants, children and adolescents.',
-      image: './stitch/medicos-5-pediatria.webp',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Pediatria+Hospital+Trevelin',
-    },
-    {
-      id: 'odontologia',
-      title: lang === 'es' ? 'Odontología' : 'Dental Care',
-      category: lang === 'es' ? 'Odontología' : 'Dentistry',
-      location: 'Trevelin',
-      phone: '02945 480117',
-      desc: lang === 'es'
-        ? 'Consultorios odontológicos con atención general y tratamientos básicos.'
-        : 'Dental offices providing general dentistry, urgent pain relief and basic treatments.',
-      image: './stitch/medicos-6-odontologia.webp',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Odontologia+Trevelin',
-    },
-    {
-      id: 'laboratorios',
-      title: lang === 'es' ? 'Laboratorios' : 'Laboratories',
-      category: lang === 'es' ? 'Laboratorio' : 'Laboratory',
-      location: 'Trevelin',
-      phone: '02945 480117',
-      desc: lang === 'es'
-        ? 'Estudios clínicos y análisis con indicación médica.'
-        : 'Clinical diagnostics, laboratory testing and biochemical blood work with physician orders.',
-      image: './stitch/medicos-7-laboratorios.webp',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Laboratorio+analisis+clinicos+Trevelin',
-    },
-    {
       id: 'veterinarias',
-      title: lang === 'es' ? 'Veterinarias' : 'Veterinary Care',
+      title: lang === 'es' ? 'Atención Veterinaria y Mascotas' : 'Veterinary Care & Pets',
       category: lang === 'es' ? 'Veterinaria' : 'Veterinary',
       location: 'Trevelin',
       phone: '02945 480500',
       desc: lang === 'es'
-        ? 'Atención veterinaria para tus mascotas durante la estadía.'
-        : 'Veterinary care and emergency services for family pets during your stay.',
+        ? 'Atención veterinaria local para consultas médicas, urgencias, medicamentos y cuidados de tus mascotas durante tu estadía.'
+        : 'Local veterinary care for general checkups, pet emergencies, medications and supplies during your stay in Trevelin.',
       image: './stitch/medicos-8-veterinarias.webp',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Veterinarias+en+Trevelin',
     },
@@ -256,12 +196,12 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
             {tPage.sectionTitle || 'Información útil para tu tranquilidad'}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            {tPage.sectionDesc || 'Encontrá hospitales, clínicas, farmacias y servicios de urgencias en Trevelin y sus alrededores. Toda la información que necesitás para una estadía más segura y tranquila.'}
+            {tPage.sectionDesc || 'Encontrá el Hospital público con guardia de emergencias las 24 horas, farmacias con turnos rotativos y atención veterinaria en Trevelin. Toda la información esencial para una estadía segura y tranquila.'}
           </p>
         </div>
 
-        {/* Cards Grid (2 rows x 4 columns) matching Google Stitch */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-7 xl:gap-8" data-purpose="directory-grid">
+        {/* Cards Grid: 3 items centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto" data-purpose="directory-grid">
           {services.map((svc, idx) => (
             <article
               key={svc.id}

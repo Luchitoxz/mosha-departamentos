@@ -128,10 +128,10 @@ export const t = {
     medicosPage: {
       eyebrow: "EXPLORÁ TREVELIN",
       title: "Servicios médicos",
-      subtitle: "Hospitales, clínicas, farmacias y atención de urgencias en Trevelin y sus alrededores.",
+      subtitle: "Hospital público con guardia 24 hs, farmacias y atención veterinaria en Trevelin.",
       badge: "Salud y bienestar durante tu estadía",
       sectionTitle: "Información útil para tu tranquilidad",
-      sectionDesc: "Encontrá hospitales, clínicas, farmacias y servicios de urgencias en Trevelin y sus alrededores. Toda la información que necesitás para una estadía más segura y tranquila.",
+      sectionDesc: "Encontrá el Hospital público con guardia médica de urgencias las 24 horas, farmacias con turnos rotativos y atención veterinaria en Trevelin. Toda la información esencial para una estadía más segura y tranquila.",
       btnMaps: "Ver en Google Maps",
       quickUrgent: "Líneas directas de emergencia",
     }
@@ -266,10 +266,10 @@ export const t = {
     medicosPage: {
       eyebrow: "EXPLORE TREVELIN",
       title: "Medical Services",
-      subtitle: "Hospitals, clinics, pharmacies and 24/7 emergency care in Trevelin.",
+      subtitle: "Public hospital with 24/7 ER, pharmacies and veterinary care in Trevelin.",
       badge: "Health & Wellbeing During Your Stay",
       sectionTitle: "Useful Information for Peace of Mind",
-      sectionDesc: "Find public hospitals, walk-in clinics, pharmacies and emergency numbers in Trevelin. Everything you need for a safe and worry-free stay.",
+      sectionDesc: "Find Trevelin's public hospital with 24/7 emergency care, local pharmacies with rotating night shifts and veterinary services. Essential information for a safe and worry-free stay.",
       btnMaps: "View on Google Maps",
       quickUrgent: "Direct Emergency Lines",
     }
