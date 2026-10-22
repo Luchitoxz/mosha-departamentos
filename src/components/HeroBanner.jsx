@@ -44,7 +44,7 @@ export default function HeroBanner({ tHero }) {
           </p>
 
           {/* Quick Action Buttons for Mobile and Desktop */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
             <a
               href="#guia"
               className="inline-flex items-center justify-center space-x-2 bg-white text-[#0c1a2d] hover:bg-slate-100 font-bold px-5 sm:px-7 py-3 sm:py-3.5 rounded-full shadow-lg transition-transform hover:scale-105 duration-200 text-xs sm:text-sm cursor-pointer"

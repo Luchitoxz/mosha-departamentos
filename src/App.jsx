@@ -179,6 +179,7 @@ export default function App() {
 
             {/* 4-Columns Category Cards Section */}
             <GuiaCardsSection
+              lang={lang}
               tGuia={currentT.guia}
               onOpenLugares={handleOpenLugares}
               onOpenGastronomia={handleOpenGastronomia}

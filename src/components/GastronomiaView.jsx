@@ -187,25 +187,26 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
           {/* Back button pill */}
           <button
             onClick={onBack}
-            className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-slate-300 text-slate-700 hover:text-slate-900 hover:border-slate-400 bg-white text-xs sm:text-sm font-semibold transition-all cursor-pointer"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-slate-300 text-slate-700 hover:text-slate-900 hover:border-slate-400 bg-white text-xs sm:text-sm font-semibold transition-all cursor-pointer shrink-0"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M10 19l-7-7m0 0l7-7m-7 7h18" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
             </svg>
-            <span>{currentT.nav.volverGuia || 'Volver a la guía'}</span>
+            <span className="hidden sm:inline">{currentT.nav.volverGuia || 'Volver a la guía'}</span>
+            <span className="sm:hidden">Guía</span>
           </button>
 
           {/* Region indicator pill */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-700">
+          <div className="flex items-center gap-2 text-right min-w-0">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-700 shrink-0">
               <svg className="w-4 h-4 sm:w-5 sm:h-5 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                 <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
               </svg>
             </div>
-            <div>
+            <div className="text-right min-w-0">
               <h2 className="text-xs sm:text-sm font-bold text-slate-900 leading-none">Trevelin, Chubut</h2>
-              <p className="text-[10px] sm:text-xs text-slate-500 mt-0.5 sm:mt-1">
+              <p className="hidden sm:block text-[10px] sm:text-xs text-slate-500 mt-0.5 sm:mt-1 truncate">
                 {tPage.badge || 'Gastronomía regional y sabores únicos'}
               </p>
             </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function GuiaCardsSection({
+  lang = 'es',
   tGuia,
   onOpenLugares,
   onOpenGastronomia,
@@ -11,6 +12,8 @@ export default function GuiaCardsSection({
     {
       id: 'lugares',
       title: tGuia.card1Title || 'Lugares para visitar',
+      titleLine1: lang === 'en' ? 'Places' : 'Lugares',
+      titleLine2: lang === 'en' ? 'to Visit' : 'para visitar',
       desc: tGuia.card1Desc || 'Naturaleza, paisajes y experiencias únicas.',
       image: './cascadas-nant-y-fall.webp',
       fallbackImage: './cascadas-nant-y-fall.png',
@@ -25,6 +28,8 @@ export default function GuiaCardsSection({
     {
       id: 'gastronomia',
       title: tGuia.card2Title || 'Dónde comer',
+      titleLine1: lang === 'en' ? 'Where' : 'Dónde',
+      titleLine2: lang === 'en' ? 'to Eat' : 'comer',
       desc: tGuia.card2Desc || 'Restaurantes, cafeterías y sabores locales.',
       image: './los-troncos.webp',
       fallbackImage: './los-troncos.jpg',
@@ -38,6 +43,8 @@ export default function GuiaCardsSection({
     {
       id: 'historicos',
       title: tGuia.card3Title || 'Puntos históricos',
+      titleLine1: lang === 'en' ? 'Historic' : 'Puntos',
+      titleLine2: lang === 'en' ? 'Sites' : 'históricos',
       desc: tGuia.card3Desc || 'Historia, cultura y el legado galés.',
       image: './la-trochita.webp',
       fallbackImage: './la-trochita.jpg',
@@ -51,6 +58,8 @@ export default function GuiaCardsSection({
     {
       id: 'medicos',
       title: tGuia.card4Title || 'Servicios médicos',
+      titleLine1: lang === 'en' ? 'Medical' : 'Servicios',
+      titleLine2: lang === 'en' ? 'Services' : 'médicos',
       desc: tGuia.card4Desc || 'Hospitales, clínicas, farmacias y urgencias.',
       image: './stitch/medicos-hero.webp',
       fallbackImage: './stitch/medicos-hero.jpg',
@@ -102,34 +111,30 @@ export default function GuiaCardsSection({
               {/* Atmospheric Vignette Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20" />
 
-              {/* Top-Left Category Icon Badge */}
-              <div className="relative z-10 p-2.5 sm:p-4">
+              {/* Top Row: Category Icon Badge (Left) + Action Arrow (Right) */}
+              <div className="relative z-10 p-2.5 sm:p-4 flex items-center justify-between">
                 <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/25 flex items-center justify-center text-white shadow-sm group-hover:bg-white/30 group-hover:scale-105 transition-all">
                   {card.icon}
                 </div>
-              </div>
 
-              {/* Card Bottom Content */}
-              <div className="relative z-10 p-2.5 sm:p-5 lg:p-6 flex items-end justify-between gap-2">
-                <div className="min-w-0 pr-1">
-                  <h3 className="text-xs sm:text-base md:text-xl font-bold text-white leading-tight drop-shadow-sm group-hover:text-cyan-100 transition-colors">
-                    {card.title}
-                  </h3>
-                  <p className="hidden md:block text-xs sm:text-[13px] text-slate-200/90 line-clamp-2 mt-1 sm:mt-2 leading-relaxed">
-                    {card.desc}
-                  </p>
-                </div>
-
-                {/* Floating Action Arrow */}
-                <button
-                  aria-label={`Ver ${card.title}`}
-                  className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 rounded-full bg-white text-[#0c1a2d] group-hover:bg-cyan-50 group-hover:scale-110 shadow-md flex items-center justify-center shrink-0 transition-transform cursor-pointer"
-                  type="button"
+                <div
+                  className="w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full bg-white text-[#0c1a2d] group-hover:bg-cyan-50 group-hover:scale-110 shadow-md flex items-center justify-center shrink-0 transition-transform"
                 >
-                  <svg className="w-3 h-3 sm:w-4 sm:h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M8.25 4.5l7.5 7.5-7.5 7.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </button>
+                </div>
+              </div>
+
+              {/* Card Bottom Content: Full Width Title */}
+              <div className="relative z-10 p-2.5 sm:p-5 lg:p-6 flex flex-col justify-end">
+                <h3 className="text-xs sm:text-base md:text-xl font-bold text-white leading-tight drop-shadow-sm group-hover:text-cyan-100 transition-colors">
+                  <span className="block">{card.titleLine1}</span>
+                  <span className="block">{card.titleLine2}</span>
+                </h3>
+                <p className="hidden md:block text-xs sm:text-[13px] text-slate-200/90 line-clamp-2 mt-1 sm:mt-2 leading-relaxed">
+                  {card.desc}
+                </p>
               </div>
             </article>
           ))}
