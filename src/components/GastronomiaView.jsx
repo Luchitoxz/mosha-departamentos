@@ -28,7 +28,8 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       desc: lang === 'es'
         ? 'Opciones ideales para disfrutar de un buen café, pastelería casera y vistas increíbles.'
         : 'Perfect retreats to savor specialty pour-over coffee, traditional homemade pastries and scenic views.',
-      image: './la-mutisia.webp',
+      image: './la-mutisia.webp?v=2',
+      imagePos: 'object-center',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Casa+de+Te+La+Mutisia+Trevelin',
     },
     {

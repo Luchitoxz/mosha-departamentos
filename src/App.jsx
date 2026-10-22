@@ -62,6 +62,7 @@ export default function App() {
     const subpageAssets = [
       './stitch/lugares-hero.webp',
       './gastronomia-banner.webp',
+      './la-mutisia.webp?v=2',
       './el-refugio-pizzeria.webp',
       './banco-chubut.webp',
       './stitch/medicos-hero.webp',
