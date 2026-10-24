@@ -129,15 +129,19 @@ export default function App() {
       }
 
       // If Wi-Fi QR modal is popping, let PracticalInfoSection handle it
-      if (window.location.hash === '#wifi-qr') {
+      if (window.location.hash === '#wifi-qr' || eventState?.modal === 'wifi-qr') {
         return;
       }
 
-      // Determine target view from history state or URL hash
-      const targetView = eventState?.view || getViewFromHash(window.location.hash) || 'home';
+      // If we just popped back FROM #wifi-qr, do NOT reset scroll to top
+      const previousHash = window.location.hash;
+      const targetView = eventState?.view || getViewFromHash(previousHash) || 'home';
 
-      setCurrentView(targetView);
-      window.scrollTo(0, 0);
+      // Only scroll to top if the view actually changed or wasn't a modal close
+      if (targetView !== currentViewRef.current) {
+        setCurrentView(targetView);
+        window.scrollTo(0, 0);
+      }
     };
 
     const handlePopState = (event) => syncRouteFromHistory(event.state);

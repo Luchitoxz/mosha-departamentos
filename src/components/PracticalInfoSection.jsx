@@ -37,7 +37,9 @@ export default function PracticalInfoSection({
   // Open & Close QR modal with browser history support for mobile back button
   const handleOpenQrModal = () => {
     setShowQrModal(true);
-    window.history.pushState({ modal: 'wifi-qr' }, '', '#wifi-qr');
+    // Preserve current scroll position and state
+    const currentHash = window.location.hash || '#servicios';
+    window.history.pushState({ modal: 'wifi-qr', prevHash: currentHash }, '', '#wifi-qr');
   };
 
   const handleCloseQrModal = () => {
@@ -54,7 +56,7 @@ export default function PracticalInfoSection({
       if (e.key === 'Escape') handleCloseQrModal();
     };
 
-    const handlePopState = () => {
+    const handlePopState = (e) => {
       if (showQrModal) {
         setShowQrModal(false);
       }
