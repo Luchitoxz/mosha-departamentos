@@ -377,13 +377,16 @@ export default function PracticalInfoSection({
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <div className="flex items-center space-x-2.5">
+                  <div className="flex items-center space-x-2.5 min-w-0 flex-1">
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 fill-current text-emerald-400 shrink-0" viewBox="0 0 24 24">
                       <path d="M12.031 2C6.51 2 2.03 6.47 2.03 11.984a9.92 9.92 0 001.536 5.32L2.01 22l4.839-1.523a9.972 9.972 0 005.182 1.439h.005c5.517 0 9.997-4.47 9.997-9.983A9.97 9.97 0 0012.031 2zm0 18.272a8.27 8.27 0 01-4.223-1.154l-.303-.18-3.136.986.993-3.05-.198-.315a8.257 8.257 0 01-1.42-4.575c0-4.568 3.72-8.283 8.29-8.283a8.267 8.267 0 015.867 2.427 8.243 8.243 0 012.423 5.86c0 4.57-3.719 8.284-8.293 8.284zm4.542-6.195c-.249-.124-1.472-.726-1.7-.809-.228-.083-.394-.124-.56.124-.166.249-.643.809-.788.975-.145.166-.29.187-.539.062a6.8 6.8 0 01-2-1.233c-.76-.677-1.274-1.514-1.424-1.771-.149-.249-.016-.384.108-.507.112-.112.249-.29.373-.435.125-.145.166-.249.25-.415.083-.166.041-.311-.021-.435-.062-.125-.56-1.35-.768-1.849-.203-.486-.409-.42-.56-.428l-.478-.008c-.166 0-.436.062-.664.311-.228.249-.872.852-.872 2.077s.893 2.409 1.018 2.575c.124.166 1.756 2.682 4.254 3.762.594.257 1.059.41 1.422.525.599.191 1.144.164 1.575.099.48-.072 1.472-.602 1.68-1.183.208-.581.208-1.079.145-1.183-.062-.104-.228-.166-.477-.29z" />
                     </svg>
-                    <span className="text-xs sm:text-sm font-semibold">{tServicios.contactoBtn || 'Enviar mensaje por WhatsApp'}</span>
+                    <div className="flex flex-col text-left">
+                      <span className="text-xs sm:text-sm font-semibold">{tServicios.contactoBtn || 'Enviar mensaje por WhatsApp'}</span>
+                      <span className="text-[11px] text-slate-300 font-mono tracking-wide">+54 9 2945 64-5700</span>
+                    </div>
                   </div>
-                  <svg className="w-4 h-4 ml-1 stroke-[2.5] text-slate-300 group-hover:text-white group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1 stroke-[2.5] text-slate-300 group-hover:text-white group-hover:translate-x-0.5 transition shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </a>
