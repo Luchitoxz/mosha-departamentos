@@ -73,8 +73,11 @@ export default function PracticalInfoSection({
     };
   }, [showQrModal]);
 
-  const cleanPhone = hostPhone.replace(/[^0-9]/g, '');
+  // Strip all non-digits and strip leading 0 for international formatting
+  const rawDigits = hostPhone.replace(/[^0-9]/g, '');
+  const cleanPhone = rawDigits.startsWith('0') ? rawDigits.slice(1) : rawDigits;
   const waNumber = cleanPhone.startsWith('54') ? cleanPhone : `549${cleanPhone}`;
+  const telNumber = rawDigits.startsWith('0') ? rawDigits : `0${rawDigits}`;
   const waText = encodeURIComponent(
     tServicios.waMessage || 'Hola, me estoy hospedando en Mosha Departamentos'
   );
@@ -338,7 +341,7 @@ export default function PracticalInfoSection({
                 {/* Phone Clickable Row (Guaranteed Single-Line No-Wrap) */}
                 <a
                   className="group bg-slate-50/90 hover:bg-slate-100/80 rounded-xl p-3 sm:p-3.5 border border-slate-200/70 flex items-center justify-between gap-2.5 transition-colors"
-                  href={`tel:${cleanPhone}`}
+                  href={`tel:${telNumber}`}
                   title="Llamar por teléfono"
                 >
                   <div className="flex items-center space-x-3 min-w-0 flex-1">
