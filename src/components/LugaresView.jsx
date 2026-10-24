@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Globe } from 'lucide-react';
 import Footer from './Footer';
 import PanoramicBanner from './PanoramicBanner';
 import { t } from '../data/translations';
 
 export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
+  const [activeFilter, setActiveFilter] = useState('all');
   const currentT = t[lang] || t.es;
   const tPage = currentT.lugaresPage;
 
   const places = [
     {
       id: 'nant-y-fall',
+      group: 'naturaleza',
       title: lang === 'es' ? 'Cascadas Nant y Fall' : 'Nant y Fall Waterfalls',
       location: 'Trevelin',
       category: lang === 'es' ? 'Naturaleza' : 'Nature',
@@ -23,6 +25,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
     },
     {
       id: 'tulipanes',
+      group: 'naturaleza',
       title: lang === 'es' ? 'Campo de Tulipanes' : 'Tulip Fields',
       location: 'Trevelin',
       category: lang === 'es' ? 'Primavera (Oct-Nov)' : 'Spring (Oct-Nov)',
@@ -35,6 +38,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
     },
     {
       id: 'los-alerces',
+      group: 'naturaleza',
       title: lang === 'es' ? 'Parque Nacional Los Alerces' : 'Los Alerces National Park',
       location: 'Esquel / Trevelin',
       category: lang === 'es' ? 'Parque Nacional' : 'National Park',
@@ -47,6 +51,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
     },
     {
       id: 'molino-nant-fach',
+      group: 'historia',
       title: lang === 'es' ? 'Molino Nant Fach' : 'Nant Fach Mill Museum',
       location: 'Trevelin',
       category: lang === 'es' ? 'Sitio histórico' : 'Historic Site',
@@ -59,6 +64,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
     },
     {
       id: 'lago-futalaufquen',
+      group: 'naturaleza',
       title: lang === 'es' ? 'Lago Futalaufquen' : 'Futalaufquen Lake',
       location: 'Parque Nacional Los Alerces',
       category: lang === 'es' ? 'Lago glaciar' : 'Glacial Lake',
@@ -71,6 +77,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
     },
     {
       id: 'la-trochita',
+      group: 'historia',
       title: lang === 'es' ? 'La Trochita' : 'La Trochita Steam Train',
       location: 'Esquel / Trevelin',
       category: lang === 'es' ? 'Tren histórico' : 'Historic Train',
@@ -83,6 +90,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
     },
     {
       id: 'museo-regional',
+      group: 'historia',
       title: lang === 'es' ? 'Museo Regional Trevelin' : 'Trevelin Regional Museum',
       location: 'Trevelin',
       category: lang === 'es' ? 'Museo' : 'Museum',
@@ -94,6 +102,16 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Museo+Regional+Trevelin+Molino+Andes',
     },
   ];
+
+  const filters = [
+    { id: 'all', label: lang === 'en' ? 'All (7)' : 'Todos (7)' },
+    { id: 'naturaleza', label: lang === 'en' ? 'Nature & Lakes (4)' : 'Naturaleza y Lagos (4)' },
+    { id: 'historia', label: lang === 'en' ? 'History & Culture (3)' : 'Historia y Cultura (3)' },
+  ];
+
+  const filteredPlaces = activeFilter === 'all'
+    ? places
+    : places.filter(p => p.group === activeFilter);
 
   return (
     <div className="bg-[#f8fafc] text-slate-800 antialiased min-h-screen flex flex-col justify-between">
@@ -278,19 +296,39 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
 
       {/* BEGIN: MainContentSection */}
       <main className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-8 sm:py-12 md:py-16 grow">
-        {/* Title & Description Intro */}
-        <div className="mb-8 sm:mb-10 max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#091524] tracking-tight mb-2 sm:mb-3">
-            {tPage.sectionTitle || 'Recomendaciones imperdibles'}
-          </h2>
-          <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-            {tPage.sectionDesc || 'Descubrí los mejores lugares para conocer, disfrutar de la naturaleza y vivir experiencias únicas en Trevelin y sus alrededores. Todos los destinos están muy cerca de tu estadía.'}
-          </p>
+        {/* Title, Description & Quick Filter Pills */}
+        <div className="mb-6 sm:mb-9 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#091524] tracking-tight mb-2 sm:mb-3">
+              {tPage.sectionTitle || 'Recomendaciones imperdibles'}
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+              {tPage.sectionDesc || 'Descubrí los mejores lugares para conocer, disfrutar de la naturaleza y vivir experiencias únicas en Trevelin y sus alrededores. Todos los destinos están muy cerca de tu estadía.'}
+            </p>
+          </div>
+
+          {/* Quick Category Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            {filters.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                onClick={() => setActiveFilter(f.id)}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition cursor-pointer border ${
+                  activeFilter === f.id
+                    ? 'bg-[#0b1b30] text-white border-[#0b1b30] shadow-xs'
+                    : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:text-slate-900'
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Places 8-Card Grid matching Google Stitch */}
+        {/* Places Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-7 xl:gap-8" data-purpose="recommendations-grid">
-          {places.map((place, idx) => (
+          {filteredPlaces.map((place, idx) => (
             <article
               key={place.id}
               className="bg-white rounded-2xl overflow-hidden card-shadow border border-slate-100 flex flex-col justify-between transition-transform duration-200 hover:-translate-y-1"

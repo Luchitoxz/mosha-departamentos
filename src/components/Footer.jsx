@@ -1,7 +1,10 @@
 import React from 'react';
 
 export default function Footer({ tFooter, onOpenPrivacy }) {
-  const waLink = "https://wa.me/5492945645700?text=Hola,%20me%20estoy%20hospedando%20en%20Mosha%20Departamentos";
+  const waText = encodeURIComponent(
+    tFooter?.waMessage || 'Hola, me estoy hospedando en Mosha Departamentos'
+  );
+  const waLink = `https://wa.me/5492945645700?text=${waText}`;
 
   return (
     <footer className="bg-[#0c1a2d] text-white border-t border-slate-800" id="contacto">

@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Globe } from 'lucide-react';
 import Footer from './Footer';
 import PanoramicBanner from './PanoramicBanner';
 import { t } from '../data/translations';
 
 export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }) {
+  const [activeFilter, setActiveFilter] = useState('all');
   const currentT = t[lang] || t.es;
   const tPage = currentT.gastronomiaPage;
 
   const places = [
     {
       id: 'cocina-patagonica',
+      group: 'restaurantes',
       title: lang === 'es' ? 'Cocina patagónica' : 'Patagonian Cuisine',
       category: lang === 'es' ? 'Restaurante' : 'Restaurant',
       location: 'Trevelin',
@@ -22,6 +24,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
     },
     {
       id: 'cafeterias-te',
+      group: 'cafes',
       title: lang === 'es' ? 'Cafeterías y casas de té' : 'Cafes & Tea Rooms',
       category: lang === 'es' ? 'Cafetería' : 'Cafe',
       location: 'Trevelin',
@@ -34,6 +37,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
     },
     {
       id: 'pizzerias',
+      group: 'restaurantes',
       title: lang === 'es' ? 'Pizzerías' : 'Pizzerias',
       category: lang === 'es' ? 'Pizzería' : 'Pizzeria',
       location: 'Trevelin',
@@ -46,6 +50,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
     },
     {
       id: 'bodegon-nikanor',
+      group: 'restaurantes',
       title: 'Bodegón Nikanor',
       category: lang === 'es' ? 'Bodegón' : 'Traditional Bodegón',
       location: 'Trevelin',
@@ -57,6 +62,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
     },
     {
       id: 'parrillas',
+      group: 'restaurantes',
       title: lang === 'es' ? 'Parrillas' : 'Steakhouses & Grills',
       category: lang === 'es' ? 'Parrilla' : 'Steakhouse',
       location: 'Trevelin',
@@ -68,6 +74,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
     },
     {
       id: 'panaderias',
+      group: 'cafes',
       title: lang === 'es' ? 'Panaderías y confiterías' : 'Bakeries & Confectioneries',
       category: lang === 'es' ? 'Panadería' : 'Bakery',
       location: 'Trevelin',
@@ -80,6 +87,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
     },
     {
       id: 'cervecerias',
+      group: 'cervecerias',
       title: lang === 'es' ? 'Cervecerías' : 'Craft Breweries',
       category: lang === 'es' ? 'Cervecería' : 'Brewery',
       location: 'Trevelin',
@@ -91,6 +99,17 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Cervecerias+Trevelin',
     },
   ];
+
+  const filters = [
+    { id: 'all', label: lang === 'en' ? 'All (7)' : 'Todos (7)' },
+    { id: 'restaurantes', label: lang === 'en' ? 'Restaurants & Grills (4)' : 'Restaurantes y Parrillas (4)' },
+    { id: 'cafes', label: lang === 'en' ? 'Cafes & Bakeries (2)' : 'Cafés y Panaderías (2)' },
+    { id: 'cervecerias', label: lang === 'en' ? 'Breweries (1)' : 'Cervecerías (1)' },
+  ];
+
+  const filteredPlaces = activeFilter === 'all'
+    ? places
+    : places.filter(p => p.group === activeFilter);
 
   return (
     <div className="bg-[#f6f8fa] text-slate-800 antialiased selection:bg-slate-800 selection:text-white min-h-screen flex flex-col justify-between">
@@ -249,19 +268,39 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
 
       {/* BEGIN: MainContent */}
       <main className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-8 sm:py-12 md:py-16" data-purpose="gastronomy-catalog">
-        {/* Intro text */}
-        <div className="max-w-4xl mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0b192c] tracking-tight mb-2 sm:mb-3">
-            {tPage.sectionTitle || 'Sabores para descubrir'}
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            {tPage.sectionDesc || 'Desde comida regional hasta cafeterías y casas de té, Trevelin ofrece una gran variedad de propuestas gastronómicas para todos los gustos. Descubrí algunos lugares recomendados para disfrutar durante tu estadía.'}
-          </p>
+        {/* Intro text & Quick Filter Pills */}
+        <div className="mb-6 sm:mb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0b192c] tracking-tight mb-2 sm:mb-3">
+              {tPage.sectionTitle || 'Sabores para descubrir'}
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              {tPage.sectionDesc || 'Desde comida regional hasta cafeterías y casas de té, Trevelin ofrece una gran variedad de propuestas gastronómicas para todos los gustos. Descubrí algunos lugares recomendados para disfrutar durante tu estadía.'}
+            </p>
+          </div>
+
+          {/* Quick Category Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            {filters.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                onClick={() => setActiveFilter(f.id)}
+                className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition cursor-pointer border ${
+                  activeFilter === f.id
+                    ? 'bg-[#0b192c] text-white border-[#0b192c] shadow-xs'
+                    : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300 hover:text-slate-900'
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Cards Grid matching Google Stitch */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-7 xl:gap-8" data-purpose="cards-grid">
-          {places.map((place, idx) => (
+          {filteredPlaces.map((place, idx) => (
             <article
               key={place.id}
               className="bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"

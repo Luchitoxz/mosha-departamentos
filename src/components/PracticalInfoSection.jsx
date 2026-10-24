@@ -73,7 +73,10 @@ export default function PracticalInfoSection({
 
   const cleanPhone = hostPhone.replace(/[^0-9]/g, '');
   const waNumber = cleanPhone.startsWith('54') ? cleanPhone : `549${cleanPhone}`;
-  const waLink = `https://wa.me/${waNumber}?text=Hola,%20me%20estoy%20hospedando%20en%20Mosha%20Departamentos`;
+  const waText = encodeURIComponent(
+    tServicios.waMessage || 'Hola, me estoy hospedando en Mosha Departamentos'
+  );
+  const waLink = `https://wa.me/${waNumber}?text=${waText}`;
 
   return (
     <section className="pb-16 lg:pb-24 bg-[#f8fafc]" id="servicios">
@@ -424,6 +427,17 @@ export default function PracticalInfoSection({
                       <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
                         {tServicios.contactoLocation || 'Trevelin, Chubut — En el centro, a pasos de la plaza'}
                       </p>
+                      <a
+                        href="https://www.google.com/maps/search/?api=1&query=Mosha+Departamentos+Trevelin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-700 hover:text-blue-900 mt-1 transition group"
+                      >
+                        <span>{tServicios.directionsBtn || 'Cómo llegar en Google Maps'}</span>
+                        <svg className="w-3 h-3 stroke-[2.5] group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </a>
                     </div>
                   </div>
 

@@ -105,13 +105,13 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
           </nav>
         </div>
 
-        {/* Uncropped 2.5:1 Panoramic Banner Artwork */}
+        {/* Uncropped 2.5:1 Panoramic Banner Artwork + Bilingual Graphic Overlay */}
         <div className="relative w-full aspect-[2.5/1] overflow-hidden bg-[#0c1a2d]">
           <img
             alt={tPage.title || 'Bancos y Cajeros en Trevelin'}
             className="h-full w-full object-cover object-center"
-            src="./banner-bancos-2x.webp?v=2"
-            srcSet="./banner-bancos.webp?v=2 1200w, ./banner-bancos-2x.webp?v=2 1983w"
+            src="./banner-bancos-2x.webp?v=3"
+            srcSet="./banner-bancos.webp?v=3 1200w, ./banner-bancos-2x.webp?v=3 1983w"
             sizes="100vw"
             fetchpriority="high"
             decoding="async"
@@ -119,7 +119,66 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
               e.currentTarget.src = "./banner-bancos-2x.jpg";
             }}
           />
-          <h1 className="sr-only">{tPage.title || 'Bancos y cajeros'}</h1>
+
+          {/* Center Bilingual Title & Bank Building SVG Icon Lockup */}
+          <div className="absolute left-[50.5%] top-[49%] -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center pointer-events-none">
+            <div className="flex items-center gap-[clamp(0.4rem,1.4vw,1.5rem)]">
+              <h1 className="flex flex-col items-center text-center font-extrabold tracking-tight leading-[0.94]">
+                <span className="text-white text-[clamp(1.25rem,5vw,5.2rem)] drop-shadow-[0_4px_14px_rgba(0,0,0,0.75)]">
+                  {lang === 'en' ? 'Banks' : 'Bancos'}
+                </span>
+                <span className="bg-gradient-to-b from-[#fef3c7] via-[#f4c988] to-[#dfa650] bg-clip-text text-transparent text-[clamp(1.05rem,4.1vw,4.3rem)] drop-shadow-[0_4px_12px_rgba(0,0,0,0.75)] whitespace-nowrap">
+                  {lang === 'en' ? '& ATMs' : 'y Cajeros'}
+                </span>
+              </h1>
+
+              {/* Custom Classical Bank Building SVG Icon */}
+              <svg
+                className="w-[clamp(2.2rem,8.2vw,8.5rem)] h-[clamp(2.2rem,8.2vw,8.5rem)] shrink-0 drop-shadow-[0_5px_14px_rgba(0,0,0,0.7)]"
+                viewBox="0 0 120 120"
+                fill="none"
+              >
+                {/* Pediment Roof Outer (White) & Inner Triangle (Warm Gold) */}
+                <path
+                  d="M60 12L10 40h100L60 12z"
+                  fill="#ffffff"
+                />
+                <path
+                  d="M60 20L24 38h72L60 20z"
+                  fill="#f4c988"
+                />
+                <circle cx="60" cy="30" r="4" fill="#0c1a2d" />
+                {/* Architrave Bar */}
+                <rect x="14" y="42" width="92" height="6" rx="2" fill="#ffffff" />
+                {/* Three Classical Columns */}
+                <rect x="22" y="50" width="14" height="40" rx="2" fill="#ffffff" />
+                <rect x="53" y="50" width="14" height="40" rx="2" fill="#ffffff" />
+                <rect x="84" y="50" width="14" height="40" rx="2" fill="#ffffff" />
+                {/* Base Steps */}
+                <rect x="14" y="92" width="92" height="6" rx="2" fill="#ffffff" />
+                <rect x="8" y="100" width="104" height="8" rx="3" fill="#ffffff" />
+              </svg>
+            </div>
+
+            {/* Curved Sky-Blue to White Brush Stroke Underline */}
+            <svg
+              className="w-[88%] h-[clamp(6px,1.2vw,14px)] -mt-0.5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
+              viewBox="0 0 300 18"
+              fill="none"
+            >
+              <defs>
+                <linearGradient id="bancosArcGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#38bdf8" />
+                  <stop offset="65%" stopColor="#bae6fd" />
+                  <stop offset="100%" stopColor="#ffffff" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M8 15 C 95 2, 205 2, 292 11 C 205 7, 95 8, 8 15 Z"
+                fill="url(#bancosArcGrad)"
+              />
+            </svg>
+          </div>
         </div>
       </header>
       {/* END: MainHeader */}

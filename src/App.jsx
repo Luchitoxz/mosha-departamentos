@@ -34,7 +34,17 @@ const getHashFromView = (view) => {
 };
 
 export default function App() {
-  const [lang, setLang] = useState('es'); // 'es' or 'en'
+  const [lang, setLang] = useState(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = window.localStorage.getItem('mosha_lang');
+        if (saved === 'es' || saved === 'en') return saved;
+        const browserLang = (window.navigator.language || '').toLowerCase();
+        if (browserLang.startsWith('en')) return 'en';
+      } catch {}
+    }
+    return 'es';
+  });
   const [currentView, setCurrentView] = useState(() => {
     if (typeof window !== 'undefined' && window.location.hash) {
       return getViewFromHash(window.location.hash);
@@ -43,6 +53,13 @@ export default function App() {
   });
   const [toastMessage, setToastMessage] = useState('');
   const [privacyOpen, setPrivacyOpen] = useState(false);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem('mosha_lang', lang);
+      document.documentElement.lang = lang;
+    } catch {}
+  }, [lang]);
 
   const privacyOpenRef = useRef(privacyOpen);
   privacyOpenRef.current = privacyOpen;
@@ -62,7 +79,7 @@ export default function App() {
     const subpageAssets = [
       './banner-lugares-2x.webp?v=2',
       './banner-donde-comer-2x.webp?v=2',
-      './banner-bancos-2x.webp?v=2',
+      './banner-bancos-2x.webp?v=3',
       './banner-servicios-medicos-2x.webp?v=2',
       './la-mutisia.webp?v=2',
       './el-refugio-pizzeria.webp',
@@ -189,10 +206,13 @@ export default function App() {
 
   const handleSelectSection = (id) => {
     if (id === 'contacto') {
-      window.open(
-        'https://wa.me/5492945645700?text=Hola%20Mosha!%20Estoy%20en%20el%20departamento%20y%20quer%C3%ADa%20hacerles%20una%20consulta',
-        '_blank'
+      const msg = encodeURIComponent(
+        currentT.servicios?.waMessage ||
+          (lang === 'en'
+            ? 'Hello! I am staying at Mosha Departamentos and have a question.'
+            : 'Hola Mosha! Estoy en el departamento y quería hacerles una consulta.')
       );
+      window.open(`https://wa.me/5492945645700?text=${msg}`, '_blank');
       return;
     }
 
