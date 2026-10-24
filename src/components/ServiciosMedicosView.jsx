@@ -25,7 +25,8 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Centro de salud público con atención clínica general, guardia médica de urgencias las 24 horas, pediatría y ambulancias (SAME 107).'
         : 'Main public healthcare center in Trevelin with general clinical care, 24/7 emergency room, pediatric service and ambulance dispatch (SAME 107).',
-      image: './stitch/medicos-1-hospital.webp',
+      image: './hospital-rural-trevelin.webp?v=2',
+      imagePos: 'object-[center_60%]',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hospital+Rural+Trevelin',
     },
     {
@@ -37,7 +38,8 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
       desc: lang === 'es'
         ? 'Farmacias locales con sistema rotativo de turnos de guardia obligatorios de 24 horas para emergencias nocturnas, recetas y medicamentos.'
         : 'Local pharmacies with mandatory 24-hour rotating night-shift schedules for prescription medicine, urgent health supplies and first aid.',
-      image: './stitch/medicos-3-farmacias.webp',
+      image: './farmacia-trevelin.webp?v=2',
+      imagePos: 'object-center',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Farmacias+en+Trevelin',
     },
     {
@@ -50,6 +52,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         ? 'Atención veterinaria local para consultas médicas, urgencias, medicamentos y cuidados de tus mascotas durante tu estadía.'
         : 'Local veterinary care for general checkups, pet emergencies, medications and supplies during your stay in Trevelin.',
       image: './stitch/medicos-8-veterinarias.webp',
+      imagePos: 'object-center',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Veterinarias+en+Trevelin',
     },
   ];
@@ -211,7 +214,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
                 <div className="w-full aspect-[16/10] overflow-hidden relative bg-slate-100">
                   <img
                     alt={svc.title}
-                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300"
+                    className={`w-full h-full object-cover ${svc.imagePos || 'object-center'} hover:scale-105 transition-transform duration-300`}
                     loading={idx < 4 ? "eager" : "lazy"}
                     decoding="async"
                     src={svc.image}

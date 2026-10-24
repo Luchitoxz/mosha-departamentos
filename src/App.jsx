@@ -70,6 +70,8 @@ export default function App() {
       './la-anonima.webp',
       './ypf-trevelin.webp',
       './stitch/medicos-hero.webp',
+      './hospital-rural-trevelin.webp?v=2',
+      './farmacia-trevelin.webp?v=2',
       './stitch/banner-panoramico.webp',
     ];
     const prefetchAssets = () => {
