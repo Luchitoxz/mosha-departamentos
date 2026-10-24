@@ -63,16 +63,19 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            alt="Banco del Chubut y servicios financieros en Trevelin"
-            className="h-full w-full object-cover object-[center_40%] filter brightness-[0.88]"
-            src="./banco-chubut.webp"
+            alt="Bancos y Cajeros en Trevelin"
+            className="h-full w-full object-cover object-center scale-105"
+            src="./banner-bancos-2x.webp?v=1"
+            srcSet="./banner-bancos.webp?v=1 1024w, ./banner-bancos-2x.webp?v=1 2048w"
+            sizes="100vw"
             fetchpriority="high"
             decoding="async"
             onError={(e) => {
-              e.currentTarget.src = "./banco-chubut.jpg";
+              e.currentTarget.src = "./banner-bancos-2x.jpg";
             }}
           />
-          <div className="hero-gradient absolute inset-0" />
+          {/* Top protective shade for navigation icons */}
+          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
         </div>
 
         {/* Navigation Top Bar */}
@@ -120,19 +123,9 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
           </nav>
         </div>
 
-        {/* Hero Typography Section */}
-        <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-10 sm:py-16 md:py-20">
-          <div className="max-w-3xl text-left">
-            <span className="text-xs font-bold tracking-[0.28em] text-cyan-200 uppercase block mb-2 sm:mb-3">
-              {tPage.eyebrow || 'SERVICIOS FINANCIEROS'}
-            </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-3 sm:mb-4 drop-shadow-md">
-              {tPage.title || 'Bancos y cajeros'}
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-slate-100 font-normal leading-relaxed max-w-xl drop-shadow">
-              {tPage.subtitle || 'Sucursales bancarias, cajeros automáticos 24 hs y puntos de retiro de efectivo en Trevelin y Esquel.'}
-            </p>
-          </div>
+        {/* Bottom spacer & accessible heading */}
+        <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-4">
+          <h1 className="sr-only">{tPage.title || 'Bancos y cajeros'}</h1>
         </div>
       </header>
       {/* END: MainHeader */}

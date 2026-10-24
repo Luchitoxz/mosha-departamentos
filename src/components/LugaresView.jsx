@@ -101,16 +101,19 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
       <header className="relative w-full min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] overflow-hidden text-white flex flex-col justify-between select-none">
         {/* Hero Background Image with Overlay */}
         <img
-          alt="Cascadas turquesas en Trevelin"
-          className="absolute inset-0 w-full h-full object-cover object-[center_35%] z-0 transform scale-105"
-          src="./stitch/lugares-hero.webp"
+          alt="Lugares para Visitar en Trevelin"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
+          src="./banner-lugares-2x.webp?v=1"
+          srcSet="./banner-lugares.webp?v=1 1024w, ./banner-lugares-2x.webp?v=1 2048w"
+          sizes="100vw"
           fetchpriority="high"
           decoding="async"
           onError={(e) => {
-            e.currentTarget.src = "./stitch/lugares-hero.png";
+            e.currentTarget.src = "./banner-lugares-2x.jpg";
           }}
         />
-        <div className="absolute inset-0 hero-gradient z-[1]" />
+        {/* Top protective shade for navigation icons */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
 
         {/* Top Navigation Bar */}
         <nav aria-label="Navegación principal" className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-4 sm:py-6 flex items-center justify-between">
@@ -156,17 +159,9 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
           </div>
         </nav>
 
-        {/* Hero Titles and Subtitle */}
-        <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-10 sm:pb-16 pt-4 sm:pt-6">
-          <p className="text-[11px] md:text-xs font-semibold tracking-[0.28em] uppercase text-slate-200 mb-2">
-            {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
-          </p>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-2 sm:mb-3">
-            {tPage.title || 'Lugares para visitar'}
-          </h1>
-          <p className="text-sm sm:text-base md:text-lg text-slate-200 font-normal max-w-xl leading-relaxed">
-            {tPage.subtitle || 'Naturaleza, paisajes y experiencias únicas en Trevelin y sus alrededores.'}
-          </p>
+        {/* Bottom spacer & accessible heading */}
+        <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-4">
+          <h1 className="sr-only">{tPage.title || 'Lugares para visitar'}</h1>
         </div>
       </header>
       {/* END: MainHeaderAndHero */}

@@ -98,17 +98,19 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
       <header className="relative w-full overflow-hidden min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] flex flex-col justify-between" data-purpose="hero-header-section">
         {/* Background Hero Image */}
         <img
-          alt="Gastronomía en Trevelin"
+          alt="Dónde Comer en Trevelin"
           className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
-          src="./gastronomia-banner.webp"
+          src="./banner-donde-comer-2x.webp?v=1"
+          srcSet="./banner-donde-comer.webp?v=1 1024w, ./banner-donde-comer-2x.webp?v=1 2048w"
+          sizes="100vw"
           fetchpriority="high"
           decoding="async"
           onError={(e) => {
-            e.currentTarget.src = "./gastronomia-banner.jpg";
+            e.currentTarget.src = "./banner-donde-comer-2x.jpg";
           }}
         />
-        {/* Hero Dark Overlay Gradients */}
-        <div className="absolute inset-0 hero-gradient z-10 pointer-events-none" />
+        {/* Top protective shade for navigation icons */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
 
         {/* Navigation Bar */}
         <div className="relative z-20 w-full border-b border-white/10">
@@ -155,19 +157,9 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
           </div>
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-20 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-8 sm:pt-12 pb-12 sm:pb-20">
-          <div className="max-w-3xl text-white">
-            <span className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-white/85 mb-2 sm:mb-3">
-              {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
-            </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] mb-3 sm:mb-4">
-              {tPage.title || 'Dónde comer'}
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-white/90 font-normal leading-relaxed max-w-xl text-shadow-sm">
-              {tPage.subtitle || 'Restaurantes, cafeterías y sabores locales para disfrutar la gastronomía de Trevelin y sus alrededores.'}
-            </p>
-          </div>
+        {/* Bottom spacer & accessible heading */}
+        <div className="relative z-20 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-4">
+          <h1 className="sr-only">{tPage.title || 'Dónde comer'}</h1>
         </div>
       </header>
       {/* END: MainHeaderAndHero */}

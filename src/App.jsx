@@ -60,8 +60,10 @@ export default function App() {
   // Idle background prefetch for instant subpage transitions
   useEffect(() => {
     const subpageAssets = [
-      './stitch/lugares-hero.webp',
-      './gastronomia-banner.webp',
+      './banner-lugares-2x.webp?v=1',
+      './banner-donde-comer-2x.webp?v=1',
+      './banner-bancos-2x.webp?v=1',
+      './banner-servicios-medicos-2x.webp?v=1',
       './la-mutisia.webp?v=2',
       './el-refugio-pizzeria.webp',
       './panaderias-confiterias.webp',
@@ -69,7 +71,6 @@ export default function App() {
       './banco-chubut.webp',
       './la-anonima.webp',
       './ypf-trevelin.webp',
-      './stitch/medicos-hero.webp',
       './hospital-rural-trevelin.webp?v=2',
       './farmacia-trevelin.webp?v=2',
       './stitch/banner-panoramico.webp',

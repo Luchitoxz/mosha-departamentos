@@ -60,19 +60,22 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
   return (
     <div className="bg-[#f8fafc] text-slate-800 antialiased selection:bg-cyan-500 selection:text-white min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeader */}
-      <header className="relative w-full min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] flex flex-col justify-between text-white border-b border-white/10" data-purpose="hero-section">
+      <header className="relative w-full min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] flex flex-col justify-between text-white border-b border-white/10 overflow-hidden" data-purpose="hero-section">
         {/* Hero Background Image */}
         <img
-          alt="Servicios médicos en Trevelin"
-          className="absolute inset-0 w-full h-full object-cover object-[center_35%] z-0 scale-105"
-          src="./stitch/medicos-hero.webp"
+          alt="Servicios Médicos en Trevelin"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
+          src="./banner-servicios-medicos-2x.webp?v=1"
+          srcSet="./banner-servicios-medicos.webp?v=1 1024w, ./banner-servicios-medicos-2x.webp?v=1 2048w"
+          sizes="100vw"
           fetchpriority="high"
           decoding="async"
           onError={(e) => {
-            e.currentTarget.src = "./stitch/medicos-hero.jpg";
+            e.currentTarget.src = "./banner-servicios-medicos-2x.jpg";
           }}
         />
-        <div className="absolute inset-0 hero-gradient z-10 pointer-events-none" />
+        {/* Top protective shade for navigation icons */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
 
         {/* Top Navigation Bar */}
         <nav aria-label="Navegación principal" className="relative z-20 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-4 sm:py-5 flex items-center justify-between">
@@ -117,17 +120,9 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
           </div>
         </nav>
 
-        {/* Hero Content */}
-        <div className="relative z-20 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pt-6 pb-10 sm:pb-16 flex flex-col justify-end">
-          <span className="text-[11px] font-bold tracking-[0.25em] text-cyan-200 uppercase mb-2">
-            {tPage.eyebrow || 'EXPLORÁ TREVELIN'}
-          </span>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-2 sm:mb-3">
-            {tPage.title || 'Servicios médicos'}
-          </h1>
-          <p className="text-white/90 text-sm sm:text-base md:text-lg max-w-xl font-normal leading-relaxed">
-            {tPage.subtitle || 'Hospitales, clínicas, farmacias y atención de urgencias en Trevelin y sus alrededores.'}
-          </p>
+        {/* Bottom spacer & accessible heading */}
+        <div className="relative z-20 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-4">
+          <h1 className="sr-only">{tPage.title || 'Servicios médicos'}</h1>
         </div>
       </header>
       {/* END: MainHeader */}
