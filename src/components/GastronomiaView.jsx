@@ -95,26 +95,10 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
   return (
     <div className="bg-[#f6f8fa] text-slate-800 antialiased selection:bg-slate-800 selection:text-white min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeaderAndHero */}
-      <header className="relative w-full overflow-hidden min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] flex flex-col justify-between" data-purpose="hero-header-section">
-        {/* Background Hero Image */}
-        <img
-          alt="Dónde Comer en Trevelin"
-          className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
-          src="./banner-donde-comer-2x.webp?v=1"
-          srcSet="./banner-donde-comer.webp?v=1 1024w, ./banner-donde-comer-2x.webp?v=1 2048w"
-          sizes="100vw"
-          fetchpriority="high"
-          decoding="async"
-          onError={(e) => {
-            e.currentTarget.src = "./banner-donde-comer-2x.jpg";
-          }}
-        />
-        {/* Top protective shade for navigation icons */}
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
-
-        {/* Navigation Bar */}
-        <div className="relative z-20 w-full border-b border-white/10">
-          <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-4 sm:py-5 flex items-center justify-between">
+      <header className="w-full bg-[#0c1a2d] text-white select-none" data-purpose="hero-header-section">
+        {/* Top Alpine Navigation Bar (Dedicated bar so artwork is never obstructed) */}
+        <div className="w-full bg-[#0c1a2d] border-b border-white/10">
+          <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-3 sm:py-4 flex items-center justify-between">
             {/* Logo Mosha */}
             <button
               onClick={onBack}
@@ -124,7 +108,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <span className="text-xl sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
+                <span className="text-lg sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
               </div>
               <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.38em] text-slate-200 uppercase pl-0.5">
                 DEPARTAMENTOS
@@ -145,21 +129,86 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
               {/* Back to Home Button */}
               <button
                 onClick={onBack}
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white text-xs sm:text-sm font-medium transition-all shadow-sm cursor-pointer"
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full border border-white/40 bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-medium transition-all shadow-sm cursor-pointer"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                 </svg>
                 <span className="hidden sm:inline">{currentT.nav.volverInicio || 'Volver al inicio'}</span>
-                <span className="sm:hidden">Inicio</span>
+                <span className="sm:hidden">{currentT.nav.inicio || 'Inicio'}</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Bottom spacer & accessible heading */}
-        <div className="relative z-20 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-4">
-          <h1 className="sr-only">{tPage.title || 'Dónde comer'}</h1>
+        {/* Uncropped 2.5:1 Panoramic Banner Artwork + Bilingual Graphic Overlay */}
+        <div className="relative w-full aspect-[2.5/1] overflow-hidden bg-[#0c1a2d]">
+          <img
+            alt={tPage.title || 'Dónde Comer en Trevelin'}
+            className="w-full h-full object-cover object-center"
+            src="./banner-donde-comer-2x.webp?v=2"
+            srcSet="./banner-donde-comer.webp?v=2 1200w, ./banner-donde-comer-2x.webp?v=2 1983w"
+            sizes="100vw"
+            fetchpriority="high"
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.src = "./banner-donde-comer-2x.jpg";
+            }}
+          />
+
+          {/* Center Bilingual Title & Graphic Icon Lockup */}
+          <div className="absolute left-[53.5%] top-[49%] -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center pointer-events-none">
+            <div className="flex items-center gap-[clamp(0.4rem,1.4vw,1.5rem)]">
+              <h1 className="flex flex-col items-center text-center font-extrabold tracking-tight leading-[0.94]">
+                <span className="text-white text-[clamp(1.25rem,5vw,5.2rem)] drop-shadow-[0_4px_14px_rgba(0,0,0,0.75)]">
+                  {lang === 'en' ? 'Where' : 'Dónde'}
+                </span>
+                <span className="bg-gradient-to-b from-[#fef3c7] via-[#f4c882] to-[#df9e42] bg-clip-text text-transparent text-[clamp(1.1rem,4.4vw,4.5rem)] drop-shadow-[0_4px_12px_rgba(0,0,0,0.75)] whitespace-nowrap">
+                  {lang === 'en' ? 'to Eat' : 'Comer'}
+                </span>
+              </h1>
+
+              {/* Custom Fork + Plate + Knife SVG Icon */}
+              <svg
+                className="w-[clamp(2.2rem,8.2vw,8.5rem)] h-[clamp(2.2rem,8.2vw,8.5rem)] shrink-0 drop-shadow-[0_5px_14px_rgba(0,0,0,0.7)]"
+                viewBox="0 0 130 120"
+                fill="none"
+              >
+                <defs>
+                  <linearGradient id="comerGoldGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#fef3c7" />
+                    <stop offset="50%" stopColor="#f4c882" />
+                    <stop offset="100%" stopColor="#df9e42" />
+                  </linearGradient>
+                </defs>
+                {/* Fork (Left) */}
+                <path
+                  d="M14 16v28c0 5 3.5 9 8 10v46c0 2.8 2.2 5 5 5s5-2.2 5-5V54c4.5-1 8-5 8-10V16h-4v22h-3V16h-4v22h-3V16h-4v22h-4V16h-4z"
+                  fill="url(#comerGoldGrad)"
+                />
+                {/* Plate Outer Ring & Inner Dish */}
+                <circle cx="70" cy="60" r="36" stroke="url(#comerGoldGrad)" strokeWidth="6" />
+                <circle cx="70" cy="60" r="26" fill="url(#comerGoldGrad)" />
+                {/* Knife (Right) */}
+                <path
+                  d="M116 16c-6 6-10 18-10 34v18h5v32c0 2.8 2.2 5 5 5s5-2.2 5-5V16h-5z"
+                  fill="url(#comerGoldGrad)"
+                />
+              </svg>
+            </div>
+
+            {/* Curved Golden Brush Stroke Underline */}
+            <svg
+              className="w-[88%] h-[clamp(6px,1.2vw,14px)] -mt-0.5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
+              viewBox="0 0 300 18"
+              fill="none"
+            >
+              <path
+                d="M8 15 C 95 2, 205 2, 292 11 C 205 7, 95 8, 8 15 Z"
+                fill="#f4c882"
+              />
+            </svg>
+          </div>
         </div>
       </header>
       {/* END: MainHeaderAndHero */}
@@ -176,7 +225,7 @@ export default function GastronomiaView({ lang, setLang, onBack, onOpenPrivacy }
               <path d="M10 19l-7-7m0 0l7-7m-7 7h18" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
             </svg>
             <span className="hidden sm:inline">{currentT.nav.volverGuia || 'Volver a la guía'}</span>
-            <span className="sm:hidden">Guía</span>
+            <span className="sm:hidden">{currentT.nav.guia || 'Guía'}</span>
           </button>
 
           {/* Region indicator pill */}

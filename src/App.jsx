@@ -60,10 +60,10 @@ export default function App() {
   // Idle background prefetch for instant subpage transitions
   useEffect(() => {
     const subpageAssets = [
-      './banner-lugares-2x.webp?v=1',
-      './banner-donde-comer-2x.webp?v=1',
-      './banner-bancos-2x.webp?v=1',
-      './banner-servicios-medicos-2x.webp?v=1',
+      './banner-lugares-2x.webp?v=2',
+      './banner-donde-comer-2x.webp?v=2',
+      './banner-bancos-2x.webp?v=2',
+      './banner-servicios-medicos-2x.webp?v=2',
       './la-mutisia.webp?v=2',
       './el-refugio-pizzeria.webp',
       './panaderias-confiterias.webp',
@@ -73,7 +73,7 @@ export default function App() {
       './ypf-trevelin.webp',
       './hospital-rural-trevelin.webp?v=2',
       './farmacia-trevelin.webp?v=2',
-      './stitch/banner-panoramico.webp',
+      './stitch/banner-tulipanes-hd-2x.webp?v=5',
     ];
     const prefetchAssets = () => {
       subpageAssets.forEach((url) => {

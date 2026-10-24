@@ -60,69 +60,114 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
   return (
     <div className="bg-[#f8fafc] text-slate-800 antialiased selection:bg-cyan-500 selection:text-white min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeader */}
-      <header className="relative w-full min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] flex flex-col justify-between text-white border-b border-white/10 overflow-hidden" data-purpose="hero-section">
-        {/* Hero Background Image */}
-        <img
-          alt="Servicios Médicos en Trevelin"
-          className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105"
-          src="./banner-servicios-medicos-2x.webp?v=1"
-          srcSet="./banner-servicios-medicos.webp?v=1 1024w, ./banner-servicios-medicos-2x.webp?v=1 2048w"
-          sizes="100vw"
-          fetchpriority="high"
-          decoding="async"
-          onError={(e) => {
-            e.currentTarget.src = "./banner-servicios-medicos-2x.jpg";
-          }}
-        />
-        {/* Top protective shade for navigation icons */}
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
-
-        {/* Top Navigation Bar */}
-        <nav aria-label="Navegación principal" className="relative z-20 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-4 sm:py-5 flex items-center justify-between">
-          {/* Brand Logo */}
-          <button
-            onClick={onBack}
-            className="flex flex-col items-start group cursor-pointer text-left text-white"
-          >
-            <div className="flex items-center space-x-1.5">
-              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <span className="text-xl sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
-            </div>
-            <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.38em] text-slate-200 uppercase pl-0.5">
-              DEPARTAMENTOS
-            </span>
-          </button>
-
-          {/* Right Action Buttons */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* Language Switch */}
-            <button
-              onClick={() => setLang(prev => (prev === 'es' ? 'en' : 'es'))}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition cursor-pointer"
-            >
-              <Globe className="w-3.5 h-3.5" />
-              <span>{lang.toUpperCase()}</span>
-            </button>
-
-            {/* Back to Home Button */}
+      <header className="w-full bg-[#0c1a2d] text-white select-none" data-purpose="hero-section">
+        {/* Top Alpine Navigation Bar (Dedicated bar so artwork is never obstructed) */}
+        <div className="w-full bg-[#0c1a2d] border-b border-white/10">
+          <nav aria-label="Navegación principal" className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-3 sm:py-4 flex items-center justify-between">
+            {/* Brand Logo */}
             <button
               onClick={onBack}
-              className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2.5 rounded-full border border-white/35 bg-white/10 backdrop-blur-md text-xs sm:text-sm font-medium text-white hover:bg-white/20 transition-all shadow-sm cursor-pointer"
+              className="flex flex-col items-start group cursor-pointer text-left text-white"
             >
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-              </svg>
-              <span className="hidden sm:inline">{currentT.nav.volverInicio || 'Volver al inicio'}</span>
-              <span className="sm:hidden">Inicio</span>
+              <div className="flex items-center space-x-1.5">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span className="text-lg sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
+              </div>
+              <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.38em] text-slate-200 uppercase pl-0.5">
+                DEPARTAMENTOS
+              </span>
             </button>
-          </div>
-        </nav>
 
-        {/* Bottom spacer & accessible heading */}
-        <div className="relative z-20 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-4">
-          <h1 className="sr-only">{tPage.title || 'Servicios médicos'}</h1>
+            {/* Right Action Buttons */}
+            <div className="flex items-center gap-2 sm:gap-3">
+              {/* Language Switch */}
+              <button
+                onClick={() => setLang(prev => (prev === 'es' ? 'en' : 'es'))}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition cursor-pointer"
+              >
+                <Globe className="w-3.5 h-3.5" />
+                <span>{lang.toUpperCase()}</span>
+              </button>
+
+              {/* Back to Home Button */}
+              <button
+                onClick={onBack}
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full border border-white/35 bg-white/10 text-xs sm:text-sm font-medium text-white hover:bg-white/20 transition-all shadow-sm cursor-pointer"
+              >
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                </svg>
+                <span className="hidden sm:inline">{currentT.nav.volverInicio || 'Volver al inicio'}</span>
+                <span className="sm:hidden">{currentT.nav.inicio || 'Inicio'}</span>
+              </button>
+            </div>
+          </nav>
+        </div>
+
+        {/* Uncropped 2.5:1 Panoramic Banner Artwork + Bilingual Graphic Overlay */}
+        <div className="relative w-full aspect-[2.5/1] overflow-hidden bg-[#0c1a2d]">
+          <img
+            alt={tPage.title || 'Servicios Médicos en Trevelin'}
+            className="w-full h-full object-cover object-center"
+            src="./banner-servicios-medicos-2x.webp?v=2"
+            srcSet="./banner-servicios-medicos.webp?v=2 1200w, ./banner-servicios-medicos-2x.webp?v=2 1983w"
+            sizes="100vw"
+            fetchpriority="high"
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.src = "./banner-servicios-medicos-2x.jpg";
+            }}
+          />
+
+          {/* Center Bilingual Title & Medical Kit Icon Lockup */}
+          <div className="absolute left-[53.5%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center pointer-events-none">
+            <div className="flex items-center gap-[clamp(0.4rem,1.4vw,1.5rem)]">
+              <h1 className="flex flex-col items-center text-center font-extrabold tracking-tight leading-[0.94]">
+                <span className="text-white text-[clamp(1.25rem,4.8vw,5rem)] drop-shadow-[0_4px_14px_rgba(0,0,0,0.75)]">
+                  {lang === 'en' ? 'Medical' : 'Servicios'}
+                </span>
+                <span className="bg-gradient-to-b from-[#e0f2fe] via-[#7dd3fc] to-[#38bdf8] bg-clip-text text-transparent text-[clamp(1.15rem,4.5vw,4.7rem)] drop-shadow-[0_4px_12px_rgba(0,0,0,0.75)] whitespace-nowrap">
+                  {lang === 'en' ? 'Services' : 'Médicos'}
+                </span>
+              </h1>
+
+              {/* Custom Medical First-Aid Kit SVG Icon */}
+              <svg
+                className="w-[clamp(2.2rem,8vw,8.2rem)] h-[clamp(2.2rem,8vw,8.2rem)] shrink-0 drop-shadow-[0_5px_14px_rgba(0,0,0,0.7)]"
+                viewBox="0 0 120 110"
+                fill="none"
+              >
+                <defs>
+                  <linearGradient id="medKitGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#ffffff" />
+                    <stop offset="55%" stopColor="#bae6fd" />
+                    <stop offset="100%" stopColor="#38bdf8" />
+                  </linearGradient>
+                </defs>
+                {/* Kit Handle & Body with Cutout Medical Cross */}
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M42 12c-4.4 0-8 3.6-8 8v8H18c-6.6 0-12 5.4-12 12v48c0 6.6 5.4 12 12 12h84c6.6 0 12-5.4 12-12V40c0-6.6-5.4-12-12-12H86v-8c0-4.4-3.6-8-8-8H42zm2 16v-6h32v6H44zm10 16h12v14h14v12H66v14H54V70H40V58h14V44z"
+                  fill="url(#medKitGrad)"
+                />
+              </svg>
+            </div>
+
+            {/* Curved Sky-Blue Brush Stroke Underline */}
+            <svg
+              className="w-[88%] h-[clamp(6px,1.2vw,14px)] -mt-0.5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]"
+              viewBox="0 0 300 18"
+              fill="none"
+            >
+              <path
+                d="M8 15 C 95 2, 205 2, 292 11 C 205 7, 95 8, 8 15 Z"
+                fill="#7dd3fc"
+              />
+            </svg>
+          </div>
         </div>
       </header>
       {/* END: MainHeader */}
@@ -140,7 +185,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
               <polyline points="12 19 5 12 12 5" />
             </svg>
             <span className="hidden sm:inline">{currentT.nav.volverGuia || 'Volver a la guía'}</span>
-            <span className="sm:hidden">Guía</span>
+            <span className="sm:hidden">{currentT.nav.guia || 'Guía'}</span>
           </button>
 
           {/* Location Indicator */}

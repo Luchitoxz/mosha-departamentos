@@ -82,13 +82,13 @@ export default function PracticalInfoSection({
         {/* Section Heading */}
         <div className="mb-8 sm:mb-10 text-left">
           <span className="text-[11px] sm:text-xs font-bold tracking-[0.22em] text-[#1e3e62] uppercase block mb-1">
-            INFORMACIÓN PRÁCTICA
+            {tServicios.sectionEyebrow || 'INFORMACIÓN PRÁCTICA'}
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0c1a2d] tracking-tight">
-            Todo para tu comodidad
+            {tServicios.sectionTitle || 'Todo para tu comodidad'}
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-slate-600 mt-1 max-w-2xl">
-            Conectate al Wi-Fi, comunicate con el anfitrión y conocé las recomendaciones para disfrutar al máximo tu estadía.
+            {tServicios.sectionSubtitle || 'Conectate al Wi-Fi, comunicate con el anfitrión y conocé las recomendaciones para disfrutar al máximo tu estadía.'}
           </p>
         </div>
 
@@ -254,7 +254,7 @@ export default function PracticalInfoSection({
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-slate-900 leading-tight">
-                        Horarios de estadía
+                        {tServicios.scheduleTitle || 'Horarios de estadía'}
                       </h4>
                       <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
                         {tServicios.checkIn || 'Check-in: 14:00 hs'} • {tServicios.checkOut || 'Check-out: 10:00 hs'}
@@ -271,7 +271,7 @@ export default function PracticalInfoSection({
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-slate-900 leading-tight">
-                        Calefacción y agua caliente
+                        {tServicios.heatingTitle || 'Calefacción y agua caliente'}
                       </h4>
                       <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
                         {tServicios.calefaccion || 'Caldera individual y radiadores en todos los ambientes'}
@@ -289,7 +289,7 @@ export default function PracticalInfoSection({
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-slate-900 leading-tight">
-                        Smart TV y entretenimiento
+                        {tServicios.tvTitle || 'Smart TV y entretenimiento'}
                       </h4>
                       <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
                         {tServicios.smartTv || 'Smart TV con apps habilitadas y fibra óptica'}
@@ -387,7 +387,7 @@ export default function PracticalInfoSection({
               {/* Host Support & Availability Details */}
               <div className="mt-5 pt-4 border-t border-slate-100">
                 <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-3">
-                  Atención y asistencia
+                  {tServicios.supportSectionTitle || 'Atención y asistencia'}
                 </span>
 
                 <div className="space-y-3 text-left">
@@ -401,7 +401,7 @@ export default function PracticalInfoSection({
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-slate-900 leading-tight">
-                        Horario de disponibilidad
+                        {tServicios.hoursTitle || 'Horario de disponibilidad'}
                       </h4>
                       <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
                         {tServicios.contactoHours || 'Atención: 08:00 a 22:00 hs (Urgencias 24 hs)'}
@@ -419,7 +419,7 @@ export default function PracticalInfoSection({
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-slate-900 leading-tight">
-                        Ubicación del complejo
+                        {tServicios.locationTitle || 'Ubicación del complejo'}
                       </h4>
                       <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
                         {tServicios.contactoLocation || 'Trevelin, Chubut — En el centro, a pasos de la plaza'}
@@ -436,7 +436,7 @@ export default function PracticalInfoSection({
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-slate-900 leading-tight">
-                        Asistencia personalizada
+                        {tServicios.assistanceTitle || 'Asistencia personalizada'}
                       </h4>
                       <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
                         {tServicios.contactoNote || 'Consultas, recomendaciones turísticas o asistencia con el dpto.'}
@@ -665,11 +665,11 @@ export default function PracticalInfoSection({
             {/* Credentials Pill */}
             <div className="w-full bg-slate-50 rounded-xl p-3 border border-slate-200/80 mb-5 text-left text-xs space-y-1.5">
               <div className="flex justify-between items-center">
-                <span className="text-slate-400 font-semibold uppercase text-[10px]">Red:</span>
+                <span className="text-slate-400 font-semibold uppercase text-[10px]">{tServicios.qrNetLabel || 'Red:'}</span>
                 <span className="font-bold text-slate-900 truncate max-w-[200px] select-all">{wifiSSID}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-slate-400 font-semibold uppercase text-[10px]">Clave:</span>
+                <span className="text-slate-400 font-semibold uppercase text-[10px]">{tServicios.qrPassLabel || 'Clave:'}</span>
                 <span className="font-bold text-slate-900 select-all">{wifiPassword}</span>
               </div>
             </div>
@@ -680,7 +680,7 @@ export default function PracticalInfoSection({
               className="w-full py-2.5 px-4 bg-[#0c1a2d] hover:bg-slate-900 text-white text-xs font-bold rounded-xl transition cursor-pointer"
               type="button"
             >
-              Cerrar
+              {tServicios.qrCloseBtn || 'Cerrar'}
             </button>
           </div>
         </div>

@@ -90,8 +90,8 @@ export default function PoliticaModal({ isOpen, onClose, lang = 'es' }) {
             </div>
             <p>
               {isEn
-                ? 'Guests are kindly asked to observe the 100% smoke-free policy, quiet night hours (23:00 to 08:00), and check-out schedule (until 11:00 AM) to preserve quality and comfort for everyone.'
-                : 'Se solicita a los huéspedes respetar el espacio 100% libre de humo, el horario de silencio nocturno (23:00 a 08:00 hs) y el horario de check-out (hasta las 11:00 hs) para garantizar el confort de todos.'}
+                ? 'Guests are kindly asked to observe the 100% smoke-free policy, quiet night hours (10:00 PM to 08:00 AM), and check-out schedule (until 10:00 AM) to preserve quality and comfort for everyone.'
+                : 'Se solicita a los huéspedes respetar el espacio 100% libre de humo, el horario de silencio nocturno (22:00 a 08:00 hs) y el horario de check-out (hasta las 10:00 hs) para garantizar el confort de todos.'}
             </p>
           </div>
         </div>

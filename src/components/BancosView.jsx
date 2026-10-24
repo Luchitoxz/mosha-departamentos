@@ -59,28 +59,10 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
   return (
     <div className="bg-[#fcfdfe] text-slate-800 antialiased min-h-screen flex flex-col justify-between">
       {/* BEGIN: MainHeader */}
-      <header className="relative w-full overflow-hidden bg-slate-900 min-h-[380px] sm:min-h-[460px] md:min-h-[520px] lg:min-h-[580px] xl:min-h-[620px] flex flex-col justify-between" data-purpose="hero-header">
-        {/* Hero Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            alt="Bancos y Cajeros en Trevelin"
-            className="h-full w-full object-cover object-center scale-105"
-            src="./banner-bancos-2x.webp?v=1"
-            srcSet="./banner-bancos.webp?v=1 1024w, ./banner-bancos-2x.webp?v=1 2048w"
-            sizes="100vw"
-            fetchpriority="high"
-            decoding="async"
-            onError={(e) => {
-              e.currentTarget.src = "./banner-bancos-2x.jpg";
-            }}
-          />
-          {/* Top protective shade for navigation icons */}
-          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 via-black/20 to-transparent z-10 pointer-events-none" />
-        </div>
-
-        {/* Navigation Top Bar */}
-        <div className="relative z-10 mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 border-b border-white/15">
-          <nav aria-label="Navegación principal" className="flex h-16 sm:h-20 items-center justify-between">
+      <header className="w-full bg-[#0c1a2d] text-white select-none" data-purpose="hero-header">
+        {/* Top Alpine Navigation Bar (Dedicated bar so artwork is never obstructed) */}
+        <div className="w-full bg-[#0c1a2d] border-b border-white/10">
+          <nav aria-label="Navegación principal" className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-3 sm:py-4 flex items-center justify-between">
             {/* Logo Mosha Departamentos */}
             <button
               onClick={onBack}
@@ -90,7 +72,7 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
                 <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <span className="text-xl sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
+                <span className="text-lg sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
               </div>
               <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.38em] text-slate-200 uppercase pl-0.5">
                 DEPARTAMENTOS
@@ -111,20 +93,32 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
               {/* Back to Home Button */}
               <button
                 onClick={onBack}
-                className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-white/40 bg-white/10 px-3.5 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-white backdrop-blur-md transition-all hover:bg-white hover:text-slate-900 cursor-pointer shadow-sm"
+                className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-white/40 bg-white/10 px-3.5 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold text-white transition-all hover:bg-white hover:text-slate-900 cursor-pointer shadow-sm"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                 </svg>
                 <span className="hidden sm:inline">{currentT.nav.volverInicio || 'Volver al inicio'}</span>
-                <span className="sm:hidden">Inicio</span>
+                <span className="sm:hidden">{currentT.nav.inicio || 'Inicio'}</span>
               </button>
             </div>
           </nav>
         </div>
 
-        {/* Bottom spacer & accessible heading */}
-        <div className="relative z-10 w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 pb-4">
+        {/* Uncropped 2.5:1 Panoramic Banner Artwork */}
+        <div className="relative w-full aspect-[2.5/1] overflow-hidden bg-[#0c1a2d]">
+          <img
+            alt={tPage.title || 'Bancos y Cajeros en Trevelin'}
+            className="h-full w-full object-cover object-center"
+            src="./banner-bancos-2x.webp?v=2"
+            srcSet="./banner-bancos.webp?v=2 1200w, ./banner-bancos-2x.webp?v=2 1983w"
+            sizes="100vw"
+            fetchpriority="high"
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.src = "./banner-bancos-2x.jpg";
+            }}
+          />
           <h1 className="sr-only">{tPage.title || 'Bancos y cajeros'}</h1>
         </div>
       </header>
@@ -142,7 +136,7 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
               <path d="M10 19l-7-7m0 0l7-7m-7 7h18" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <span className="hidden sm:inline">{currentT.nav.volverGuia || 'Volver a la guía'}</span>
-            <span className="sm:hidden">← Guía</span>
+            <span className="sm:hidden">{currentT.nav.guia || 'Guía'}</span>
           </button>
 
           {/* Location Badge */}
