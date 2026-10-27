@@ -11,47 +11,65 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
   const quickDials = [
     { label: lang === 'es' ? '107 Médicas' : '107 Medical', num: '107', icon: '🚑', desc: lang === 'es' ? 'SAME Urgencias' : 'Ambulance' },
     { label: lang === 'es' ? 'Hospital Esquel' : 'Esquel Hospital', num: '02945451222', icon: '🏥', desc: '(02945) 451222' },
-    { label: lang === 'es' ? '101 Policía' : '101 Police', num: '101', icon: '👮', desc: lang === 'es' ? 'Comisaría Esquel' : 'Local Police' },
-    { label: lang === 'es' ? '100 Bomberos' : '100 Fire Dept', num: '100', icon: '🚒', desc: lang === 'es' ? 'Bomberos Esquel' : 'Rescue' },
+    { label: lang === 'es' ? 'Hospital Trevelin' : 'Trevelin Hospital', num: '02945480117', icon: '🏥', desc: '(02945) 480117' },
+    { label: lang === 'es' ? '101 Policía' : '101 Police', num: '101', icon: '👮', desc: lang === 'es' ? 'Comisaría local' : 'Local Police' },
+    { label: lang === 'es' ? '100 Bomberos' : '100 Fire Dept', num: '100', icon: '🚒', desc: lang === 'es' ? 'Bomberos' : 'Fire Rescue' },
   ];
 
   const services = [
     {
-      id: 'hospital',
+      id: 'hospital-esquel',
       title: lang === 'es' ? 'Hospital Zonal de Esquel (Guardia 24 hs)' : 'Esquel Regional Hospital (24/7 ER)',
-      category: lang === 'es' ? 'Hospital de Alta Complejidad' : 'Regional Hospital & ER',
+      category: lang === 'es' ? 'Hospital de Cabecera (Alta Complejidad)' : 'Regional Hospital & ER',
       location: '25 de Mayo 150, Esquel',
       phone: '02945 451222',
       desc: lang === 'es'
-        ? 'Centro de salud de cabecera comarcal y máxima complejidad de la cordillera. Cuenta con guardia médica permanente de adultos y pediatría 24 hs y ambulancias SAME 107.'
-        : 'Main regional high-complexity hospital in the Andean corridor. Features 24/7 adult and pediatric emergency room and ambulance fleet (SAME 107).',
-      image: './hospital-rural-trevelin.webp?v=2',
-      imagePos: 'object-[center_60%]',
+        ? 'Centro de salud público de cabecera comarcal y máxima complejidad en la cordillera. Cuenta con guardia médica de urgencias 24 hs para adultos y pediatría, terapia intensiva y ambulancias SAME 107.'
+        : 'Main high-complexity regional public hospital in the Andean corridor. Features 24/7 adult and pediatric emergency room, ICU, and ambulance fleet (SAME 107).',
+      image: './hospital-zonal-esquel.webp',
+      fallbackImage: './hospital-zonal-esquel.jpg',
+      imagePos: 'object-[center_55%]',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hospital+Zonal+de+Esquel',
     },
     {
+      id: 'hospital-trevelin',
+      title: lang === 'es' ? 'Hospital Rural Trevelin (Guardia 24 hs)' : 'Trevelin Rural Hospital (24/7 ER)',
+      category: lang === 'es' ? 'Hospital y Urgencias' : 'Hospital & Emergency',
+      location: 'Av. San Martín 955, Trevelin',
+      phone: '02945 480117',
+      desc: lang === 'es'
+        ? 'Centro de salud público con atención clínica general, guardia médica de urgencias las 24 horas, consultorios externos y ambulancias (SAME 107).'
+        : 'Main public healthcare center in Trevelin with general clinical care, 24/7 emergency room, pediatric service and ambulance dispatch (SAME 107).',
+      image: './hospital-rural-trevelin.webp?v=2',
+      fallbackImage: './hospital-rural-trevelin.jpg',
+      imagePos: 'object-[center_60%]',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hospital+Rural+Trevelin',
+    },
+    {
       id: 'farmacias',
-      title: lang === 'es' ? 'Farmacias de Turno en Esquel (24 hs)' : 'Esquel 24h Duty Pharmacies',
+      title: lang === 'es' ? 'Farmacias de Turno (Guardia 24 hs)' : '24h Duty Pharmacies',
       category: lang === 'es' ? 'Farmacia de Turno' : 'Duty Pharmacy',
-      location: 'Centro y Macrocentro, Esquel',
+      location: 'Esquel y Trevelin',
       phone: '02945 450500',
       desc: lang === 'es'
         ? 'Red de farmacias con turnos rotativos obligatorios las 24 horas para venta de medicamentos bajo receta, artículos de primera necesidad y primeros auxilios.'
         : 'Network of local pharmacies operating on a mandatory 24-hour rotating schedule for emergency prescriptions, medical items and first-aid.',
       image: './farmacia-trevelin.webp?v=2',
+      fallbackImage: './farmacia-trevelin.jpg',
       imagePos: 'object-center',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Farmacias+de+turno+Esquel',
     },
     {
       id: 'veterinarias',
-      title: lang === 'es' ? 'Clínicas Veterinarias de Esquel' : 'Esquel Veterinary Clinics',
+      title: lang === 'es' ? 'Clínicas Veterinarias y Mascotas' : 'Veterinary Clinics & Pets',
       category: lang === 'es' ? 'Veterinaria y Urgencias' : 'Veterinary Care',
-      location: 'Esquel',
+      location: 'Esquel y Trevelin',
       phone: '02945 452000',
       desc: lang === 'es'
-        ? 'Atención veterinaria local para emergencias, consultas clínicas, medicamentos y bienestar de mascotas en Esquel.'
-        : 'Local veterinary clinics for emergency consultations, pet health care, medications and supplies during your stay in Esquel.',
+        ? 'Atención veterinaria local para emergencias, consultas clínicas, medicamentos y bienestar de mascotas durante tu estadía.'
+        : 'Local veterinary clinics for emergency consultations, pet health care, medications and supplies during your stay in the region.',
       image: './stitch/medicos-8-veterinarias.webp',
+      fallbackImage: './stitch/medicos-8-veterinarias.jpg',
       imagePos: 'object-center',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Veterinarias+en+Esquel',
     },
@@ -241,12 +259,12 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
             {tPage.sectionTitle || 'Información útil para tu tranquilidad'}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            {tPage.sectionDesc || 'Encontrá el Hospital Zonal de alta complejidad de Esquel con guardia médica las 24 horas, farmacias con turnos rotativos y atención de urgencias. Toda la información esencial para una estadía segura y tranquila.'}
+            {tPage.sectionDesc || 'Encontrá el Hospital Zonal de Esquel (alta complejidad) y el Hospital Rural de Trevelin con guardias médicas las 24 horas, farmacias con turnos rotativos y atención veterinaria. Toda la información esencial para tu tranquilidad.'}
           </p>
         </div>
 
-        {/* Cards Grid: 3 items centered */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto" data-purpose="directory-grid">
+        {/* Cards Grid: 4 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-6 xl:gap-8" data-purpose="directory-grid">
           {services.map((svc, idx) => (
             <article
               key={svc.id}
@@ -260,6 +278,11 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
                     loading={idx < 4 ? "eager" : "lazy"}
                     decoding="async"
                     src={svc.image}
+                    onError={(e) => {
+                      if (svc.fallbackImage) {
+                        e.currentTarget.src = svc.fallbackImage;
+                      }
+                    }}
                   />
                 </div>
                 <div className="p-5">

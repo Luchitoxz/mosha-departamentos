@@ -146,10 +146,10 @@ export const t = {
     medicosPage: {
       eyebrow: "SALUD Y URGENCIAS",
       title: "Servicios médicos",
-      subtitle: "Hospital Zonal de Esquel, clínicas privadas, farmacias de turno y emergencias 24 hs.",
+      subtitle: "Hospital Zonal de Esquel, Hospital Rural de Trevelin, farmacias de turno y emergencias 24 hs.",
       badge: "Salud y bienestar durante tu estadía",
-      sectionTitle: "Centro de salud de cabecera comarcal",
-      sectionDesc: "Esquel cuenta con el Hospital Zonal de alta complejidad con guardia 24 hs, centros médicos privados, farmacias de turno rotativo y atención de emergencias (SAME 107).",
+      sectionTitle: "Atención médica y emergencias en la comarca",
+      sectionDesc: "Esquel y Trevelin cuentan con el Hospital Zonal de alta complejidad, el Hospital Rural de Trevelin con guardia 24 hs, farmacias con turnos rotativos y atención de emergencias (SAME 107).",
       btnMaps: "Ver en Google Maps",
       quickUrgent: "Líneas directas de emergencia",
     }
@@ -302,10 +302,10 @@ export const t = {
     medicosPage: {
       eyebrow: "HEALTH & EMERGENCY",
       title: "Medical Services",
-      subtitle: "Esquel Regional Hospital, private medical clinics, 24/7 pharmacies and emergencies.",
+      subtitle: "Esquel Regional Hospital, Trevelin Rural Hospital, 24/7 pharmacies and emergencies.",
       badge: "Health & Wellbeing During Your Stay",
-      sectionTitle: "Regional Healthcare Center",
-      sectionDesc: "Esquel hosts the main high-complexity Regional Hospital with 24/7 emergency room, private clinics, rotating night-shift pharmacies and emergency ambulance dispatch (SAME 107).",
+      sectionTitle: "Regional Healthcare & Emergency Care",
+      sectionDesc: "Esquel and Trevelin host the main high-complexity Regional Hospital, Trevelin rural hospital with 24/7 ER, rotating night-shift pharmacies and emergency ambulance dispatch (SAME 107).",
       btnMaps: "View on Google Maps",
       quickUrgent: "Direct Emergency Lines",
     }
