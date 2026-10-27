@@ -19,9 +19,9 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Sucursal bancaria con amplia batería de cajeros automáticos Red Link habilitados las 24 hs los 365 días del año para extracciones, depósitos y transferencias.'
         : 'Official branch with multiple 24/7 Red Link ATMs for withdrawals and transactions year-round.',
-      image: './banco-chubut.webp',
-      fallbackImage: './banco-chubut.jpg',
-      imagePos: 'object-[center_40%]',
+      image: './banco-chubut.webp?v=esq',
+      fallbackImage: './banco-chubut.jpg?v=esq',
+      imagePos: 'object-[center_45%]',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Banco+del+Chubut+Esquel',
     },
     {
@@ -49,9 +49,9 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
       desc: lang === 'es'
         ? 'Excelente alternativa cuando hay filas en el cajero: podés retirar dinero en efectivo directamente por línea de caja al abonar tus compras con tarjeta de débito (Visa Débito / Maestro / Cabal).'
         : 'Great alternative during busy hours: withdraw cash directly at checkout counters when paying for your groceries with your debit card (Extra Cash service).',
-      image: './la-anonima.webp',
-      fallbackImage: './la-anonima.jpg',
-      imagePos: 'object-[center_35%]',
+      image: './la-anonima.webp?v=esq',
+      fallbackImage: './la-anonima.jpg?v=esq',
+      imagePos: 'object-[center_45%]',
       mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Supermercado+La+Anonima+Esquel',
     },
   ];

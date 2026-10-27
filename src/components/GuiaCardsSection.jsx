@@ -47,8 +47,8 @@ export default function GuiaCardsSection({
       titleLine1: lang === 'en' ? 'Banks' : 'Bancos',
       titleLine2: lang === 'en' ? '& ATMs' : 'y cajeros',
       desc: tGuia.card3Desc || 'Sucursales, cajeros automáticos y retiro de efectivo.',
-      image: './banco-chubut.webp',
-      fallbackImage: './banco-chubut.jpg',
+      image: './banco-chubut.webp?v=esq',
+      fallbackImage: './banco-chubut.jpg?v=esq',
       onClick: onOpenBancos || onOpenHistoricos,
       icon: (
         <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white stroke-[2]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
