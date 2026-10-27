@@ -10,50 +10,50 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
 
   const quickDials = [
     { label: lang === 'es' ? '107 Médicas' : '107 Medical', num: '107', icon: '🚑', desc: lang === 'es' ? 'SAME Urgencias' : 'Ambulance' },
-    { label: lang === 'es' ? 'Hospital Trevelin' : 'Trevelin Hospital', num: '02945480117', icon: '🏥', desc: '(02945) 480117' },
-    { label: lang === 'es' ? '101 Policía' : '101 Police', num: '101', icon: '👮', desc: lang === 'es' ? 'Comisaría local' : 'Local Police' },
-    { label: lang === 'es' ? '100 Bomberos' : '100 Fire Dept', num: '100', icon: '🚒', desc: lang === 'es' ? 'Rescate y auxilio' : 'Rescue' },
+    { label: lang === 'es' ? 'Hospital Esquel' : 'Esquel Hospital', num: '02945451222', icon: '🏥', desc: '(02945) 451222' },
+    { label: lang === 'es' ? '101 Policía' : '101 Police', num: '101', icon: '👮', desc: lang === 'es' ? 'Comisaría Esquel' : 'Local Police' },
+    { label: lang === 'es' ? '100 Bomberos' : '100 Fire Dept', num: '100', icon: '🚒', desc: lang === 'es' ? 'Bomberos Esquel' : 'Rescue' },
   ];
 
   const services = [
     {
       id: 'hospital',
-      title: lang === 'es' ? 'Hospital Rural Trevelin (Guardia 24 hs)' : 'Trevelin Rural Hospital (24/7 ER)',
-      category: lang === 'es' ? 'Hospital y Urgencias' : 'Hospital & Emergency',
-      location: 'Av. San Martín 955, Trevelin',
-      phone: '02945 480117',
+      title: lang === 'es' ? 'Hospital Zonal de Esquel (Guardia 24 hs)' : 'Esquel Regional Hospital (24/7 ER)',
+      category: lang === 'es' ? 'Hospital de Alta Complejidad' : 'Regional Hospital & ER',
+      location: '25 de Mayo 150, Esquel',
+      phone: '02945 451222',
       desc: lang === 'es'
-        ? 'Centro de salud público con atención clínica general, guardia médica de urgencias las 24 horas, pediatría y ambulancias (SAME 107).'
-        : 'Main public healthcare center in Trevelin with general clinical care, 24/7 emergency room, pediatric service and ambulance dispatch (SAME 107).',
+        ? 'Centro de salud de cabecera comarcal y máxima complejidad de la cordillera. Cuenta con guardia médica permanente de adultos y pediatría 24 hs y ambulancias SAME 107.'
+        : 'Main regional high-complexity hospital in the Andean corridor. Features 24/7 adult and pediatric emergency room and ambulance fleet (SAME 107).',
       image: './hospital-rural-trevelin.webp?v=2',
       imagePos: 'object-[center_60%]',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hospital+Rural+Trevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Hospital+Zonal+de+Esquel',
     },
     {
       id: 'farmacias',
-      title: lang === 'es' ? 'Farmacias de Trevelin (Turnos de Guardia)' : 'Trevelin Pharmacies (Rotating Night Shifts)',
-      category: lang === 'es' ? 'Farmacia' : 'Pharmacy',
-      location: 'Av. San Martín, Trevelin',
-      phone: '02945 480409',
+      title: lang === 'es' ? 'Farmacias de Turno en Esquel (24 hs)' : 'Esquel 24h Duty Pharmacies',
+      category: lang === 'es' ? 'Farmacia de Turno' : 'Duty Pharmacy',
+      location: 'Centro y Macrocentro, Esquel',
+      phone: '02945 450500',
       desc: lang === 'es'
-        ? 'Farmacias locales con sistema rotativo de turnos de guardia obligatorios de 24 horas para emergencias nocturnas, recetas y medicamentos.'
-        : 'Local pharmacies with mandatory 24-hour rotating night-shift schedules for prescription medicine, urgent health supplies and first aid.',
+        ? 'Red de farmacias con turnos rotativos obligatorios las 24 horas para venta de medicamentos bajo receta, artículos de primera necesidad y primeros auxilios.'
+        : 'Network of local pharmacies operating on a mandatory 24-hour rotating schedule for emergency prescriptions, medical items and first-aid.',
       image: './farmacia-trevelin.webp?v=2',
       imagePos: 'object-center',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Farmacias+en+Trevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Farmacias+de+turno+Esquel',
     },
     {
       id: 'veterinarias',
-      title: lang === 'es' ? 'Atención Veterinaria y Mascotas' : 'Veterinary Care & Pets',
-      category: lang === 'es' ? 'Veterinaria' : 'Veterinary',
-      location: 'Trevelin',
-      phone: '02945 480500',
+      title: lang === 'es' ? 'Clínicas Veterinarias de Esquel' : 'Esquel Veterinary Clinics',
+      category: lang === 'es' ? 'Veterinaria y Urgencias' : 'Veterinary Care',
+      location: 'Esquel',
+      phone: '02945 452000',
       desc: lang === 'es'
-        ? 'Atención veterinaria local para consultas médicas, urgencias, medicamentos y cuidados de tus mascotas durante tu estadía.'
-        : 'Local veterinary care for general checkups, pet emergencies, medications and supplies during your stay in Trevelin.',
+        ? 'Atención veterinaria local para emergencias, consultas clínicas, medicamentos y bienestar de mascotas en Esquel.'
+        : 'Local veterinary clinics for emergency consultations, pet health care, medications and supplies during your stay in Esquel.',
       image: './stitch/medicos-8-veterinarias.webp',
       imagePos: 'object-center',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Veterinarias+en+Trevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Veterinarias+en+Esquel',
     },
   ];
 
@@ -64,20 +64,22 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
         {/* Top Alpine Navigation Bar (Dedicated bar so artwork is never obstructed) */}
         <div className="w-full bg-[#0c1a2d] border-b border-white/10">
           <nav aria-label="Navegación principal" className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-3 sm:py-4 flex items-center justify-between">
-            {/* Brand Logo */}
+            {/* Punto Sur Brand Logo */}
             <button
               onClick={onBack}
-              className="flex flex-col items-start group cursor-pointer text-left text-white"
+              className="flex items-center space-x-2.5 sm:space-x-3 group cursor-pointer text-left text-white"
             >
-              <div className="flex items-center space-x-1.5">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <span className="text-lg sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
+              <img
+                src="./punto-sur-logo.png"
+                alt="Punto Sur Esquel"
+                className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover shadow-sm border border-amber-400/40 group-hover:scale-105 transition-transform"
+              />
+              <div className="flex flex-col">
+                <span className="text-lg sm:text-2xl font-extrabold tracking-[0.18em] text-white">PUNTO SUR</span>
+                <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.32em] text-amber-300 uppercase pl-0.5">
+                  ESQUEL • DEPTOS
+                </span>
               </div>
-              <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.38em] text-slate-200 uppercase pl-0.5">
-                DEPARTAMENTOS
-              </span>
             </button>
 
             {/* Right Action Buttons */}
@@ -195,7 +197,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
               <circle cx="12" cy="10" r="3" />
             </svg>
             <div className="text-right min-w-0 leading-tight">
-              <div className="text-xs sm:text-sm font-bold text-slate-900">Trevelin, Chubut</div>
+              <div className="text-xs sm:text-sm font-bold text-slate-900">Esquel, Chubut</div>
               <div className="hidden sm:block text-[10px] sm:text-[11px] text-slate-500 font-medium truncate">
                 {tPage.badge || 'Salud y bienestar durante tu estadía'}
               </div>
@@ -239,7 +241,7 @@ export default function ServiciosMedicosView({ lang, setLang, onBack, onOpenPriv
             {tPage.sectionTitle || 'Información útil para tu tranquilidad'}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            {tPage.sectionDesc || 'Encontrá el Hospital público con guardia de emergencias las 24 horas, farmacias con turnos rotativos y atención veterinaria en Trevelin. Toda la información esencial para una estadía segura y tranquila.'}
+            {tPage.sectionDesc || 'Encontrá el Hospital Zonal de alta complejidad de Esquel con guardia médica las 24 horas, farmacias con turnos rotativos y atención de urgencias. Toda la información esencial para una estadía segura y tranquila.'}
           </p>
         </div>
 

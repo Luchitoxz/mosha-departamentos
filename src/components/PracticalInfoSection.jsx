@@ -3,9 +3,9 @@ import { QRCodeSVG } from 'qrcode.react';
 
 export default function PracticalInfoSection({
   tServicios,
-  wifiSSID = "Mosha_Departamentos_Fibra",
-  wifiPassword = "Trevelin2026!",
-  hostPhone = "02945 64-5700",
+  wifiSSID = "PuntoSur_Esquel_WiFi",
+  wifiPassword = "PuntoSurEsquel!",
+  hostPhone = "02945 46-6058",
   onShowToast,
 }) {
   const [copiedPass, setCopiedPass] = useState(false);
@@ -79,7 +79,7 @@ export default function PracticalInfoSection({
   const waNumber = cleanPhone.startsWith('54') ? cleanPhone : `549${cleanPhone}`;
   const telNumber = rawDigits.startsWith('0') ? rawDigits : `0${rawDigits}`;
   const waText = encodeURIComponent(
-    tServicios.waMessage || 'Hola, me estoy hospedando en Mosha Departamentos'
+    tServicios.waMessage || 'Hola, me estoy hospedando en Punto Sur Esquel'
   );
   const waLink = `https://wa.me/${waNumber}?text=${waText}`;
 
@@ -360,7 +360,7 @@ export default function PracticalInfoSection({
                         {tServicios.contactoTelLabel || 'Llamadas directas'}
                       </span>
                       <span className="text-xs sm:text-sm font-bold text-slate-900 whitespace-nowrap group-hover:text-blue-700 transition block">
-                        +54 9 2945 64-5700
+                        +54 9 2945 46-6058
                       </span>
                     </div>
                   </div>
@@ -386,7 +386,7 @@ export default function PracticalInfoSection({
                     </svg>
                     <div className="flex flex-col text-left">
                       <span className="text-xs sm:text-sm font-semibold">{tServicios.contactoBtn || 'Enviar mensaje por WhatsApp'}</span>
-                      <span className="text-[11px] text-slate-300 font-mono tracking-wide">+54 9 2945 64-5700</span>
+                      <span className="text-[11px] text-slate-300 font-mono tracking-wide">+54 9 2945 46-6058</span>
                     </div>
                   </div>
                   <svg className="w-4 h-4 ml-1 stroke-[2.5] text-slate-300 group-hover:text-white group-hover:translate-x-0.5 transition shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -433,10 +433,10 @@ export default function PracticalInfoSection({
                         {tServicios.locationTitle || 'Ubicación del complejo'}
                       </h4>
                       <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
-                        {tServicios.contactoLocation || 'Trevelin, Chubut — En el centro, a pasos de la plaza'}
+                        {tServicios.contactoLocation || 'Chacabuco 1368, Esquel, Chubut'}
                       </p>
                       <a
-                        href="https://www.google.com/maps/search/?api=1&query=Mosha+Departamentos+Trevelin"
+                        href="https://www.google.com/maps/search/?api=1&query=Punto+Sur+Departamentos+Chacabuco+1368+Esquel"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-700 hover:text-blue-900 mt-1 transition group"
@@ -538,7 +538,7 @@ export default function PracticalInfoSection({
                       {tServicios.rule2Title || 'Uso responsable de agua y energía'}
                     </h4>
                     <p className="text-[11px] text-slate-500 leading-snug mt-0.5">
-                      {tServicios.rule2Desc || 'Trevelin es un lugar único, cuidemos sus recursos.'}
+                      {tServicios.rule2Desc || 'Esquel es un lugar único, cuidemos sus recursos.'}
                     </p>
                   </div>
                 </div>

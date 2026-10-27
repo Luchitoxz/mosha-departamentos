@@ -48,34 +48,29 @@ export default function Navbar({ lang, setLang, tNav, onSelectSection }) {
       }`}
     >
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 flex items-center justify-between">
-        {/* Brand Logo - Google Stitch Alpine Design */}
+        {/* Brand Logo - Punto Sur Esquel */}
         <a
-          aria-label="Mosha Departamentos"
-          className="flex flex-col items-start group cursor-pointer"
+          aria-label="Punto Sur Esquel - Departamentos Turísticos"
+          className="flex items-center space-x-2.5 sm:space-x-3 group cursor-pointer"
           href="#inicio"
           onClick={(e) => {
             e.preventDefault();
             handleNavClick('inicio');
           }}
         >
-          <div className="flex items-center space-x-1.5">
-            <svg
-              className="w-6 h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
+          <img
+            src="./punto-sur-logo.png"
+            alt="Punto Sur Esquel Logo"
+            className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover border border-white/30 shadow-md group-hover:scale-105 transition-transform"
+          />
+          <div className="flex flex-col items-start leading-tight">
+            <span className="text-lg sm:text-xl font-black tracking-tight text-white drop-shadow-sm">
+              PUNTO SUR
+            </span>
+            <span className="text-[8px] sm:text-[9px] font-bold tracking-[0.28em] text-amber-300 uppercase">
+              ESQUEL • DEPTOS
+            </span>
           </div>
-          <span className="text-[9px] font-semibold tracking-[0.38em] text-slate-200 uppercase pl-0.5">
-            DEPARTAMENTOS
-          </span>
         </a>
 
         {/* Desktop Navigation Links */}

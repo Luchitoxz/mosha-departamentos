@@ -11,25 +11,40 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
   const places = [
     {
       id: 'banco-chubut',
-      title: lang === 'es' ? 'Banco del Chubut (Trevelin)' : 'Banco del Chubut (Trevelin)',
+      title: lang === 'es' ? 'Banco del Chubut (Esquel)' : 'Banco del Chubut (Esquel)',
       badge: lang === 'es' ? 'Red Link · Sucursal Oficial y Cajeros 24 hs' : 'Link Network · Main Branch & 24h ATMs',
-      location: 'Av. San Martín 450, Trevelin',
-      distance: 'Trevelin · Centro',
+      location: 'Av. Alvear 1131, Esquel',
+      distance: 'Esquel · Centro',
       hours: lang === 'es' ? 'Lun a Vie 08:00 - 13:00 (Cajeros 24 hs)' : 'Mon-Fri 8:00 AM - 1:00 PM (24h ATMs)',
       desc: lang === 'es'
-        ? 'Única sucursal bancaria oficial en Trevelin. Cuenta con atención personalizada, cajas de atención comercial y cajeros automáticos Red Link habilitados las 24 hs los 365 días del año.'
-        : 'Official bank branch in Trevelin with teller services, customer support, and 24/7 Red Link ATMs for withdrawals and transactions year-round.',
+        ? 'Sucursal bancaria con amplia batería de cajeros automáticos Red Link habilitados las 24 hs los 365 días del año para extracciones, depósitos y transferencias.'
+        : 'Official branch with multiple 24/7 Red Link ATMs for withdrawals and transactions year-round.',
       image: './banco-chubut.webp',
       fallbackImage: './banco-chubut.jpg',
       imagePos: 'object-[center_40%]',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Banco+del+Chubut+Trevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Banco+del+Chubut+Esquel',
+    },
+    {
+      id: 'bancos-nacionales',
+      title: lang === 'es' ? 'Bancos Nación, Santander y Galicia' : 'Nación, Santander & Galicia Banks',
+      badge: lang === 'es' ? 'Red Link y Banelco · 24 hs' : 'Link & Banelco Networks · 24h',
+      location: 'Av. Alvear y 25 de Mayo, Esquel',
+      distance: 'Esquel · Centro',
+      hours: lang === 'es' ? 'Lun a Vie 08:00 - 13:00 (Cajeros 24 hs)' : 'Mon-Fri 8:00 AM - 1:00 PM (24h ATMs)',
+      desc: lang === 'es'
+        ? 'El microcentro de Esquel concentra las principales entidades bancarias del país (Banco Nación, Santander, Galicia, Patagonia) con cajeros Banelco y Link las 24 hs.'
+        : 'Downtown Esquel gathers all major national banks (Banco Nación, Santander, Galicia) equipped with 24/7 Banelco and Link ATM lobbies.',
+      image: './banner-bancos-2x.webp',
+      fallbackImage: './banner-bancos-2x.jpg',
+      imagePos: 'object-[center_35%]',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Banco+Nacion+Esquel',
     },
     {
       id: 'extra-cash-anonima',
       title: lang === 'es' ? 'Supermercado La Anónima (Extra Cash)' : 'La Anónima Supermarket (Cash Back)',
       badge: lang === 'es' ? 'Retiro en Caja · Extra Cash' : 'Checkout Cash Back · Extra Cash',
-      location: 'Av. San Martín 328, Trevelin',
-      distance: 'Trevelin · Centro',
+      location: 'Av. Alvear 1051, Esquel',
+      distance: 'Esquel · Centro',
       hours: lang === 'es' ? 'Lun a Sáb 08:30 - 21:30 | Dom 09:00 - 13:00 / 17:00 - 21:00' : 'Mon-Sat 8:30 AM - 9:30 PM | Sun 9:00 AM - 1:00 PM / 5:00 PM - 9:00 PM',
       desc: lang === 'es'
         ? 'Excelente alternativa cuando hay filas en el cajero: podés retirar dinero en efectivo directamente por línea de caja al abonar tus compras con tarjeta de débito (Visa Débito / Maestro / Cabal).'
@@ -37,22 +52,7 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
       image: './la-anonima.webp',
       fallbackImage: './la-anonima.jpg',
       imagePos: 'object-[center_35%]',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Supermercado+La+Anonima+Trevelin',
-    },
-    {
-      id: 'extra-cash-ypf',
-      title: lang === 'es' ? 'Estación YPF Trevelin (Extra Cash 24 hs)' : 'YPF Gas Station (24h Cash Back)',
-      badge: lang === 'es' ? 'Retiro de Efectivo · 24 Horas' : '24/7 Cash Back · Extra Cash',
-      location: 'Av. San Martín y Río Corintos, Trevelin',
-      distance: 'Trevelin · Acceso',
-      hours: lang === 'es' ? 'Atención las 24 hs los 365 días' : 'Open 24/7 all year round',
-      desc: lang === 'es'
-        ? 'Estación de servicio y tienda de compras abierta las 24 horas. Ofrece la posibilidad de retirar efectivo con tu tarjeta de débito en caja con el servicio Extra Cash sujeto a disponibilidad de caja.'
-        : '24-hour service station and convenience store. Allows cash withdrawals with debit card purchases via Extra Cash (subject to register cash availability).',
-      image: './ypf-trevelin.webp',
-      fallbackImage: './ypf-trevelin.jpg',
-      imagePos: 'object-[center_35%]',
-      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=YPF+Trevelin',
+      mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Supermercado+La+Anonima+Esquel',
     },
   ];
 
@@ -63,20 +63,22 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
         {/* Top Alpine Navigation Bar (Dedicated bar so artwork is never obstructed) */}
         <div className="w-full bg-[#0c1a2d] border-b border-white/10">
           <nav aria-label="Navegación principal" className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-3 sm:py-4 flex items-center justify-between">
-            {/* Logo Mosha Departamentos */}
+            {/* Punto Sur Brand Logo */}
             <button
               onClick={onBack}
-              className="group flex flex-col items-start cursor-pointer text-left text-white"
+              className="group flex items-center space-x-2.5 sm:space-x-3 cursor-pointer text-left text-white"
             >
-              <div className="flex items-center space-x-1.5">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <span className="text-lg sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
+              <img
+                src="./punto-sur-logo.png"
+                alt="Punto Sur Esquel"
+                className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover shadow-sm border border-amber-400/40 group-hover:scale-105 transition-transform"
+              />
+              <div className="flex flex-col">
+                <span className="text-lg sm:text-2xl font-extrabold tracking-[0.18em] text-white">PUNTO SUR</span>
+                <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.32em] text-amber-300 uppercase pl-0.5">
+                  ESQUEL • DEPTOS
+                </span>
               </div>
-              <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.38em] text-slate-200 uppercase pl-0.5">
-                DEPARTAMENTOS
-              </span>
             </button>
 
             {/* Right Buttons */}
@@ -201,7 +203,7 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
           {/* Location Badge */}
           <div className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700">
             <MapPin className="w-3.5 h-3.5 text-slate-500" />
-            <span>Trevelin, Chubut</span>
+            <span>Esquel, Chubut</span>
           </div>
         </div>
       </section>
@@ -216,17 +218,17 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
             </div>
             <div>
               <h3 className="text-sm sm:text-base font-bold text-white mb-1">
-                {lang === 'es' ? 'Consejos útiles para efectivo en Trevelin' : 'Helpful Cash Tips in Trevelin'}
+                {lang === 'es' ? 'Centro financiero y cajeros en Esquel' : 'Banking Hub & ATMs in Esquel'}
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
                 {lang === 'es'
-                  ? 'En Trevelin contás con la sucursal del Banco del Chubut (con cajeros Red Link 24 hs) y comercios adheridos al servicio Extra Cash (Supermercado La Anónima y Estación YPF) para retirar efectivo en el acto con tu tarjeta de débito.'
-                  : 'Trevelin hosts Banco del Chubut (with 24/7 Link Network ATMs) and local Extra Cash partners (La Anónima Supermarket and YPF Gas Station) to withdraw cash instantly with debit purchases.'}
+                  ? 'Esquel concentra las principales entidades bancarias de la cordillera (Banco Nación, Banco del Chubut, Banco Santander, Banco Galicia) con cajeros Red Link y Banelco las 24 hs, además de comercios con Extra Cash.'
+                  : 'Esquel features a complete banking network (Banco Nación, Banco del Chubut, Santander, Galicia) with 24/7 Link and Banelco ATMs, plus Extra Cash grocery spots.'}
               </p>
             </div>
           </div>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=cajeros+automaticos+Trevelin"
+            href="https://www.google.com/maps/search/?api=1&query=bancos+cajeros+automaticos+Esquel"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-xl text-xs font-semibold transition shrink-0 cursor-pointer border border-white/20"
@@ -248,7 +250,7 @@ export default function BancosView({ lang, setLang, onBack, onOpenPrivacy }) {
             {tPage.sectionTitle || 'Sucursales, cajeros y puntos Extra Cash'}
           </h2>
           <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
-            {tPage.sectionDesc || 'En Trevelin contás con la sucursal del Banco del Chubut (con cajeros automáticos Red Link habilitados las 24 hs) y puntos de retiro Extra Cash para obtener efectivo al instante abonando con tarjeta de débito.'}
+            {tPage.sectionDesc || 'En Esquel contás con sucursales bancarias con cajeros automáticos Red Link y Banelco habilitados las 24 hs, además de puntos de retiro Extra Cash para obtener efectivo al instante abonando con tarjeta de débito.'}
           </p>
         </div>
 

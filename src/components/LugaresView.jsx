@@ -120,21 +120,23 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
         {/* Top Alpine Navigation Bar (Dedicated bar so artwork is never obstructed) */}
         <div className="w-full bg-[#0c1a2d] border-b border-white/10">
           <nav aria-label="Navegación principal" className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 py-3 sm:py-4 flex items-center justify-between">
-            {/* Mosha Brand Logo */}
+            {/* Punto Sur Brand Logo */}
             <button
               onClick={onBack}
-              className="flex flex-col items-start group cursor-pointer text-left"
+              className="flex items-center space-x-2.5 sm:space-x-3 group cursor-pointer text-left"
               data-purpose="brand-logo"
             >
-              <div className="flex items-center space-x-1.5">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white stroke-[1.75] transition-transform group-hover:scale-105" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path d="M3 10.5L12 3l9 7.5M5.25 8.75V20.25a.75.75 0 00.75.75h12a.75.75 0 00.75-.75V8.75" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <span className="text-lg sm:text-2xl font-extrabold tracking-[0.25em] text-white">MOSHA</span>
+              <img
+                src="./punto-sur-logo.png"
+                alt="Punto Sur Esquel"
+                className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover shadow-sm border border-amber-400/40 group-hover:scale-105 transition-transform"
+              />
+              <div className="flex flex-col">
+                <span className="text-lg sm:text-2xl font-extrabold tracking-[0.18em] text-white">PUNTO SUR</span>
+                <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.32em] text-amber-300 uppercase pl-0.5">
+                  ESQUEL • DEPTOS
+                </span>
               </div>
-              <span className="text-[8px] sm:text-[9px] font-semibold tracking-[0.38em] text-slate-200 uppercase pl-0.5">
-                DEPARTAMENTOS
-              </span>
             </button>
 
             {/* Action Buttons Right */}
@@ -278,7 +280,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
           {/* Location Indicator Right */}
           <div className="flex items-center gap-2 text-right min-w-0">
             <div className="text-right min-w-0">
-              <p className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">Trevelin, Chubut</p>
+              <p className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">Esquel, Chubut</p>
               <p className="hidden sm:block text-[10px] sm:text-xs text-slate-500 font-normal leading-tight">
                 {tPage.badge || 'Naturaleza en estado puro'}
               </p>
@@ -303,7 +305,7 @@ export default function LugaresView({ lang, setLang, onBack, onOpenPrivacy }) {
               {tPage.sectionTitle || 'Recomendaciones imperdibles'}
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              {tPage.sectionDesc || 'Descubrí los mejores lugares para conocer, disfrutar de la naturaleza y vivir experiencias únicas en Trevelin y sus alrededores. Todos los destinos están muy cerca de tu estadía.'}
+              {tPage.sectionDesc || 'Descubrí los mejores lugares para conocer, disfrutar de la naturaleza y vivir experiencias únicas en Esquel y la comarca andina. Todos los destinos a pocos minutos de tu estadía.'}
             </p>
           </div>
 

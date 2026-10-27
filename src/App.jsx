@@ -37,7 +37,7 @@ export default function App() {
   const [lang, setLang] = useState(() => {
     if (typeof window !== 'undefined') {
       try {
-        const saved = window.localStorage.getItem('mosha_lang');
+        const saved = window.localStorage.getItem('puntosur_lang');
         if (saved === 'es' || saved === 'en') return saved;
         const browserLang = (window.navigator.language || '').toLowerCase();
         if (browserLang.startsWith('en')) return 'en';
@@ -56,7 +56,7 @@ export default function App() {
 
   useEffect(() => {
     try {
-      window.localStorage.setItem('mosha_lang', lang);
+      window.localStorage.setItem('puntosur_lang', lang);
       document.documentElement.lang = lang;
     } catch {}
   }, [lang]);
@@ -69,10 +69,10 @@ export default function App() {
 
   const currentT = t[lang] || t.es;
 
-  // Real Complex Credentials & Contact
-  const wifiSSID = "Mosha_Departamentos_Fibra";
-  const wifiPassword = "Trevelin2026!";
-  const hostPhone = "02945 64-5700";
+  // Real Complex Credentials & Contact for Punto Sur Esquel
+  const wifiSSID = "PuntoSur_Esquel_WiFi";
+  const wifiPassword = "PuntoSurEsquel!";
+  const hostPhone = "02945 46-6058";
 
   // Idle background prefetch for instant subpage transitions
   useEffect(() => {
@@ -213,10 +213,10 @@ export default function App() {
       const msg = encodeURIComponent(
         currentT.servicios?.waMessage ||
           (lang === 'en'
-            ? 'Hello! I am staying at Mosha Departamentos and have a question.'
-            : 'Hola Mosha! Estoy en el departamento y quería hacerles una consulta.')
+            ? 'Hello! I am staying at Punto Sur Esquel and have a question.'
+            : 'Hola! Me estoy hospedando en Punto Sur Esquel y quería hacer una consulta.')
       );
-      window.open(`https://wa.me/5492945645700?text=${msg}`, '_blank');
+      window.open(`https://wa.me/5492945466058?text=${msg}`, '_blank');
       return;
     }
 
@@ -326,12 +326,12 @@ export default function App() {
               onShowToast={triggerToast}
             />
 
-            {/* Panoramic Mid-Page Trevelin Banner */}
+            {/* Panoramic Mid-Page Esquel Banner */}
             <PanoramicBanner
-              eyebrow={currentT.banner.eyebrow || 'TREVELIN, CHUBUT'}
-              title={currentT.banner.title || 'Naturaleza, historia y sabores únicos'}
-              subtitle={currentT.banner.subtitle || 'Un destino que combina paisajes increíbles, cultura galesa, buena gastronomía y la calidez de su gente. Descubrí todo lo que Trevelin tiene para ofrecerte.'}
-              buttonText={currentT.banner.btn || 'Conocé más sobre Trevelin'}
+              eyebrow={currentT.banner.eyebrow || 'ESQUEL, CHUBUT'}
+              title={currentT.banner.title || 'Naturaleza, cordillera y experiencias únicas'}
+              subtitle={currentT.banner.subtitle || 'La puerta de entrada a La Hoya, el Parque Nacional Los Alerces y la magia de La Trochita. Disfrutá de Esquel en Punto Sur.'}
+              buttonText={currentT.banner.btn || 'Conocé más sobre Esquel'}
               onButtonClick={() => scrollToSection('guia')}
               isSubpage={false}
             />

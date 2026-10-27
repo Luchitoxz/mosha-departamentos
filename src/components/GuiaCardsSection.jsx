@@ -79,13 +79,13 @@ export default function GuiaCardsSection({
         {/* Header Section Info */}
         <div className="mb-5 sm:mb-10 lg:mb-12">
           <span className="text-[11px] sm:text-sm font-bold tracking-[0.2em] text-[#1e3e62] uppercase block mb-1">
-            {tGuia.eyebrow || 'DESCUBRÍ TREVELIN'}
+            {tGuia.eyebrow || 'DESCUBRÍ ESQUEL'}
           </span>
           <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0c1a2d] tracking-tight">
             {tGuia.title || 'Explorá, disfrutá y viví la experiencia'}
           </h2>
           <p className="text-xs sm:text-base lg:text-lg text-slate-600 mt-1 sm:mt-2.5 max-w-4xl leading-relaxed">
-            {tGuia.subtitle || 'Accedé a nuestra guía con los mejores lugares para visitar, dónde comer, puntos históricos y servicios médicos en Trevelin y sus alrededores.'}
+            {tGuia.subtitle || 'Accedé a nuestra guía con los mejores lugares para visitar, gastronomía local y servicios esenciales en Esquel y la comarca.'}
           </p>
         </div>
 

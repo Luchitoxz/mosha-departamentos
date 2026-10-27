@@ -26,7 +26,7 @@ export default function PoliticaModal({ isOpen, onClose, lang = 'es' }) {
                 {isEn ? 'Privacy Policy & Terms' : 'Política de Privacidad y Términos'}
               </h3>
               <p className="text-xs text-slate-500">
-                {isEn ? 'Mosha Departamentos • Digital Guest Guide' : 'Mosha Departamentos • Guía Digital del Huésped'}
+                {isEn ? 'Punto Sur Esquel • Digital Guest Guide' : 'Punto Sur Esquel • Guía Digital del Huésped'}
               </p>
             </div>
           </div>

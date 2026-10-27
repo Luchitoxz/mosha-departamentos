@@ -1,16 +1,16 @@
 {
-  "short_name": "Mosha Deptos",
-  "name": "Mosha Departamentos - Guía del Huésped",
-  "description": "Guía interactiva para huéspedes en Trevelin, Chubut. Wi-Fi, paseos, restaurantes y servicios esenciales.",
+  "short_name": "Punto Sur",
+  "name": "Punto Sur Esquel - Departamentos Turísticos",
+  "description": "Guía interactiva para huéspedes en Esquel, Chubut. Wi-Fi, paseos, restaurantes y servicios esenciales.",
   "icons": [
     {
-      "src": "/favicon.svg",
-      "type": "image/svg+xml",
-      "sizes": "any",
+      "src": "./punto-sur-logo.png",
+      "type": "image/png",
+      "sizes": "192x192 512x512",
       "purpose": "any maskable"
     }
   ],
-  "start_url": "/",
+  "start_url": "./",
   "background_color": "#0b192c",
   "theme_color": "#0b192c",
   "display": "standalone",
